@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\dtos\\truck\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\truck\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\proyecto poo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\proyecto poo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "TruckCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T20:58:01.523Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TruckEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T20:54:23.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Proyecto Poo",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Proyecto Poo.csproj",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
+              "RelativeToolTip": "Proyecto Poo\\Proyecto Poo.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-19T20:50:56.576Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
