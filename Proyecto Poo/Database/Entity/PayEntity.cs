@@ -8,8 +8,8 @@
 
         public double Amount {  get; set; }
 
-        public string PaymentDate { get; set; }
+        public string Paymentdate { get; set; }
 
-        public bool PayMethod { get; set; }
+        public bool PayMentmethod { get; set; }
     }
 }

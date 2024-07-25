@@ -7,23 +7,23 @@ namespace Proyecto_Poo.Database.Entity
     {
         [Key]
         [Column("Id")]
-        public Guid Id { get; set; }
+        public Guid id { get; set; }
         [Display(Name = "Nombre")]
         [Required(ErrorMessage = "El {0} del empleado es requerido")]
         [StringLength(50)]
         [Column("Name Employee")]
-        public string Name { get; set; }
+        public string? Name { get; set; }
         [Display(Name = "Cargo")]
         [Required(ErrorMessage = ("El {0} del empleado es requerido"))]
         [Column("Post Employee")]
-        public string Post { get; set; }
+        public string? Post { get; set; }
 
         [Display(Name = "Correo Electronio")]
         [MinLength(11)]
         [Required(ErrorMessage = "El {0} del empleado debe tener al menos {1} caracteres")]
         [StringLength(150)]
         [Column("Mail")]
-        public string Mail { get; set; }
+        public string? Mail { get; set; }
 
         [Display(Name = "Telefono")]
         [MinLength(12)]
@@ -32,7 +32,7 @@ namespace Proyecto_Poo.Database.Entity
         [StringLength(16)]
         [Column("Cellphone")]
 
-        public string Cellphone {  get; set; }
+        public string? Cellphone {  get; set; }
 
     }
 }

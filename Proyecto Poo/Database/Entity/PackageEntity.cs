@@ -1,5 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Poo.Database.Entity
 {
@@ -8,14 +8,13 @@ namespace Proyecto_Poo.Database.Entity
     {
         [Key]
         public Guid PackageId { get; set; }
-        
-        public Guid OrderId { get; set; }
+       
+       public Guid OrderId { get; set; }
+       [ForeignKey(nameof(OrderId))]
 
-        [ForeignKey(nameof(OrderId))]
+        public OrderEntity Order { get; set; }
 
-        public virtual OrderEntity Order { get; set; }
-
-        public double PackageWeight { get; set; }
+        public bool PackageWeight { get; set; }
 
 
     }
