@@ -13,25 +13,23 @@ namespace Proyecto_Poo.Service
 {
     public class OrderService : IOrderService
     {
-        private readonly PackageServiceDbContext _contex;
+        private readonly PackageServiceDbContext _context;
         private readonly ILogger<OrderService> _logger;
         private readonly IMapper _mapper;
 
         public OrderService(PackageServiceDbContext context, ILogger<OrderService> logger, IMapper mapper)
         {
-            _contex = context;
-            _logger = logger;
-            _mapper = mapper;
+            this._context = context;
+            this._logger = logger;
+            this._mapper = mapper;
         }
 
         public async Task<ResponseDto<OrderDto>> GetByIdAsync(Guid id)
         {
             try
             {
-                var orderEntity = await _contex.Orders
-                    .Include(x => x.Order)  
-                    .FirstOrDefaultAsync(x => x.OrderId == id);
-
+                var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+                
                 if (orderEntity == null)
                 {
                     return new ResponseDto<OrderDto>
@@ -58,22 +56,22 @@ namespace Proyecto_Poo.Service
                 {
                     StatusCode = 500,
                     Status = false,
-                    Message = "Se produjo un error al obtener el pedido"
+                    Message = $"Se produjo un error al obtener el pedido"
                 };
             }
         }
 
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {
-            using (var transaction = await _contex.Database.BeginTransactionAsync())
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
                 try
                 {
                     var orderEntity = _mapper.Map<OrderEntity>(dto);
 
-                    _contex.Orders.Add(orderEntity);  // Agregar la entidad al contexto
+                    _context.Orders.Add(orderEntity);  // Agregar la entidad al contexto
 
-                    await _contex.SaveChangesAsync();
+                    await _context.SaveChangesAsync();
                     await transaction.CommitAsync();
 
                     var orderDto = _mapper.Map<OrderDto>(orderEntity);

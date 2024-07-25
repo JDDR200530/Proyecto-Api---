@@ -19,15 +19,15 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    OrderDate = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    SenderName = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Address = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    reciverName = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    order_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    sender_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    adress = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    reciver_name = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_orders", x => x.OrderId);
+                    table.PrimaryKey("PK_orders", x => x.order_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -35,27 +35,27 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    PackageId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    OrderId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    PackageWeight = table.Column<bool>(type: "bit", nullable: false)
+                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    package_weight = table.Column<bool>(type: "bit", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_packages", x => x.PackageId);
+                    table.PrimaryKey("PK_packages", x => x.package_id);
                     table.ForeignKey(
-                        name: "FK_packages_orders_OrderId",
-                        column: x => x.OrderId,
+                        name: "FK_packages_orders_order_id",
+                        column: x => x.order_id,
                         principalSchema: "dbo",
                         principalTable: "orders",
-                        principalColumn: "OrderId",
+                        principalColumn: "order_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_packages_OrderId",
+                name: "IX_packages_order_id",
                 schema: "dbo",
                 table: "packages",
-                column: "OrderId");
+                column: "order_id");
         }
 
         /// <inheritdoc />

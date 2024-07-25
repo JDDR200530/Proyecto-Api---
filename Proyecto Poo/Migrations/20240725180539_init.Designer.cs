@@ -12,7 +12,7 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20240724203140_init")]
+    [Migration("20240725180539_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -29,19 +29,24 @@ namespace Proyecto_Poo.Migrations
                 {
                     b.Property<Guid>("OrderId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("order_id");
 
                     b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("adress");
 
                     b.Property<DateTime>("OrderDate")
-                        .HasColumnType("datetime2");
+                        .HasColumnType("datetime2")
+                        .HasColumnName("order_date");
+
+                    b.Property<string>("ReciverName")
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("reciver_name");
 
                     b.Property<string>("SenderName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("reciverName")
-                        .HasColumnType("nvarchar(max)");
+                        .HasColumnType("nvarchar(max)")
+                        .HasColumnName("sender_name");
 
                     b.HasKey("OrderId");
 
@@ -52,13 +57,16 @@ namespace Proyecto_Poo.Migrations
                 {
                     b.Property<Guid>("PackageId")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("package_id");
 
                     b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("order_id");
 
                     b.Property<bool>("PackageWeight")
-                        .HasColumnType("bit");
+                        .HasColumnType("bit")
+                        .HasColumnName("package_weight");
 
                     b.HasKey("PackageId");
 

@@ -3,7 +3,7 @@
     public class TruckEditDto : TruckCreateDto
     {
 
-        public bool IsAvailable { get; set; }
+       
 
     }
 }

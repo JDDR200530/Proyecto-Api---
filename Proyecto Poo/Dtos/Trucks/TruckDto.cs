@@ -6,10 +6,13 @@ namespace Proyecto_Poo.Dtos.Truck
     public class TruckDto
     {
 
+       
         public Guid TruckId { get; set; }
 
-        public bool IsAvailable { get; set; }
        
-        public double MaxWeight { get; set; }
+        public bool IsAvailable { get; set; }
+        
+        public double TruckCapacity { get; set; }
+        
     }
 }

@@ -12,8 +12,7 @@ namespace Proyecto_Poo.Database.Contex
 
         private readonly IAuthService _authService;
 
-        public DbSet<OrderEntity> Orders { get; set; }
-        public DbSet<PackageEntity> Packages { get; set; }
+       
         public PackageServiceDbContext(DbContextOptions options, IAuthService authService) : base(options)
         {
             _authService = authService;
@@ -36,6 +35,10 @@ namespace Proyecto_Poo.Database.Contex
                 }
             }
             return base.SaveChangesAsync(cancellationToken);
-        }
+
+        
+    }
+        public DbSet<OrderEntity> Orders { get; set; }
+        public DbSet<PackageEntity> Packages { get; set; }
     }
 }

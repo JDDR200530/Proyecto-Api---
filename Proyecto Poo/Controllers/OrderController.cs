@@ -6,13 +6,15 @@ using Proyecto_Poo.Service.Interface;
 
 namespace Proyecto_Poo.Controllers
 {
+    [ApiController]
+    [Route("/api/orders")]
     public class OrderController : ControllerBase
     {
         private readonly IOrderService _orderService;
 
         public OrderController(IOrderService orderService)
         {
-            _orderService = orderService;
+            this._orderService = orderService;
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<Response<OrderDto>>> GetOneById(Guid id)
