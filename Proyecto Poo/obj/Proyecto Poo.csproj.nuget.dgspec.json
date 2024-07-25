@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj": {}
+    "C:\\Users\\Jonathan\\Downloads\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj": {
+    "C:\\Users\\Jonathan\\Downloads\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
+        "projectUniqueName": "C:\\Users\\Jonathan\\Downloads\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj",
         "projectName": "Proyecto Poo",
-        "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
-        "packagesPath": "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\obj\\",
+        "projectPath": "C:\\Users\\Jonathan\\Downloads\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj",
+        "packagesPath": "C:\\Users\\Jonathan\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Jonathan\\Downloads\\Prueba Proyecto - POO\\Proyecto Poo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\JOSUE DAVID\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Jonathan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -94,7 +94,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.300/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

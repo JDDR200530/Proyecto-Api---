@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "qIfqzW2sP26JRob/gJ5foqu+K2jpNvsEdhCWyUheukc=",
+  "Source": "ServicioEntregas.Api",
+  "BasePath": "_content/ServicioEntregas.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

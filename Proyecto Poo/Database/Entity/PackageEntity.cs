@@ -1,16 +1,21 @@
-﻿namespace Proyecto_Poo.Database.Entity
+﻿using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+
+namespace Proyecto_Poo.Database.Entity
 {
+    [Table("packages", Schema = "dbo")]
     public class PackageEntity
     {
-        public Guid IdPackage { get; set; }
-        public string Sender { get; set; }
-        public string ShippingLocation { get; set; }
-        public string Addressee { get; set; }
-        public string ReceptionPlace { get; set; }
+        [Key]
+        public Guid PackageId { get; set; }
+        
+        public Guid OrderId { get; set; }
 
-        public double Distance { get; set; }
+        [ForeignKey(nameof(OrderId))]
 
-        public bool PackageType { get; set; }
+        public virtual OrderEntity Order { get; set; }
+
+        public double PackageWeight { get; set; }
 
 
     }
