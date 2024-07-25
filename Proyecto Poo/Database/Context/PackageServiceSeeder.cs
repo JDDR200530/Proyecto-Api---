@@ -33,16 +33,16 @@ namespace Proyecto_Poo.Database.Contex
             {
                 var jsonFilePath = "SeedData/Order.json";
                 var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                var Orders = JsonConvert.DeserializeObject<List<OrderEntity>>(jsonContent);
+                var orders = JsonConvert.DeserializeObject<List<OrderEntity>>(jsonContent);
 
                 if (!await context.Orders.AnyAsync())
                 {
-                    foreach (var order in Orders)
+                    foreach (var order in orders)
                     {
                         order.OrderDate = DateTime.Now;
                     }
 
-                    await context.Orders.AddRangeAsync(Orders);
+                    await context.Orders.AddRangeAsync(orders);
                     await context.SaveChangesAsync();
                 }
             }
@@ -53,11 +53,26 @@ namespace Proyecto_Poo.Database.Contex
             }
         }
 
-        public static async Task LoadPackageAsync(ILoggerFactory loggerFactory, PackageServiceDbContext contex)
+        public static async Task LoadPackageAsync(
+            PackageServiceDbContext context, ILoggerFactory loggerFactory)
         {
-            var jsonFilePath = "SeedData/Package.json";
-            var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-            >>
+            try
+            {
+                var jsonFilePath = "SeedData/package.json";
+                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
+                var packages = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent);
+
+                
+
+                await context.Packages.AddRangeAsync(packages);
+                await context.SaveChangesAsync();
+                
+            }
+            catch (Exception e)
+            {
+                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
+                logger.LogError(e, "Error al ejecutar el Seed Packages.");
+            }
         }
     }
 

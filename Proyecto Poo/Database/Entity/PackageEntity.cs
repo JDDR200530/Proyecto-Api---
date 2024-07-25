@@ -6,14 +6,17 @@ namespace Proyecto_Poo.Database.Entity
     [Table("packages", Schema = "dbo")]
     public class PackageEntity
     {
-        [Key]
-        public Guid PackageId { get; set; }
-       
-       public Guid OrderId { get; set; }
+       [Key]
+       [Column("package_id")]
+       public Guid PackageId { get; set; }
+
+       [Column("order_id")]
+        public Guid OrderId { get; set; }
        [ForeignKey(nameof(OrderId))]
 
         public OrderEntity Order { get; set; }
 
+        [Column("order_id")]
         public bool PackageWeight { get; set; }
 
 

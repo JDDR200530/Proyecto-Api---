@@ -12,7 +12,7 @@ namespace Proyecto_Poo.Dtos.Order
         [Required(ErrorMessage ="La {0} es requerida")]
         public string Address { get; set; }
 
-        [Display(Name = "Nombre del receptor")]
+        [Display(Name = "Nombre del Destinatario")]
         [Required(ErrorMessage ="El {0} es requerido")]
         public string ReciverName { get; set; }
 

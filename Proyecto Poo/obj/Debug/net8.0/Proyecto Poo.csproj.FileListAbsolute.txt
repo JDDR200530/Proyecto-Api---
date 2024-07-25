@@ -281,3 +281,14 @@ C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.genruntimeconfig.cache
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8.0\ref\Proyecto Poo.dll
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\bin\Debug\net8.0\SeedData\Order.json
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.csproj.AssemblyReference.cache
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.AssemblyInfoInputs.cache
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.AssemblyInfo.cs
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.csproj.CoreCompileInputs.cache
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.sourcelink.json
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.dll
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\refint\Proyecto Poo.dll
+C:\Users\Jonathan\Desktop\Actualizacion Proyecto\Proyecto-Api---Jonathan-Vasquez---David-Diaz\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.pdb
