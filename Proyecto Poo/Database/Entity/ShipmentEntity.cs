@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Proyecto_Poo.Database.Entity
 {
     [Table("shipments", Schema = "dbo")]
-    public class ShipmentEnity
+    public class ShipmentEntity
     {
         [Key]
         [Column("shipment_id")]
@@ -29,7 +29,7 @@ namespace Proyecto_Poo.Database.Entity
         [Column("shipped")]
         public bool IsShipped { get; set; }
 
-        public virtual IEnumerable<OrderShipmentsEntity> Shipments { get; set; }
+        
 
 
 

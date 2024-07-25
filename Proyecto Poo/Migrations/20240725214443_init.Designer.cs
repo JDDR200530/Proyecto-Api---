@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20240725202827_relaciones2")]
-    partial class relaciones2
+    [Migration("20240725214443_init")]
+    partial class init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,28 +59,21 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("orders", "dbo");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderShipmentsEntity", b =>
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderPackagesEntity", b =>
                 {
-                    b.Property<Guid>("OrderShipmentId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("shipments_id");
-
                     b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("order_id");
 
-                    b.Property<Guid>("ShipmentId")
+                    b.Property<Guid>("PackageId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("shipment_id");
+                        .HasColumnName("package_id");
 
-                    b.HasKey("OrderShipmentId");
+                    b.HasKey("OrderId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("PackageId");
 
-                    b.HasIndex("ShipmentId");
-
-                    b.ToTable("order_shipments", "dbo");
+                    b.ToTable("order_packages", "dbo");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
@@ -90,22 +83,11 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("package_id");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("order_id");
-
                     b.Property<bool>("PackageWeight")
                         .HasColumnType("bit")
                         .HasColumnName("package_weight");
 
-                    b.Property<Guid?>("PaymentEntityPaymentId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.HasKey("PackageId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("PaymentEntityPaymentId");
 
                     b.ToTable("packages", "dbo");
                 });
@@ -138,10 +120,10 @@ namespace Proyecto_Poo.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.ToTable("paymets", "dbo");
+                    b.ToTable("payments", "dbo");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEnity", b =>
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
                 {
                     b.Property<Guid>("ShipmentId")
                         .ValueGeneratedOnAdd()
@@ -189,7 +171,7 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("trucks", "dbo");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderShipmentsEntity", b =>
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderPackagesEntity", b =>
                 {
                     b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
                         .WithMany("Orders")
@@ -197,30 +179,15 @@ namespace Proyecto_Poo.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.ShipmentEnity", "Shipment")
-                        .WithMany("Shipments")
-                        .HasForeignKey("ShipmentId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
-
-                    b.Navigation("Shipment");
-                });
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
-                {
-                    b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
+                    b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "Package")
                         .WithMany("Packages")
-                        .HasForeignKey("OrderId")
+                        .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.PaymentEntity", null)
-                        .WithMany("Pay")
-                        .HasForeignKey("PaymentEntityPaymentId");
-
                     b.Navigation("Order");
+
+                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
@@ -234,10 +201,10 @@ namespace Proyecto_Poo.Migrations
                     b.Navigation("Order");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEnity", b =>
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
                 {
                     b.HasOne("Proyecto_Poo.Database.Entity.PaymentEntity", "Pay")
-                        .WithMany()
+                        .WithMany("Pay")
                         .HasForeignKey("PaymentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
@@ -257,19 +224,17 @@ namespace Proyecto_Poo.Migrations
                 {
                     b.Navigation("Orders");
 
-                    b.Navigation("Packages");
-
                     b.Navigation("Payment");
+                });
+
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
+                {
+                    b.Navigation("Packages");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
                 {
                     b.Navigation("Pay");
-                });
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEnity", b =>
-                {
-                    b.Navigation("Shipments");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>

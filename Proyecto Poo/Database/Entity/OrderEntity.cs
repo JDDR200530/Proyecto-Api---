@@ -34,9 +34,11 @@ namespace Proyecto_Poo.Database.Entity
         [Column("reciver_name")]
         public string ReciverName { get; set; }
         
-        public virtual IEnumerable<PackageEntity> Packages { get; set; }
         public virtual IEnumerable<PaymentEntity> Payment { get; set; }
-        public virtual IEnumerable<OrderShipmentsEntity> Orders { get; set; }
+        public virtual IEnumerable<OrderPackagesEntity> Orders { get; set; }
+
+
+       
 
     }
 }

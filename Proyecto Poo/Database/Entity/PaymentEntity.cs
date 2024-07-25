@@ -3,7 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Poo.Database.Entity
 {
-    [Table("paymets", Schema = "dbo")]
+    [Table("payments", Schema = "dbo")]
     public class PaymentEntity
     {
         [Key]
@@ -39,7 +39,7 @@ namespace Proyecto_Poo.Database.Entity
 
         
 
-        public virtual IEnumerable<PackageEntity> Pay { get; set; }
+        public virtual IEnumerable<ShipmentEntity> Pay { get; set; }
 
 
     }

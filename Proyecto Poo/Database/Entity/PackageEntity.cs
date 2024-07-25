@@ -10,16 +10,11 @@ namespace Proyecto_Poo.Database.Entity
         [Column("package_id")]
         public Guid PackageId { get; set; }
 
-        [Column("order_id")]
-        public Guid OrderId { get; set; }
-        [ForeignKey(nameof(OrderId))]
-
-        public OrderEntity Order { get; set; }
 
         [Column("package_weight")]
         public bool PackageWeight { get; set; }
-        
 
+        public virtual IEnumerable<OrderPackagesEntity> Packages { get; set; }
 
     }
 }

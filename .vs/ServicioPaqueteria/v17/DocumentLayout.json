@@ -3,32 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\ordershipmentsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\ordershipmentsentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\orderpackagesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\orderpackagesentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\shipmentenity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\shipmentenity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\paymententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\paymententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725214443_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725214443_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\orderentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -37,6 +13,58 @@
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\paymententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\paymententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213722_fixRel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725213722_fixRel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213255_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725213255_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\shipmententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\shipmententity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211319_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725211319_update.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211204_chea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725211204_chea.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211053_fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725211053_fix.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725210912_change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20240725210912_change.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\dtos\\trucks\\truckeditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -141,14 +169,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\migrations\\20240725201938_relaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240725201938_relaciones.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto-api---jonathan-vasquez---david-diaz\\proyecto poo\\migrations\\20240725180539_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240725180539_init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -162,7 +182,7 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 32,
+              "DocumentIndex": 39,
               "Title": "Proyecto Poo.csproj",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Proyecto Poo.csproj",
               "RelativeDocumentMoniker": "Proyecto Poo\\Proyecto Poo.csproj",
@@ -176,14 +196,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "20240725202827_relaciones2.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs",
-              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725202827_relaciones2.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Title": "20240725214443_init.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725214443_init.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725214443_init.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725214443_init.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725214443_init.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T20:28:27.868Z",
+              "WhenOpened": "2024-07-25T21:44:43.436Z",
               "EditorCaption": ""
             },
             {
@@ -192,56 +212,189 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 35,
-              "Title": "20240725201938_relaciones.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725201938_relaciones.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725201938_relaciones.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725201938_relaciones.cs",
-              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725201938_relaciones.cs",
+              "DocumentIndex": 4,
+              "Title": "20240725213722_fixRel.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213722_fixRel.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725213722_fixRel.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213722_fixRel.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725213722_fixRel.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T20:19:38.886Z"
+              "WhenOpened": "2024-07-25T21:37:22.654Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ShipmentEnity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\ShipmentEnity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\ShipmentEnity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\ShipmentEnity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\ShipmentEnity.cs",
-              "ViewState": "AQIAAAEAAAAAAAAAAAAAABoAAAAuAAAA",
+              "DocumentIndex": 5,
+              "Title": "20240725213255_init.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213255_init.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725213255_init.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213255_init.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725213255_init.cs",
+              "ViewState": "AQIAAJAAAAAAAAAAAAAAAAAAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T19:05:46.449Z"
+              "WhenOpened": "2024-07-25T21:32:55.925Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "OrderShipmentsEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderShipmentsEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderShipmentsEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderShipmentsEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderShipmentsEntity.cs",
-              "ViewState": "AQIAAAwAAAAAAAAAAAAAABgAAAAHAAAA",
+              "Title": "OrderEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAkwCUAAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T19:25:08.003Z",
+              "WhenOpened": "2024-07-24T20:07:03.846Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PaymentEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAASAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T18:16:02.592Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "OrderPackagesEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderPackagesEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderPackagesEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderPackagesEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderPackagesEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAIAAAA",
+              "Title": "PackageEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAABAAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T18:21:43.696Z"
+              "WhenOpened": "2024-07-24T20:09:47.555Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 6,
+              "Title": "20240725213147_fixrelationships.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725213147_fixrelationships.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:31:47.359Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "20240725212704_orderPackages.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725212704_orderPackages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:27:04.923Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20240725212045_fix_spelling.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725212045_fix_spelling.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:20:45.804Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ShipmentEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\ShipmentEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\ShipmentEntity.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\ShipmentEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\ShipmentEntity.cs",
+              "ViewState": "AQIAAA0AAAAAAAAAAAAAAB8AAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T19:05:46.449Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TruckEntity.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T18:33:57.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20240725211319_update.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211319_update.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725211319_update.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211319_update.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725211319_update.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:13:19.976Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "20240725211204_chea.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211204_chea.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725211204_chea.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211204_chea.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725211204_chea.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:12:04.505Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "20240725211053_fix.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211053_fix.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725211053_fix.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725211053_fix.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725211053_fix.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:10:53.364Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "20240725210912_change.cs",
+              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725210912_change.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725210912_change.cs",
+              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725210912_change.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725210912_change.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-25T21:09:12.977Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "CustomerService.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Service\\CustomerService.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Service\\CustomerService.cs",
@@ -253,55 +406,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "OrderEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAAACQAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T20:07:03.846Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "PackageEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
-              "ViewState": "AQIAAA0AAAAAAAAAAAAAABAAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-24T20:09:47.555Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "PaymentEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PaymentEntity.cs",
-              "ViewState": "AQIAAB8AAAAAAAAAAAAAACkAAABDAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T18:16:02.592Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "TruckEntity.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAXAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T18:33:57.906Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 17,
               "Title": "TruckCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
@@ -313,7 +418,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 18,
               "Title": "OrderEditDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Order\\OrderEditDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Order\\OrderEditDto.cs",
@@ -325,7 +430,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 19,
               "Title": "OrderDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
@@ -337,7 +442,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 20,
               "Title": "OrderCreateDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Order\\OrderCreateDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Order\\OrderCreateDto.cs",
@@ -349,7 +454,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 16,
               "Title": "TruckEditDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Trucks\\TruckEditDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Trucks\\TruckEditDto.cs",
@@ -361,7 +466,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 21,
               "Title": "TruckDto.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
@@ -373,7 +478,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 22,
               "Title": "AutoMapperProfile.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
@@ -385,7 +490,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 23,
               "Title": "ClientEntity.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Entity\\ClientEntity.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\ClientEntity.cs",
@@ -397,7 +502,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 24,
               "Title": "Order.json",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\SeedData\\Order.json",
               "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Order.json",
@@ -409,7 +514,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 25,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\appsettings.json",
               "RelativeDocumentMoniker": "Proyecto Poo\\appsettings.json",
@@ -421,7 +526,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 27,
               "Title": "20240725174809_init.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725174809_init.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725174809_init.cs",
@@ -433,7 +538,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 26,
               "Title": "20240725175213_fixNames.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725175213_fixNames.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725175213_fixNames.cs",
@@ -445,19 +550,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 36,
-              "Title": "20240725180539_init.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725180539_init.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725180539_init.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725180539_init.cs",
-              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240725180539_init.cs",
-              "ViewState": "AQIAADQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T18:05:39.571Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 28,
               "Title": "OrderController.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Controllers\\OrderController.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Controllers\\OrderController.cs",
@@ -469,7 +562,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 29,
               "Title": "20240725173307_updatenames.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Migrations\\20240725173307_updatenames.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240725173307_updatenames.cs",
@@ -481,7 +574,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 30,
               "Title": "OrderService.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Service\\OrderService.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Service\\OrderService.cs",
@@ -489,11 +582,12 @@
               "RelativeToolTip": "Proyecto Poo\\Service\\OrderService.cs",
               "ViewState": "AQIAAC0AAAAAAAAAAAAAADgAAAAiAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-25T04:51:42.741Z"
+              "WhenOpened": "2024-07-25T04:51:42.741Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 24,
+              "DocumentIndex": 31,
               "Title": "IOrderService.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Service\\Interface\\IOrderService.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Service\\Interface\\IOrderService.cs",
@@ -505,7 +599,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 27,
+              "DocumentIndex": 34,
               "Title": "AuthService.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Service\\AuthService.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Service\\AuthService.cs",
@@ -517,7 +611,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 26,
+              "DocumentIndex": 33,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Program.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Program.cs",
@@ -529,7 +623,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 25,
+              "DocumentIndex": 32,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Startup.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Startup.cs",
@@ -541,7 +635,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 28,
+              "DocumentIndex": 35,
               "Title": "PackageServiceSeeder.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
@@ -553,7 +647,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
+              "DocumentIndex": 36,
               "Title": "PackageServiceDbContext.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
@@ -565,7 +659,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 30,
+              "DocumentIndex": 37,
               "Title": "CustomerController.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Controllers\\CustomerController.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Controllers\\CustomerController.cs",
@@ -577,7 +671,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
+              "DocumentIndex": 38,
               "Title": "Package.json",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\SeedData\\Package.json",
               "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Package.json",
@@ -589,7 +683,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 33,
+              "DocumentIndex": 40,
               "Title": "IAuthService.cs",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\Service\\Interface\\IAuthService.cs",
               "RelativeDocumentMoniker": "Proyecto Poo\\Service\\Interface\\IAuthService.cs",
@@ -601,7 +695,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 34,
+              "DocumentIndex": 41,
               "Title": "appsettings.Development.json",
               "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto-Api---Jonathan-Vasquez---David-Diaz\\Proyecto Poo\\appsettings.Development.json",
               "RelativeDocumentMoniker": "Proyecto Poo\\appsettings.Development.json",
