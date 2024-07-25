@@ -281,3 +281,10 @@ C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8.0\Proyecto Poo.genruntimeconfig.cache
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\obj\Debug\net8.0\ref\Proyecto Poo.dll
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Proyecto Poo\bin\Debug\net8.0\SeedData\Order.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\clients.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\Order.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\Package.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\SeedData\clients.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\SeedData\Customer.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\SeedData\trucks.json
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Proyecto Poo\bin\Debug\net8.0\SeedData\trucks.json

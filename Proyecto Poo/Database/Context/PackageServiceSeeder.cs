@@ -17,7 +17,7 @@ namespace Proyecto_Poo.Database.Contex
             try
             {
                 await LoadOrderAsync(context, loggerFactory);
-                await LoadPackageAsync(context, loggerFactory);
+                //await LoadPackageAsync(context, loggerFactory);
 
             }
             catch (Exception e)
@@ -53,12 +53,19 @@ namespace Proyecto_Poo.Database.Contex
             }
         }
 
-        public static async Task LoadPackageAsync(ILoggerFactory loggerFactory, PackageServiceDbContext contex)
-        {
-            var jsonFilePath = "SeedData/Package.json";
-            var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-            >>
-        }
+        //public static async Task LoadPackageAsync(ILoggerFactory loggerFactory, PackageServiceDbContext contex)
+        //{
+        //    var jsonFilePath = "SeedData/Package.json";
+        //    var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
+        //    var package = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent);
+        //    if (!await contex.Packages.AnyAsync()) { 
+            
+        //        for (int i=0; i<package.Count; i++)
+        //        {
+
+        //        }
+        //    }
+        //}
     }
 
 }

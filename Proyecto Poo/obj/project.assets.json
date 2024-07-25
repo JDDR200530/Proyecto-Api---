@@ -4623,11 +4623,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj",
+      "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
       "projectName": "Proyecto Poo",
-      "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Proyecto Poo\\Proyecto Poo.csproj",
+      "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
       "packagesPath": "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Proyecto Poo\\obj\\",
+      "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\JOSUE DAVID\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4713,13 +4713,5 @@
         "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1900",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Error al obtener los datos de vulnerabilidad del paquete: No se puede cargar el índice de servicio del origen https://api.nuget.org/v3/index.json."
-    }
-  ]
+  }
 }
