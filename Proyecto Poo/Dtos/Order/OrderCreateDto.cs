@@ -4,6 +4,9 @@ namespace Proyecto_Poo.Dtos.Order
 {
     public class OrderCreateDto
     {
+        //public Guid OrderId { get; set; }
+
+        //public DateTime OrderDate { get; set; }
         [Display(Name = "Nombre del remitente")]
         [Required(ErrorMessage ="El {0} es requerido")]
         public string SenderName { get; set; }
@@ -16,7 +19,6 @@ namespace Proyecto_Poo.Dtos.Order
         [Required(ErrorMessage ="El {0} es requerido")]
         public string ReciverName { get; set; }
 
-        public DateTime OrderDate { get; set; }
 
 
     }

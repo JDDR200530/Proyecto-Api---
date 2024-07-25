@@ -16,7 +16,7 @@ namespace Proyecto_Poo.Helpers
         private void MapsForOrders()
         {
             CreateMap<OrderEntity, OrderDto>(); // mapea los valores que coinciden entre donde se envia a donde se recibe
-            
+            CreateMap<OrderCreateDto, OrderEntity>(); 
         }
     }
 

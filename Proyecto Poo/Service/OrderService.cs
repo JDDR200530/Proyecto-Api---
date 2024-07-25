@@ -16,6 +16,7 @@ namespace Proyecto_Poo.Service
         private readonly PackageServiceDbContext _context;
         private readonly ILogger<OrderService> _logger;
         private readonly IMapper _mapper;
+        private readonly IAuthService _authService;
 
         public OrderService(PackageServiceDbContext context, ILogger<OrderService> logger, IMapper mapper)
         {
@@ -63,38 +64,25 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {
-            using (var transaction = await _context.Database.BeginTransactionAsync())
+            var orderEntity = _mapper.Map<OrderEntity>(dto);
+            orderEntity.OrderId = new Guid();
+            orderEntity.OrderDate = DateTime.Now;
+            
+            _context.Orders.Add(orderEntity);
+            // Guardar cambios
+            await _context.SaveChangesAsync();
+
+            // mapeamos cuando posee el category entity el id para poder obtenerlo una vez creado
+            // Pues al crear no existe debe generarse
+            var orderDto = _mapper.Map<OrderDto>(orderEntity);
+
+            return new ResponseDto<OrderDto>
             {
-                try
-                {
-                    var orderEntity = _mapper.Map<OrderEntity>(dto);
-
-                    _context.Orders.Add(orderEntity);  // Agregar la entidad al contexto
-
-                    await _context.SaveChangesAsync();
-                    await transaction.CommitAsync();
-
-                    var orderDto = _mapper.Map<OrderDto>(orderEntity);
-                    return new ResponseDto<OrderDto>
-                    {
-                        StatusCode = 201,
-                        Status = true,
-                        Message = "Registro creado correctamente",
-                        Data = orderDto
-                    };
-                }
-                catch (Exception ex)
-                {
-                    await transaction.RollbackAsync();
-                    _logger.LogError(ex, "Error al crear el pedido");
-                    return new ResponseDto<OrderDto>
-                    {
-                        StatusCode = 500,
-                        Status = false,
-                        Message = "Se produjo un error al crear el pedido"
-                    };
-                }
-            }
+                StatusCode = 201,
+                Status = true,
+                Message = "Registro creado correctamnete",
+                Data = orderDto,
+            };
         }
     }
 }
