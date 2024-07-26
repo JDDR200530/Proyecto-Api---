@@ -12,7 +12,7 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20240725214443_init")]
+    [Migration("20240726042637_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -83,8 +83,8 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("package_id");
 
-                    b.Property<bool>("PackageWeight")
-                        .HasColumnType("bit")
+                    b.Property<double>("PackageWeight")
+                        .HasColumnType("float")
                         .HasColumnName("package_weight");
 
                     b.HasKey("PackageId");

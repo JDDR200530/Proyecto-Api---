@@ -35,6 +35,7 @@ namespace Proyecto_Poo
             services.AddTransient<ICustomerService, CustomerService>(); // Cambiado de ICategoriesService a ICustomerService
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IOrderService, OrderService>(); // Cambiado de IPostsService a IOrderService
+            services.AddTransient<IPackageService, PackageService>(); // Cambiado de IPostsService a IOrderService
 
             // Add AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile)); // Asegúrate de que AutoMapperProfile esté correctamente definido

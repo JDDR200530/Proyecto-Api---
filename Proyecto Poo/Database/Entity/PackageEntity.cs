@@ -12,7 +12,10 @@ namespace Proyecto_Poo.Database.Entity
 
 
         [Column("package_weight")]
-        public bool PackageWeight { get; set; }
+        [Display (Name = "Peso")]
+        [Required(ErrorMessage = "El {0} es requerido")]
+
+        public double PackageWeight { get; set; }
 
         public virtual IEnumerable<OrderPackagesEntity> Packages { get; set; }
 

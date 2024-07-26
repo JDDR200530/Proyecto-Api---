@@ -80,8 +80,8 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("package_id");
 
-                    b.Property<bool>("PackageWeight")
-                        .HasColumnType("bit")
+                    b.Property<double>("PackageWeight")
+                        .HasColumnType("float")
                         .HasColumnName("package_weight");
 
                     b.HasKey("PackageId");

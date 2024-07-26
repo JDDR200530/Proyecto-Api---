@@ -36,7 +36,7 @@ namespace Proyecto_Poo.Migrations
                 columns: table => new
                 {
                     package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    package_weight = table.Column<bool>(type: "bit", nullable: false)
+                    package_weight = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
