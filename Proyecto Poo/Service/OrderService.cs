@@ -80,8 +80,64 @@ namespace Proyecto_Poo.Service
             {
                 StatusCode = 201,
                 Status = true,
-                Message = "Registro creado correctamnete",
+                Message = "El pedido sea  creado correctamnete",
                 Data = orderDto,
+            };
+        }
+        public async Task<ResponseDto<OrderDto>> EditAsync(OrderEditDto dto, Guid id) 
+        {
+            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+
+            if (orderEntity == null)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 404,
+                    Status = false,
+                    Message = $"El pedido {id} no fue encontrado"
+                };
+
+            
+            }
+             _mapper.Map(dto, orderEntity);
+            orderEntity.OrderDate = DateTime.Now;
+
+            _context.Orders.Update(orderEntity);
+            await _context.SaveChangesAsync();
+            var orderDto = _mapper.Map<OrderDto>(orderEntity);
+            return new ResponseDto<OrderDto>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "El pedido sea editado correctamente",
+                Data = orderDto,
+            };
+        }
+
+        public async Task<ResponseDto<OrderDto>> DeleteAsync(Guid id)
+        {
+            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+
+            if (orderEntity == null)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 404,
+                    Status = false,
+                    Message = $"El pedido {id} no fue encontrado"
+                };
+
+
+            }
+
+            _context.Orders.Remove(orderEntity);
+            await _context.SaveChangesAsync();
+
+            return new ResponseDto<OrderDto>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "El pedido se a borrado correctamente "
             };
         }
     }

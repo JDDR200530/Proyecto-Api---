@@ -36,5 +36,24 @@ namespace Proyecto_Poo.Controllers
                 response.Status, response.Message,
             });
         }
+
+        [HttpPut ("{id}")]
+        public async Task<ActionResult<ResponseDto<OrderDto>>> Edit(OrderEditDto dto, Guid id)
+        {
+            var response = await _orderService.EditAsync(dto, id);
+            return StatusCode(response.StatusCode, new
+            {
+                response.Status,
+                response.Message,
+                response.Data,
+            });
+        
+        }
+        [HttpDelete ("{id}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var response = await _orderService.DeleteAsync(id);
+            return StatusCode(response.StatusCode, response);
+        }
     }
 }
