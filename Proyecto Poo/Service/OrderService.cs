@@ -25,6 +25,24 @@ namespace Proyecto_Poo.Service
             this._mapper = mapper;
         }
 
+        public async Task<ResponseDto<List<OrderDto>>> GetOrderListAsync()
+        {
+            var ordersEntity = await _context.Orders.ToListAsync();
+
+            var ordersDtos = _mapper.Map<List<OrderDto>>(ordersEntity); 
+            
+            return new ResponseDto<List<OrderDto>>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "Lista de Registros obtenida correctamnete",
+                Data = ordersDtos
+            };
+
+        }
+
+
+
         public async Task<ResponseDto<OrderDto>> GetByIdAsync(Guid id)
         {
             try
@@ -140,5 +158,7 @@ namespace Proyecto_Poo.Service
                 Message = "El pedido se a borrado correctamente "
             };
         }
+
+        
     }
 }

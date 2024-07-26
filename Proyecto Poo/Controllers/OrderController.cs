@@ -16,7 +16,18 @@ namespace Proyecto_Poo.Controllers
         {
             this._orderService = orderService;
         }
+
+
+        [HttpGet]
+        public async Task<ActionResult<Response<OrderDto>>> GetAll()
+        {
+            var response = await _orderService.GetOrderListAsync();
+            return StatusCode(response.StatusCode, response);
+        }
+
         [HttpGet("{id}")]
+
+       
         public async Task<ActionResult<Response<OrderDto>>> GetOneById(Guid id)
         {
             var response = await _orderService.GetByIdAsync(id);
