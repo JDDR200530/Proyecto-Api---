@@ -2,10 +2,12 @@
 {
     public class CustomerDto
     {
-        public Guid id { get; set; }
+        public Guid Id { get; set; }
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
-        public string? Address { get; set; }
+        public int Identity { get; set; }
+
+        public string Address { get; set; }
     }
 }

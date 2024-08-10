@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Proyecto_Poo.Database.Entity;
+using Proyecto_Poo.Dtos.Clientes;
 using Proyecto_Poo.Dtos.Order;
 using Proyecto_Poo.Dtos.Package;
 
@@ -11,6 +12,8 @@ namespace Proyecto_Poo.Helpers
         {
             MapsForOrders();
             MapsForPackages();
+            MapsForCustomer();
+          
             
         }
 
@@ -28,6 +31,12 @@ namespace Proyecto_Poo.Helpers
             CreateMap<PackageEditDto, PackageEntity>();
         }
 
+        private void MapsForCustomer()
+        {
+            CreateMap<CustomerEntity, CustomerDto>();
+            CreateMap<CustomerCreateDto, CustomerEntity>();
+            CreateMap<CustomerEditDto, CustomerEntity>();
+        }
     }
 
     

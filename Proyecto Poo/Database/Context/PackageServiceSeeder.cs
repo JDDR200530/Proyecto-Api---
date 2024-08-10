@@ -53,19 +53,31 @@ namespace Proyecto_Poo.Database.Contex
             }
         }
 
-        //public static async Task LoadPackageAsync(ILoggerFactory loggerFactory, PackageServiceDbContext contex)
-        //{
-        //    var jsonFilePath = "SeedData/Package.json";
-        //    var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-        //    var package = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent);
-        //    if (!await contex.Packages.AnyAsync()) { 
-            
-        //        for (int i=0; i<package.Count; i++)
-        //        {
+        public static async Task LoadPackageAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
+        {
+            try
+            {
+                var jsonFilePath = "SeedData/Package.json";
+                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
+                var Packages = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent);
 
-        //        }
-        //    }
-        //}
+                if (!await context.Packages.AnyAsync())
+                {
+                    foreach (var package in Packages)
+                    {
+
+                    }
+                    await context.Packages.AddRangeAsync(Packages);
+                    await context.SaveChangesAsync();
+
+                }
+            }
+            catch (Exception e)
+            {
+                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
+                logger.LogError(e, "Error al ejecutar el Seed Paxkage");
+            }
     }
 
+    }
 }

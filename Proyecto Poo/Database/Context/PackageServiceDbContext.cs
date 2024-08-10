@@ -40,5 +40,7 @@ namespace Proyecto_Poo.Database.Contex
     }
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PackageEntity> Packages { get; set; }
+
+        public DbSet<CustomerEntity> Customers { get; set; }
     }
 }

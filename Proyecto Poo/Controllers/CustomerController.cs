@@ -21,13 +21,13 @@ namespace Proyecto_Poo.Controllers
         [HttpGet]
         public async Task<ActionResult<ResponseDto<List<CustomerDto>>>> GetAll()
         {
-            var response = await _customerService.GetClientesListAsync();
+            var response = await _customerService.GetCustomerListAsync();
             return StatusCode(response.StatusCode, response);
         }
         [HttpGet("{id}")]
         public async Task<ActionResult<ResponseDto<List<CustomerDto>>>> Get(Guid id)
         {
-            var response = await _customerService.GetClientesByIdAsync(id);
+            var response = await _customerService.GetCustomersByIdAsync(id);
             return StatusCode(response.StatusCode, response);
         }
 

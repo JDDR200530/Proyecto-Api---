@@ -5,14 +5,10 @@ namespace Proyecto_Poo.Service.Interface
 {
     public interface ICustomerService
     {
-        Task<ResponseDto<List<CustomerDto>>> GetClientesListAsync();
-
-        Task<ResponseDto<CustomerDto>> GetClientesByIdAsync(Guid id);
-
         Task<ResponseDto<CustomerDto>> CreateAsync(CustomerCreateDto dto);
-
-        Task<ResponseDto<CustomerDto>> EditAsync(CustomerEditDto dto, Guid id);
-
         Task<ResponseDto<CustomerDto>> DeleteAsync(Guid id);
+        Task<ResponseDto<CustomerDto>> EditAsync(CustomerEditDto dto, Guid id);
+        Task<ResponseDto<List<CustomerDto>>> GetCustomerListAsync();
+        Task<ResponseDto<CustomerDto>> GetCustomersByIdAsync(Guid id);
     }
 }

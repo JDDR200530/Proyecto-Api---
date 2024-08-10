@@ -1,0 +1,19 @@
+meta {
+  name: Get All
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{PATH}}/orders/dcde359e-ffcc-426b-96ba-77ab507c0946
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "senderName": "string",
+    "address": "string",
+    "reciverName": "string"
+  }
+}

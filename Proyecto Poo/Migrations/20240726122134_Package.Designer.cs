@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Poo.Database.Contex;
 
@@ -11,9 +12,11 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    partial class PackageServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20240726122134_Package")]
+    partial class Package
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,30 +24,6 @@ namespace Proyecto_Poo.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.CustomerEntity", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("customer_id");
-
-                    b.Property<string>("Address")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("customer_address");
-
-                    b.Property<int>("Identity")
-                        .HasColumnType("int")
-                        .HasColumnName("customer_identity");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("customer_name");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("customers", "dbo");
-                });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderEntity", b =>
                 {

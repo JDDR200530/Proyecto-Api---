@@ -7,6 +7,8 @@ namespace Proyecto_Poo.Database.Entity
     public class OrderEntity
     {
         [Key]
+
+        
         [Column("order_id")]
         public Guid OrderId { get; set; }
 
