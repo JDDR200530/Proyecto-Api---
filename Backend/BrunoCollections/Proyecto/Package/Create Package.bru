@@ -1,0 +1,18 @@
+meta {
+  name: Create Package
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{PATH}}/packages
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "packageWeight": 100
+    
+  }
+}

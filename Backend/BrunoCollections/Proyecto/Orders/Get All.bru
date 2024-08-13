@@ -1,0 +1,19 @@
+meta {
+  name: Get All
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{PATH}}/orders
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "senderName": "string",
+    "address": "string",
+    "reciverName": "string"
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "XH22NojkI6JQ2TlTltqnGixXAdAZwyUZrKO+SU9GdfI=",
+  "Source": "PackageService.API",
+  "BasePath": "_content/PackageService.API",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
