@@ -16,11 +16,15 @@ namespace Proyecto_Poo.Service
         private readonly IMapper _mapper;
         private readonly IAuthService _authService;
 
-        public PackageService(PackageServiceDbContext context, ILogger<PackageService> logger, IMapper mapper)
+        public PackageService(PackageServiceDbContext context,
+            ILogger<PackageService> logger,
+            IMapper mapper,
+            IAuthService authService)
         {
             this._context = context;
             this._logger = logger;
             this._mapper = mapper;
+            this._authService = authService;
         }
 
         public async Task<ResponseDto<List<PackageDto>>> GetPackageListAsync()
@@ -76,57 +80,89 @@ namespace Proyecto_Poo.Service
 
 
         public async Task<ResponseDto<PackageDto>> CreatePackageAsync(PackageCreateDto dto)
+
         {
-            var packageEntity = _mapper.Map<PackageEntity>(dto);
-            packageEntity.PackageId = new Guid();
-
-            _context.Packages.Add(packageEntity);
-
-            await _context.SaveChangesAsync();
-
-
-            var packageDto = _mapper.Map<PackageDto>(packageEntity);
-
-            return new ResponseDto<PackageDto>
+            using (var transaction = await _context.Database.BeginTransactionAsync())
             {
-                StatusCode = 201,
-                Status = true,
-                Message = "El pedido sea  creado correctamnete",
-                Data = packageDto,
-            };
-        }
-
-        public async Task<ResponseDto<PackageDto>> EditPackageAsync(PackageEditDto dto, Guid id)
-        {
-            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.PackageId == id);
-
-            if (packageEntity == null)
-            {
-                return new ResponseDto<PackageDto>
+                try
                 {
-                    StatusCode = 404,
-                    Status = false,
-                    Message = $"El pedido {id} no fue encontrado"
-                };
+
+
+
+
+                    var packageEntity = _mapper.Map<PackageEntity>(dto);
+                    Guid orderId = new Guid("7B9B23E8-8F7A-48F5-A91D-F6E38EC67F1A");
+                    // To Do Ver de Mandar El Id del cliente que haga la orden 
+                    packageEntity.OrderId = orderId;
+
+                    _context.Packages.Add(packageEntity);
+
+                    await _context.SaveChangesAsync();
+
+
+                    var packageDto = _mapper.Map<PackageDto>(packageEntity);
+
+                    await transaction.CommitAsync();
+
+                    return new ResponseDto<PackageDto>
+                    {
+                        StatusCode = 201,
+                        Status = true,
+                        Message = "El paquete agregado al pedido correctamnete",
+                        Data = packageDto,
+                    };
+                }
+
+                catch (Exception e)
+                {
+                    await transaction.RollbackAsync();
+                    _logger.LogError(e, "Error al agregar el paquete");
+
+                    return new ResponseDto<PackageDto>
+                    {
+                        StatusCode = 500,
+                        Status = false,
+                        Message = "Error al agregar el paquete",
+                    };
+                }
+
 
 
             }
-            _mapper.Map(dto, packageEntity);
-            
-
-            _context.Packages.Update(packageEntity);
-            await _context.SaveChangesAsync();
-            var packageDto = _mapper.Map<PackageDto>(packageEntity);
-            return new ResponseDto<PackageDto>
-            {
-                StatusCode = 200,
-                Status = true,
-                Message = "El pedido sea editado correctamente",
-                Data = packageDto,
-            };
         }
 
-    
+            public async Task<ResponseDto<PackageDto>> EditPackageAsync(PackageEditDto dto, Guid id)
+            {
+                var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.PackageId == id);
+
+                if (packageEntity == null)
+                {
+                    return new ResponseDto<PackageDto>
+                    {
+                        StatusCode = 404,
+                        Status = false,
+                        Message = $"El pedido {id} no fue encontrado"
+                    };
+
+
+                }
+                _mapper.Map(dto, packageEntity);
+
+
+                _context.Packages.Update(packageEntity);
+                await _context.SaveChangesAsync();
+                var packageDto = _mapper.Map<PackageDto>(packageEntity);
+
+                return new ResponseDto<PackageDto>
+                {
+                    StatusCode = 200,
+                    Status = true,
+                    Message = "El pedido sea editado correctamente",
+                    Data = packageDto,
+                };
+            }
+
+        
        
         public async Task<ResponseDto<PackageDto>> DeletePackageAsync(Guid id)
         {

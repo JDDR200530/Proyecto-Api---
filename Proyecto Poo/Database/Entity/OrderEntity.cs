@@ -7,7 +7,6 @@ namespace Proyecto_Poo.Database.Entity
     public class OrderEntity
     {
         [Key]
-
         
         [Column("order_id")]
         public Guid OrderId { get; set; }
@@ -37,7 +36,8 @@ namespace Proyecto_Poo.Database.Entity
         public string ReciverName { get; set; }
         
         public virtual IEnumerable<PaymentEntity> Payment { get; set; }
-        public virtual IEnumerable<OrderPackagesEntity> Orders { get; set; }
+
+        public virtual IEnumerable<PackageEntity> Orders { get; set; }
 
 
        

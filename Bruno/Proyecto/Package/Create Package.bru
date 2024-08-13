@@ -5,7 +5,13 @@ meta {
 }
 
 post {
-  url: 
-  body: none
+  url: {{PATH}}/packages
+  body: json
   auth: none
+}
+
+body:json {
+  {
+    "packageWeight": 0
+  }
 }
