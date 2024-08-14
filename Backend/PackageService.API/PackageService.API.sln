@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.10.35013.160
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackageService.API", "Proyecto Poo\PackageService.API.csproj", "{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PackageService", "Proyecto Poo\PackageService.csproj", "{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

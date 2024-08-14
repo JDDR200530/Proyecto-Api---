@@ -8,16 +8,16 @@ namespace Proyecto_Poo.Database.Entity
     {
         [Key]
         [Column("customer_id")]
-        public Guid Id { get; set; }
+        public Guid CustomerId { get; set; }
 
         [Column("customer_name")]
-        public string Name { get; set; }
+        public string CustomerName { get; set; }
 
         [Column("customer_identity")]
-        public int Identity {  get; set; }
+        public long CustomerIdentity {  get; set; }
 
         [Column("customer_address")]
-        public string Address { get; set; }
+        public string CustomerAddress { get; set; }
 
 
     }

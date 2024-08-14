@@ -8,6 +8,6 @@ namespace Proyecto_Poo.Dtos.Clientes
         [Display(Name = "Direccion")]
         [MinLength(5, ErrorMessage = "La {0} debe tener al menos {1} carateres")]
         [Column("Addres")]
-        public string Address {  get; set; }
+        public string CustomerAddress {  get; set; }
     }
 }

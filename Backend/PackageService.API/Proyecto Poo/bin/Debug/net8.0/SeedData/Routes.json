@@ -1,0 +1,14 @@
+[
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "RouteName": "Tegucigalpa / Santa Rosa de Copan ",
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "RouteName": "Santa Rosa de Copan / San Pedro Sula",
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "RouteName": "San Pedro Sula / Tegucigalpa",
+  },
+]

@@ -24,24 +24,24 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.CustomerEntity", b =>
                 {
-                    b.Property<Guid>("Id")
+                    b.Property<Guid>("CustomerId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("customer_id");
 
-                    b.Property<string>("Address")
+                    b.Property<string>("CustomerAddress")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("customer_address");
 
-                    b.Property<int>("Identity")
-                        .HasColumnType("int")
+                    b.Property<long>("CustomerIdentity")
+                        .HasColumnType("bigint")
                         .HasColumnName("customer_identity");
 
-                    b.Property<string>("Name")
+                    b.Property<string>("CustomerName")
                         .HasColumnType("nvarchar(max)")
                         .HasColumnName("customer_name");
 
-                    b.HasKey("Id");
+                    b.HasKey("CustomerId");
 
                     b.ToTable("customers", "dbo");
                 });
@@ -87,17 +87,11 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("package_id");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("order_id");
-
                     b.Property<double>("PackageWeight")
                         .HasColumnType("float")
                         .HasColumnName("package_weight");
 
                     b.HasKey("PackageId");
-
-                    b.HasIndex("OrderId");
 
                     b.ToTable("packages", "dbo");
                 });
@@ -133,6 +127,22 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("payments", "dbo");
                 });
 
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.RouteEntity", b =>
+                {
+                    b.Property<Guid>("RouteId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<string>("RouteName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.HasKey("RouteId");
+
+                    b.ToTable("Routes");
+                });
+
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
                 {
                     b.Property<Guid>("ShipmentId")
@@ -161,6 +171,33 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("shipments", "dbo");
                 });
 
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.StopPointEntity", b =>
+                {
+                    b.Property<Guid>("StopPointId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<double>("Latitude")
+                        .HasColumnType("float");
+
+                    b.Property<string>("LocationName")
+                        .IsRequired()
+                        .HasMaxLength(100)
+                        .HasColumnType("nvarchar(100)");
+
+                    b.Property<double>("Longitude")
+                        .HasColumnType("float");
+
+                    b.Property<Guid>("RouteId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("StopPointId");
+
+                    b.HasIndex("RouteId");
+
+                    b.ToTable("StopPoints");
+                });
+
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>
                 {
                     b.Property<Guid>("TruckId")
@@ -179,17 +216,6 @@ namespace Proyecto_Poo.Migrations
                     b.HasKey("TruckId");
 
                     b.ToTable("trucks", "dbo");
-                });
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
-                {
-                    b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
-                        .WithMany("Orders")
-                        .HasForeignKey("OrderId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Order");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
@@ -222,16 +248,30 @@ namespace Proyecto_Poo.Migrations
                     b.Navigation("Truck");
                 });
 
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.StopPointEntity", b =>
+                {
+                    b.HasOne("Proyecto_Poo.Database.Entity.RouteEntity", "Route")
+                        .WithMany("StopPoints")
+                        .HasForeignKey("RouteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Route");
+                });
+
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderEntity", b =>
                 {
-                    b.Navigation("Orders");
-
                     b.Navigation("Payment");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
                 {
                     b.Navigation("Pay");
+                });
+
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.RouteEntity", b =>
+                {
+                    b.Navigation("StopPoints");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>

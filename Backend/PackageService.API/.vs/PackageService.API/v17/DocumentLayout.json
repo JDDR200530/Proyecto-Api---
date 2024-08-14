@@ -1,10 +1,54 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz-feature-database\\Backend\\PackageService.API\\",
+  "WorkspaceRootPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.API.csproj|c:\\users\\jonathan\\desktop\\actualizacion proyecto\\proyecto-api---jonathan-vasquez---david-diaz-feature-database\\backend\\packageservice.api\\proyecto poo\\service\\packageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.API.csproj|solutionrelative:proyecto poo\\service\\packageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\dtos\\trucks\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\trucks\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\database\\entity\\routeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\routeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\database\\context\\packageserviceseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\context\\packageserviceseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\seeddata\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\seeddata\\package.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\seeddata\\stoppoint.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\seeddata\\stoppoint.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\service\\stoppointservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\stoppointservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\seeddata\\routes.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\seeddata\\routes.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\migrations\\20240814061344_tablasllenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240814061344_tablasllenas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\migrations\\20240814055724_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240814055724_tablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\migrations\\20240814055510_llenadodetablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240814055510_llenadodetablas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\backend\\packageservice.api\\proyecto poo\\migrations\\20240814052007_elimanadotablaorderpackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\migrations\\20240814052007_elimanadotablaorderpackages.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -14,52 +58,163 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 4,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "TruckEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAAwBoAAAAGAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:40:43.47Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RouteEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAIBJwA0AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-13T15:43:42.308Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PackageServiceSeeder.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
+              "ViewState": "AQIAAJUAAAAAAAAAAAAuwLUAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T04:33:59.852Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Package.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Package.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Package.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Package.json",
+              "RelativeToolTip": "Proyecto Poo\\SeedData\\Package.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T06:46:22.008Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "PackageService.cs",
-              "DocumentMoniker": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz-feature-database\\Backend\\PackageService.API\\Proyecto Poo\\Service\\PackageService.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\PackageService.cs",
-              "ToolTip": "C:\\Users\\Jonathan\\Desktop\\Actualizacion Proyecto\\Proyecto-Api---Jonathan-Vasquez---David-Diaz-feature-database\\Backend\\PackageService.API\\Proyecto Poo\\Service\\PackageService.cs",
-              "RelativeToolTip": "Proyecto Poo\\Service\\PackageService.cs",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAE0AAAANAAAA",
+              "Title": "TruckCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Trucks\\TruckCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwA4AAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-13T03:54:35.45Z",
+              "WhenOpened": "2024-08-14T06:41:33.91Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "20240814061344_TablasLlenas.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814061344_TablasLlenas.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240814061344_TablasLlenas.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814061344_TablasLlenas.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240814061344_TablasLlenas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:13:44.928Z",
+              "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:2:0:{d212f56b-c48a-434c-a121-1c5d80b59b9f}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "StopPointService.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Service\\StopPointService.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\StopPointService.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Service\\StopPointService.cs",
+              "RelativeToolTip": "Proyecto Poo\\Service\\StopPointService.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAkwBAAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T06:09:56.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "20240814055724_Tablas.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814055724_Tablas.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240814055724_Tablas.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814055724_Tablas.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240814055724_Tablas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T05:57:24.46Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "StopPoint.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\StopPoint.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\StopPoint.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\StopPoint.json",
+              "RelativeToolTip": "Proyecto Poo\\SeedData\\StopPoint.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T05:21:46.591Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Routes.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Routes.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Routes.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Routes.json",
+              "RelativeToolTip": "Proyecto Poo\\SeedData\\Routes.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-08-14T05:21:37.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "20240814055510_LlenadodeTablas.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814055510_LlenadodeTablas.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240814055510_LlenadodeTablas.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814055510_LlenadodeTablas.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240814055510_LlenadodeTablas.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T05:55:10.945Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "20240814052007_ElimanadotablaOrderPackages.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814052007_ElimanadotablaOrderPackages.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20240814052007_ElimanadotablaOrderPackages.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20240814052007_ElimanadotablaOrderPackages.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20240814052007_ElimanadotablaOrderPackages.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-14T05:20:07.322Z",
+              "EditorCaption": ""
             }
           ]
         }

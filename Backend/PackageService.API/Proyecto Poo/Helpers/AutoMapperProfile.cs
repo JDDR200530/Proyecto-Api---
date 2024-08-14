@@ -20,7 +20,7 @@ namespace Proyecto_Poo.Helpers
 
         private void MapsForOrders()
         {
-            CreateMap<OrderEntity, OrderDto>(); // mapea los valores que coinciden entre donde se envia a donde se recibe
+            CreateMap<OrderEntity, Dtos.Order.OrderDto>(); 
             CreateMap<OrderCreateDto, OrderEntity>(); 
             CreateMap<OrderEditDto, OrderEntity>();
         }
@@ -33,7 +33,7 @@ namespace Proyecto_Poo.Helpers
 
         private void MapsForCustomer()
         {
-            CreateMap<CustomerEntity, CustomerDto>();
+            CreateMap<CustomerEntity, Dtos.Clientes.CustomerDto>();
             CreateMap<CustomerCreateDto, CustomerEntity>();
             CreateMap<CustomerEditDto, CustomerEntity>();
         }

@@ -7,7 +7,7 @@ namespace Proyecto_Poo.Service
     {
         public string GetUserId()
         {
-            return "a1b2c3d4-e5f6-7890-abcd-ef1234567890";
+            return "dcde357e-ffcc-426b-96ba-77ab507b0946";
         }
     }
 }

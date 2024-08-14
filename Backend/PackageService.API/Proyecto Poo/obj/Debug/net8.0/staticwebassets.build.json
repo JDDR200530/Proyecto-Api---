@@ -1,8 +1,8 @@
 {
   "Version": 1,
-  "Hash": "XH22NojkI6JQ2TlTltqnGixXAdAZwyUZrKO+SU9GdfI=",
-  "Source": "PackageService.API",
-  "BasePath": "_content/PackageService.API",
+  "Hash": "5t01o3mdL+wei37gbtKExhyxEqc1zO86+Qzkv43hVnI=",
+  "Source": "PackageService",
+  "BasePath": "_content/PackageService",
   "Mode": "Default",
   "ManifestType": "Build",
   "ReferencedProjectsConfiguration": [],

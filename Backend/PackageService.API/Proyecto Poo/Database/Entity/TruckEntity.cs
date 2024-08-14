@@ -22,7 +22,8 @@ namespace Proyecto_Poo.Database.Entity
 
         [Column("truck_capacity")]
         public double TruckCapacity { get; set; }
-
+      
+      
         public virtual IEnumerable<ShipmentEntity> Truck { get; set; }
         
         
