@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
-import { NavBar } from "../components"
-import {CreateOrder} from "../pages/CreateOrder"
+import { NavBar, Footer } from "../components"
+import {CreateOrder, CreateClient, Login, Portal, HomePage} from "../pages"
+
 
 
 export const PackageServiceRouter = () => {
@@ -10,14 +11,18 @@ export const PackageServiceRouter = () => {
       <div className="px-6 py-8">
             <div className="container flex justify-between mx-auto">
              <Routes>
-                {/* <Route path= '/orders' element = {<HomePage/>}/> */}
+
+                <Route path= '/login' element = {<Login/>}/>
+                <Route path= '/home' element = {<HomePage/>}/>
                 <Route path= '/createorder' element = {<CreateOrder/>}/>
+                <Route path= '/createclient' element = {<CreateClient/>}/>
+                <Route path= '/portal' element = {<Portal/>}/>
                 {/* <Route path= '/blog/post/:id' element = {<PostPage/>}/> */}
                 <Route path= '/*' element = {<Navigate to = {"/home"}/> }/>
              </Routes>
             </div>
           </div>
-          Footer
+          <Footer/>
         </div>
   )
 }

@@ -1,20 +1,35 @@
 
 import { FaBoxesPacking } from "react-icons/fa6";
+import { Link } from "react-router-dom";
+
 
 export const NavBar = () => {
+
   return (
     <nav className="bg-gray-900 text-white py-6">
     <div className=" container mx-auto flex justify-between items-center">
       {/* Logotipo */}
       <div className="flex items-center">
-        <img src="/src/assets/Logo.png" alt="Logo" className=" h-16 w-40 p-0 rounded-sm" />
-       <h1 className="text-white ml-3 font-bold text-2xl ">Envíos
-        <span className="ml-3 font-bold text-2xl text-orange-400">Dynamo</span></h1> 
+        <Link to={'/home'}>
+          <img src="/src/assets/Logo.png" alt="Logo" className=" h-16 w-40 p-0 rounded-sm" />
+         </Link>
+        
+       <Link className="flex-col"
+       to={'/home'}
+       >
+       
+       <h1 className="text-white ml-3 font-bold text-2xl "
+       
+       >Envíos
+       <span className="ml-3 font-bold text-2xl text-orange-400">Dynamo</span></h1> 
+       <h2 className="text-white ml-3 font-thin text-sm ">Cada Paquete, un Compromiso</h2> 
+       </Link>
+       
       </div>
 
       {/* Enlaces del menú */}
       <div className="hidden md:flex space-x-8">
-        <a href="#" className="hover:text-blue-300">Inicio</a>
+        <Link to={'/home'} className="hover:text-blue-300">Inicio</Link>
         <div className="relative group">
           <button className="hover:text-blue-300 focus:outline-none">Agencias</button>
           {/* Dropdown */}
@@ -29,13 +44,18 @@ export const NavBar = () => {
 
       {/* Botones a la derecha */}
       <div className="hidden md:flex space-x-4">
-        <button className=" flex justify-between bg-gray-400 text-white hover:bg-gray-300  hover:text-gray-500 font-bold py-2 px-4 rounded">
-         <FaBoxesPacking className="px-1 h-6 w-6"  />
+        <Link 
+        className=" flex justify-between bg-gray-400 text-white hover:bg-gray-300  hover:text-gray-500 font-bold py-2 px-4 rounded"
+        to={'/createorder'}
+        >
+         <FaBoxesPacking className="px-1 h-6 w-6"/>
           Realiza tu Envío
-        </button>
-        <button className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded">
-          Mi perfil
-        </button>
+        </Link>
+        <Link className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
+        to={"/login"}> 
+        Portal
+        </Link>
+       
       </div>
 
       

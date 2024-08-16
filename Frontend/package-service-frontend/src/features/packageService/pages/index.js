@@ -1,1 +1,5 @@
 export * from './CreateOrder'
+export * from './CreateClient'
+export * from './Login'
+export * from './Portal'
+export * from './HomePage'
