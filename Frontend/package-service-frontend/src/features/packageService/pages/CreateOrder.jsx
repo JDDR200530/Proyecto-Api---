@@ -50,15 +50,25 @@ export const CreateOrder = () => {
             Cantidad de Paquetes <span className="text-red-500">*</span>
           </label>
           <div className="flex items-center">
-          <input className="mt-1 block w-10/12 px-4 pl-3 pr-10 py-2  border-gray-300 focus:outline-none  focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"></input>
+          <input className="mt-1 block w-10/12 px-4 pl-3 pr-10 py-2  border-gray-300 focus:outline-none  focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md border-black-500 "></input>
 
           </div>
 
 
         </div>
+      
+
 
       </div>
-
+          {/* Button Save Data */}
+            <div className="flex justify-center mt-8">
+                  <button
+                  type= "submit"
+                  className="px-4 py-2 bg-indigo-500 text-white font-semibold rounded-md shadow-sm hover:bg-indigo-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                  >
+                    Guardar Datos
+                  </button>
+            </div>
 
     </div>
     );

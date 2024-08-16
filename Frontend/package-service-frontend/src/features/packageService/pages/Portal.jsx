@@ -33,7 +33,7 @@ export const Portal = () => {
                 <Link to={"/createorder"}>Crear Nueva Orden</Link>
             </div>
             <div className=" bg-orange-500 hover:bg-green-700  text-white font-bold rounded w-max mt-2 p-4 shadow-sm">
-                <Link to={"/createorder"}>Listar Todas las Ordenes</Link>
+                <Link to={"/listorder"}>Listar Todas las Ordenes</Link>
             </div>
          </div>
          
