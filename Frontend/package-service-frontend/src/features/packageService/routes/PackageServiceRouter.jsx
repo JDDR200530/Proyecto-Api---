@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { NavBar, Footer } from "../components"
-import {CreateOrder, CreateClient, Login, Portal, HomePage,ListAll,FindOrdersId} from "../pages"
+import {CreateOrder, CreateClient, Login, Portal, HomePage,ListAll,FindOrdersId,FindOrdersByName} from "../pages"
 
 
 
@@ -20,6 +20,8 @@ export const PackageServiceRouter = () => {
                 <Route path= '/portal' element = {<Portal/>}/>
                 <Route path= '/listall'element = {<ListAll/>}/> 
                 <Route path='/findorders/:orderId' element={<FindOrdersId />} />
+                <Route path='/findnames/:name' element={<FindOrdersByName />} />
+
            {/* <Route path= '/blog/post/:id' element = {<PostPage/>}/> */}
                 <Route path= '/*' element = {<Navigate to = {"/home"}/> }/>
              </Routes>

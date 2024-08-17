@@ -5,5 +5,8 @@ export * from './Portal'
 export * from './HomePage'
 export * from './ListAll'
 export * from './ListOrders'
-export * from './FindOrdersId'
+export { default as FindOrdersId } from './FindOrdersId';
+export { default as FindOrdersByName } from './FindOrdersByName';
+
+
 
