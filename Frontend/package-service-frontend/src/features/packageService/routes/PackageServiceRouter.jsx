@@ -1,6 +1,7 @@
 import { Navigate, Route, Routes } from "react-router-dom"
 import { NavBar, Footer } from "../components"
-import {CreateOrder, CreateClient, Login, Portal, HomePage} from "../pages"
+import {CreateOrder, CreateClient, Login, Portal, HomePage,ListOrders } from "../pages"
+
 
 
 
@@ -17,6 +18,7 @@ export const PackageServiceRouter = () => {
                 <Route path= '/createorder' element = {<CreateOrder/>}/>
                 <Route path= '/createclient' element = {<CreateClient/>}/>
                 <Route path= '/portal' element = {<Portal/>}/>
+                <Route path= '/listorder' element = {<ListOrders/>}/>
                 {/* <Route path= '/blog/post/:id' element = {<PostPage/>}/> */}
                 <Route path= '/*' element = {<Navigate to = {"/home"}/> }/>
              </Routes>

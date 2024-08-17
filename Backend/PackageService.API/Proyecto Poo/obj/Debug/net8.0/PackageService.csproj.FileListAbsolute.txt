@@ -14,8 +14,6 @@ C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto 
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\AutoMapper.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Azure.Core.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Azure.Identity.dll
-C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\GMap.NET.Core.dll
-C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\GMap.NET.WindowsForms.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Humanizer.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.CodeAnalysis.dll
