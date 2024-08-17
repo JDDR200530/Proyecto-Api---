@@ -15,6 +15,21 @@ namespace Proyecto_Poo.Migrations
                 name: "dbo");
 
             migrationBuilder.CreateTable(
+                name: "customers",
+                schema: "dbo",
+                columns: table => new
+                {
+                    customer_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    customer_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    customer_identity = table.Column<long>(type: "bigint", nullable: false),
+                    customer_address = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_customers", x => x.customer_id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "orders",
                 schema: "dbo",
                 columns: table => new
@@ -41,6 +56,18 @@ namespace Proyecto_Poo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_packages", x => x.package_id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Routes",
+                columns: table => new
+                {
+                    RouteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    RouteName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Routes", x => x.RouteId);
                 });
 
             migrationBuilder.CreateTable(
@@ -81,29 +108,23 @@ namespace Proyecto_Poo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "order_packages",
-                schema: "dbo",
+                name: "StopPoints",
                 columns: table => new
                 {
-                    order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
+                    StopPointId = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    LocationName = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Latitude = table.Column<double>(type: "float", nullable: false),
+                    Longitude = table.Column<double>(type: "float", nullable: false),
+                    RouteId = table.Column<Guid>(type: "uniqueidentifier", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_order_packages", x => x.order_id);
+                    table.PrimaryKey("PK_StopPoints", x => x.StopPointId);
                     table.ForeignKey(
-                        name: "FK_order_packages_orders_order_id",
-                        column: x => x.order_id,
-                        principalSchema: "dbo",
-                        principalTable: "orders",
-                        principalColumn: "order_id",
-                        onDelete: ReferentialAction.Cascade);
-                    table.ForeignKey(
-                        name: "FK_order_packages_packages_package_id",
-                        column: x => x.package_id,
-                        principalSchema: "dbo",
-                        principalTable: "packages",
-                        principalColumn: "package_id",
+                        name: "FK_StopPoints_Routes_RouteId",
+                        column: x => x.RouteId,
+                        principalTable: "Routes",
+                        principalColumn: "RouteId",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -137,12 +158,6 @@ namespace Proyecto_Poo.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_order_packages_package_id",
-                schema: "dbo",
-                table: "order_packages",
-                column: "package_id");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_payments_order_id",
                 schema: "dbo",
                 table: "payments",
@@ -159,13 +174,22 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 table: "shipments",
                 column: "truck_available");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_StopPoints_RouteId",
+                table: "StopPoints",
+                column: "RouteId");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "order_packages",
+                name: "customers",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "packages",
                 schema: "dbo");
 
             migrationBuilder.DropTable(
@@ -173,8 +197,7 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo");
 
             migrationBuilder.DropTable(
-                name: "packages",
-                schema: "dbo");
+                name: "StopPoints");
 
             migrationBuilder.DropTable(
                 name: "payments",
@@ -183,6 +206,9 @@ namespace Proyecto_Poo.Migrations
             migrationBuilder.DropTable(
                 name: "trucks",
                 schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "Routes");
 
             migrationBuilder.DropTable(
                 name: "orders",
