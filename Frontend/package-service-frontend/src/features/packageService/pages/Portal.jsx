@@ -1,21 +1,20 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 
 export const Portal = () => {
+  const[orderId, setOrderId] = useState("");
+  const navigate = useNavigate();
+const handleSearch = () => {
+  navigate(`/findorders/${orderId}`)
+}
   return (
-<<<<<<< HEAD
+
     // Ordenes
     <div className="flex w-11/12  p-8  m-auto justify-between container  mx-20">
       {/* Mostrar Datos y Crear Orden*/}
       <div className="bg-orange-200 text-gray-700 flex w-10/12 p-4 m-4 shadow-lg rounded-lg flex-col">
         <div className="p-4">
           <label className="block text-gray-900 text-lg font-bold mb-4 ">
-=======
-    <div className="flex w-11/12 p-8 m-auto justify-between container mx-20">
-      {/* Mostrar Datos y Crear Orden*/}
-      <div className="bg-orange-200 text-gray-700 flex w-10/12 p-4 m-4 shadow-lg rounded-lg flex-col">
-        <div className="p-4">
-          <label className="block text-gray-900 text-lg font-bold mb-4">
->>>>>>> ced7ac662d9ca67275e9c8cfc5740a627d190c6a
             Datos Ordenes & Creación de ordenes
           </label>
           <div className="pr-6">
@@ -37,7 +36,7 @@ export const Portal = () => {
             </div>
           </div>
           <div className="flex justify-between py-4">
-<<<<<<< HEAD
+
             <Link
               to={"/createorder"}
               className=" bg-orange-500 hover:bg-green-700  text-white font-bold rounded w-max mt-2 p-4 shadow-sm"
@@ -50,14 +49,7 @@ export const Portal = () => {
             >
               Listar Todas las Ordenes
             </Link>
-=======
-            <div className="bg-orange-500 hover:bg-green-700 text-white font-bold rounded w-max mt-2 p-4 shadow-sm">
-              <Link to="/createorder">Crear Nueva Orden</Link>
-            </div>
-            <div className="bg-orange-500 hover:bg-green-700 text-white font-bold rounded w-max mt-2 p-4 shadow-sm">
-              <Link to="/listorder">Listar Todas las Ordenes</Link>
-            </div>
->>>>>>> ced7ac662d9ca67275e9c8cfc5740a627d190c6a
+
           </div>
         </div>
       </div>
@@ -71,7 +63,10 @@ export const Portal = () => {
           <div className="pr-6 py-4">
             <div className="justify-between flex ">
               <p className="font-medium">Buscar Orden - Numero Guía</p>
-              <input className="bg-orange-100 rounded-sm focus:outline"></input>
+              <input className="bg-orange-100 rounded-sm focus:outline"
+               value={orderId}
+               onChange={(e) => setOrderId(e.target.value)}
+              ></input>
             </div>
           </div>
           <div className="pr-6 py-4">
@@ -80,25 +75,20 @@ export const Portal = () => {
               <input className="bg-orange-100 rounded-sm focus:outline"></input>
             </div>
           </div>
-<<<<<<< HEAD
+          <div
+          onClick={handleSearch}
+          className="bg-orange-500 hover:bg-green-700 text-white font-bold rounded w-max mt-2 p-4 shadow-sm cursor-pointer">Buscar</div>    
 
-          <div className=" bg-orange-500 hover:bg-green-700  text-white font-bold rounded w-max mt-2 p-4 shadow-sm">
-            <Link to={"/listorder"}>Buscar</Link>
-=======
-          <div className="bg-orange-500 hover:bg-green-700 text-white font-bold rounded w-max mt-2 p-4 shadow-sm">
-            <Link to="/listorder">Buscar</Link>
->>>>>>> ced7ac662d9ca67275e9c8cfc5740a627d190c6a
-          </div>
+          
         </div>
       </div>
       {/* Fin Buscar Datos */}
     </div>
-<<<<<<< HEAD
+
     // fin de ordenes
 
     // Inicio Buscar Orden
-=======
->>>>>>> ced7ac662d9ca67275e9c8cfc5740a627d190c6a
+
   );
 };
 
