@@ -1,41 +1,9 @@
-export const ListOrder = () => {
-  const orders = [
-    {
-      OrderId: "dcde359e-ffcc-426b-96ba-77ab507c0946",
-      OrderDate:  "8-6-2024",
-      SenderName: "Carlos Pineda",
-      Address: "Santa Rosa de Copan",
-      ReciverName: "Juan Perez",
-    },
-    {
-      OrderId: "7e4d2f82-cb9f-4b67-8257-09a2f3fba4c9",
-      OrderDate: "25-5-2024",
-      SenderName: "Ana Morales",
-      Address: "Tegucigalpa",
-      ReciverName: "Luis Fernández",
-    },
-    {
-      OrderId: "3f2c1d7f-5f0e-4c80-b06e-0d41f5bde7f5",
-      OrderDate: "10-8-2024",
-      SenderName: "Marta López",
-      Address: "San Pedro Sula",
-      ReciverName: "Jorge Martinez",
-    },
-    {
-      OrderId: "d1e67c21-737f-487b-bb5a-7872d568e582",
-      OrderDate: "25-6-2024",
-      SenderName: "Pedro Gómez",
-      Address: "La Ceiba",
-      ReciverName: "María Rodríguez",
-    },
-    {
-      OrderId: "8a4f2d85-8030-4d7d-bb76-f0a1b4b3e5d8",
-      OrderDate: "20-3-23",
-      SenderName: "Sofia Castillo",
-      Address: "Choluteca",
-      ReciverName: "Roberto García",
-    },
-  ];
+// src/features/packageService/components/ListOrder.jsx
+const ListOrder = ({ orders = [] }) => {
+  const formatDate = (dateString) => {
+    const date = new Date(dateString);
+    return date.toISOString();  // Puedes ajustar el formato según sea necesario
+  };
 
   return (
     <div className="container mx-auto p-4">
@@ -52,18 +20,26 @@ export const ListOrder = () => {
             </tr>
           </thead>
           <tbody>
-            {orders.map((order) => (
-              <tr key={order.OrderId}>
-                <td className="border px-4 py-2 text-center">{order.OrderId}</td>
-                <td className="border px-4 py-2 text-center">{order.OrderDate}</td>
-                <td className="border px-4 py-2 text-center">{order.SenderName}</td>
-                <td className="border px-4 py-2 text-center">{order.ReciverName}</td>
-                <td className="border px-4 py-2 text-center">{order.Address}</td>
+            {orders.length > 0 ? (
+              orders.map((order) => (
+                <tr key={order.orderId}>
+                  <td className="border px-4 py-2 text-center">{order.orderId}</td>
+                  <td className="border px-4 py-2 text-center">{formatDate(order.orderDate)}</td>
+                  <td className="border px-4 py-2 text-center">{order.senderName}</td>
+                  <td className="border px-4 py-2 text-center">{order.receiverName}</td>
+                  <td className="border px-4 py-2 text-center">{order.address}</td>
+                </tr>
+              ))
+            ) : (
+              <tr>
+                <td colSpan="5" className="text-center">No orders available</td>
               </tr>
-            ))}
+            )}
           </tbody>
         </table>
       </div>
     </div>
   );
 };
+
+export default ListOrder;
