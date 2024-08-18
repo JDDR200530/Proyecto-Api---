@@ -27,9 +27,6 @@ namespace Proyecto_Poo
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
 
-            var name = Configuration.GetConnectionString("DefaultConnection");
-
-
             // Add DbContext
             services.AddDbContext<PackageServiceDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
@@ -43,16 +40,13 @@ namespace Proyecto_Poo
             // Add AutoMapper
             services.AddAutoMapper(typeof(AutoMapperProfile)); // Asegúrate de que AutoMapperProfile esté correctamente definido
 
-            services.AddCors(opt =>
-            {
-                var allowURLS = Configuration.GetSection("AllowURLS").Get<string[]>();
+            // Remove comment from Add custom services line if necessary
+            // services.AddTransient<IAuthService, AuthService>(); // Remove this line if it's a comment causing error
 
-                opt.AddPolicy("CorsPolicy", builder => builder
-                .WithOrigins(allowURLS)
-                .AllowAnyMethod()
-                .AllowAnyHeader()
-                .AllowCredentials());
-            });
+            // Ensure correct configuration for AutoMapper, if needed
+            // services.AddAutoMapper(typeof(Startup)); // Example if AutoMapperProfile is in the same assembly
+
+            // Add any other services needed for your application
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -65,7 +59,6 @@ namespace Proyecto_Poo
 
             app.UseHttpsRedirection();
             app.UseRouting();
-            app.UseCors("CorsPolicy");
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

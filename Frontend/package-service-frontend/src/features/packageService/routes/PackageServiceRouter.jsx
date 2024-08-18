@@ -10,7 +10,7 @@ export const PackageServiceRouter = () => {
     <div className="overflow-x-hidden bg-gray-100 w-screen h-screen bg-hero-pattern bg-no-repeat bg-cover" >
       <NavBar/>
       <div className="px-6 py-8">
-            <div className="container flex justify-between mx-auto">
+            <div className="container justify-between mx-auto">
              <Routes>
 
                 <Route path= '/login' element = {<Login/>}/>

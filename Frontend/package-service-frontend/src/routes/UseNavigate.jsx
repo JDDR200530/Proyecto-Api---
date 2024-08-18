@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import CreateOrder from '../pages/CreateOrder';
-import ListOrder  from '../features/packageService/components/ListOrder';
+import ListOrder  from '../pages/ListOrder';
 <pages></pages>; 
 import NavBar from './NavBar'; 
 function App() {
