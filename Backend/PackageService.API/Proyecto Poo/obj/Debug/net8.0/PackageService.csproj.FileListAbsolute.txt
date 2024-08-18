@@ -1,7 +1,6 @@
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\appsettings.json
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Customer.json
-C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Order.json
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Package.json
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Routes.json
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\StopPoint.json
@@ -144,3 +143,4 @@ C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto 
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\PackageService.pdb
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\PackageService.genruntimeconfig.cache
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\ref\PackageService.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Order.json
