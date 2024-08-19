@@ -1,0 +1,142 @@
+[
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "154303ea-f448-483f-95a0-5f13c5848732",
+    "LocationName": "Tegucigalpa",
+    "Latitude": 14.08,
+    "Longitude": -87.20
+  },
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "b9a56fcd-72d2-4de3-ae5e-67a3837b6486",
+    "LocationName": "La Paz",
+    "Latitude": 14.2,
+    "Longitude": -87.48
+  },
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "c8a62d34-9d1f-4a45-871c-97c58b1f92c7",
+    "LocationName": "Marcala",
+    "Latitude": 14.65,
+    "Longitude": -86.93
+  },
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "4c6cdb7d-230d-4937-b6c0-d0b96eaf0c8b",
+    "LocationName": "La Esperanza",
+    "Latitude": 13.96,
+    "Longitude": -88.17
+  },
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "d1a4c34e-5b5f-41d0-9674-1b5d059d7e1d",
+    "LocationName": "Gracias Lempira",
+    "Latitude": 14.25,
+    "Longitude": -89.12
+  },
+  {
+    "RouteId": "62012d76-7b90-4586-a18e-d2bb05d9dcb5",
+    "StopPointId": "e7a0f3b0-23e4-4d4c-b493-2f6c7f2a4b5a",
+    "LocationName": "Santa Rosa de Copan",
+    "Latitude": 14.77,
+    "Longitude": -89.15
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "e7a0f3b0-23e4-4d4c-b493-2f6c7f2a4b5a",
+    "LocationName": "Santa Rosa de Copan",
+    "Latitude": 14.77,
+    "Longitude": -89.15
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "d0a4e5c4-d71e-4e35-9277-b43c2b2d53c2",
+    "LocationName": "La Entrada",
+    "Latitude": 15.52,
+    "Longitude": -88.56
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "e2f8e0e3-1c1e-4d6c-bf77-82f5d6e3d827",
+    "LocationName": "Sula",
+    "Latitude": 15.32,
+    "Longitude": -88.85
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "7cbd0e12-4c89-4b9d-a4d3-f5419d93f0e0",
+    "LocationName": "La Flecha",
+    "Latitude": 15.04,
+    "Longitude": -87.79
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "e6c8d8d6-08b1-4f60-b8bc-78d5f2d843e1",
+    "LocationName": "Quimistan",
+    "Latitude": 15.42,
+    "Longitude": -88.33
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "6a3c9f4d-daba-4e4b-a0e8-4c3b98d52d9b",
+    "LocationName": "La Ceibita",
+    "Latitude": 15.00,
+    "Longitude": -86.77
+  },
+  {
+    "RouteId": "19e6eb1a-650b-4e87-af01-b8373c69bc9e",
+    "StopPointId": "3b9a6d8c-3a40-470d-8b6e-1c5b6e0eaf4b",
+    "LocationName": "San Pedro Sula",
+    "Latitude": 15.50,
+    "Longitude": -88.02
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "3b9a6d8c-3a40-470d-8b6e-1c5b6e0eaf4b",
+    "LocationName": "San Pedro Sula",
+    "Latitude": 15.50,
+    "Longitude": -88.02
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "b8e8c8d1-6b2a-4d87-a5b4-638e64f519fd",
+    "LocationName": "Villanueva",
+    "Latitude": 15.62,
+    "Longitude": -87.95
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "d9a7e5b3-4b39-4d70-8a43-62bfc4e3e328",
+    "LocationName": "La Guama",
+    "Latitude": 14.88,
+    "Longitude": -87.47
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "7f4a7d1e-fcbb-42c0-8b30-5d49b3a5e14f",
+    "LocationName": "Siguatepeque",
+    "Latitude": 14.59,
+    "Longitude": -86.93
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "a6d9c7e3-42c7-4d2e-a8c7-41cfcf39b07b",
+    "LocationName": "Comayagua",
+    "Latitude": 14.45,
+    "Longitude": -87.64
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "f4b5a3f2-4c48-4c0e-bb77-66a0d22a19ab",
+    "LocationName": "Zambrano",
+    "Latitude": 13.98,
+    "Longitude": -86.97
+  },
+  {
+    "RouteId": "a3063bff-b07d-4f07-bd95-955c55ec8f76",
+    "StopPointId": "3d5b6c8d-7f1e-4d8c-a8c6-5c4b9e4a12f7",
+    "LocationName": "Tegucigalpa",
+    "Latitude": 14.08,
+    "Longitude": -87.20
+  }
+]

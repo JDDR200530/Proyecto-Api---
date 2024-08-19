@@ -1,0 +1,322 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\customerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\service\\customerservicesqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\customerservicesqlservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\controllers\\customercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\service\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\service\\interface\\icustomerservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\payentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\payentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\routeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\routeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\customerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\customerentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\database\\entity\\employeeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\database\\entity\\employeeentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\dtos\\customer\\customercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\customer\\customercreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\dtos\\customer\\customereditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\customer\\customereditdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\seeddata\\customer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\seeddata\\customer.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\dtos\\truck\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\truck\\truckcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\dtos\\customer\\customerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|c:\\users\\josue david\\documents\\proyecto poo\\proyecto poo\\proyecto poo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\Proyecto Poo.csproj|solutionrelative:proyecto poo\\proyecto poo.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CustomerController.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Controllers\\CustomerController.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Controllers\\CustomerController.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Controllers\\CustomerController.cs",
+              "RelativeToolTip": "Proyecto Poo\\Controllers\\CustomerController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAkwDgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T21:57:50.971Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ICustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\Interface\\ICustomerService.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\Interface\\ICustomerService.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\Interface\\ICustomerService.cs",
+              "RelativeToolTip": "Proyecto Poo\\Service\\Interface\\ICustomerService.cs",
+              "ViewState": "AQIAAAIAAAAAAAAAAAAswAwAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T22:08:01.395Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PackageEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAtAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T13:01:21.062Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CustomerService.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\CustomerService.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\CustomerService.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\CustomerService.cs",
+              "RelativeToolTip": "Proyecto Poo\\Service\\CustomerService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAAwBoAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T22:34:56.148Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CustomerServiceSQlService.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\CustomerServiceSQlService.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\CustomerServiceSQlService.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Service\\CustomerServiceSQlService.cs",
+              "RelativeToolTip": "Proyecto Poo\\Service\\CustomerServiceSQlService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T22:07:40.643Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PayEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\PayEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PayEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\PayEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PayEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:29:19.892Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RouteEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\RouteEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAwBIAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T12:15:34.622Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TruckEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T20:54:23.964Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "CustomerEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\CustomerEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\CustomerEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\CustomerEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\CustomerEntity.cs",
+              "ViewState": "AQIAAAsAAACwqqoDslIwwAwAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T21:49:51.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "EmployeeEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\EmployeeEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\EmployeeEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Database\\Entity\\EmployeeEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\EmployeeEntity.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAAACIAAAAvAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-23T11:48:34.16Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "CustomerCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerCreateDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Customer\\CustomerCreateDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerCreateDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Customer\\CustomerCreateDto.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAADgvwoAAAAWAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T21:58:58.913Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "CustomerEditDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerEditDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Customer\\CustomerEditDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerEditDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Customer\\CustomerEditDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T22:00:26.188Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "TruckCreateDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Truck\\TruckCreateDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-19T20:58:01.523Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Customer.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\SeedData\\Customer.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Customer.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\SeedData\\Customer.json",
+              "RelativeToolTip": "Proyecto Poo\\SeedData\\Customer.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-20T22:45:54.296Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "CustomerDto.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerDto.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Customer\\CustomerDto.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Dtos\\Customer\\CustomerDto.cs",
+              "RelativeToolTip": "Proyecto Poo\\Dtos\\Customer\\CustomerDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-07-20T22:02:17.417Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\appsettings.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\appsettings.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\appsettings.json",
+              "RelativeToolTip": "Proyecto Poo\\appsettings.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-20T23:38:19.974Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\appsettings.Development.json",
+              "RelativeToolTip": "Proyecto Poo\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAEAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-07-20T23:39:09.43Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Proyecto Poo.csproj",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Proyecto Poo.csproj",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Proyecto Poo\\Proyecto Poo.csproj",
+              "RelativeToolTip": "Proyecto Poo\\Proyecto Poo.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAABkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-07-19T20:50:56.576Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

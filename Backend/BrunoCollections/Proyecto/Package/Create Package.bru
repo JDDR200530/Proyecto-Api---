@@ -1,0 +1,18 @@
+meta {
+  name: Create Package
+  type: http
+  seq: 3
+}
+
+post {
+  url: {{PATH}}/packages
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "orderId": "CFB634A7-2E06-4A2F-1A7C-08DCC0476632",
+    "packageWeight": 200
+  }
+}
