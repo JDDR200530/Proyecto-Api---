@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {}
+    "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {
+    "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
+        "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
         "projectName": "PackageService",
-        "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
+        "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
         "packagesPath": "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\obj\\",
+        "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\JOSUE DAVID\\AppData\\Roaming\\NuGet\\NuGet.Config",

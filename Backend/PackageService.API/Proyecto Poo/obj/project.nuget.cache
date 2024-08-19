@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "FygX/6Fpi+U=",
+  "dgSpecHash": "qRYnNSXgIuk=",
   "success": true,
-  "projectFilePath": "C:\\Users\\JOSUE DAVID\\Documents\\Proyecto Poo\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
+  "projectFilePath": "C:\\Users\\JOSUE DAVID\\Documents\\Prueba Proyecto - POO\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\automapper\\13.0.1\\automapper.13.0.1.nupkg.sha512",
     "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
