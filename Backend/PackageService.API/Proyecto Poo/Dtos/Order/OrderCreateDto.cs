@@ -17,7 +17,7 @@ namespace Proyecto_Poo.Dtos.Order
 
         [Display(Name = "Nombre del receptor")]
         [Required(ErrorMessage ="El {0} es requerido")]
-        public string ReciverName { get; set; }
+        public string ReceiverName { get; set; }
 
 
 

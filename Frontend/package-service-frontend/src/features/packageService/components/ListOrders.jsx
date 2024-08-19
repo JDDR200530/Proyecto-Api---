@@ -41,13 +41,13 @@ export const ListOrder = () => {
         <td className="border px-4 text-center py-2">{order.orderId}</td>
         <td className="border px-4 text-center py-2 ">{formatDate(order.orderDate)}</td>
         <td className="border px-4 text-center py-2">{order.senderName}</td>
-        <td className="border px-4 text-center py-2">{order.reciverName}</td>
+        <td className="border px-4 text-center py-2">{order.receiverName}</td>
         <td className="border px-4 text-center py-2">{order.address}</td>
         <td className="border px-4 text-center py-2">
           <ShowOrderData
           
           
-          OrderId={orders?.data?.orderId} />
+          Order={order} />
         </td>
       </tr>
     ))

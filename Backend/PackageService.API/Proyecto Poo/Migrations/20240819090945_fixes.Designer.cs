@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20240814043152_add-migration Rutas")]
-    partial class addmigrationRutas
+    [Migration("20240819090945_fixes")]
+    partial class fixes
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -60,20 +60,17 @@ namespace Proyecto_Poo.Migrations
                         .IsRequired()
                         .HasMaxLength(350)
                         .HasColumnType("nvarchar(350)")
-                        .HasColumnName("adress");
-
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                        .HasColumnName("address");
 
                     b.Property<DateTime>("OrderDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("order_date");
 
-                    b.Property<string>("ReciverName")
+                    b.Property<string>("ReceiverName")
                         .IsRequired()
                         .HasMaxLength(200)
                         .HasColumnType("nvarchar(200)")
-                        .HasColumnName("reciver_name");
+                        .HasColumnName("receiver_name");
 
                     b.Property<string>("SenderName")
                         .IsRequired()
@@ -86,30 +83,6 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("orders", "dbo");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderPackagesEntity", b =>
-                {
-                    b.Property<Guid>("OrderPackagesId")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("id");
-
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("order_id");
-
-                    b.Property<Guid>("PackageId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("package_id");
-
-                    b.HasKey("OrderPackagesId");
-
-                    b.HasIndex("OrderId");
-
-                    b.HasIndex("PackageId");
-
-                    b.ToTable("order_packages", "dbo");
-                });
-
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
                 {
                     b.Property<Guid>("PackageId")
@@ -117,14 +90,17 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("package_id");
 
-                    b.Property<Guid>("Id")
-                        .HasColumnType("uniqueidentifier");
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("order_id");
 
                     b.Property<double>("PackageWeight")
                         .HasColumnType("float")
                         .HasColumnName("package_weight");
 
                     b.HasKey("PackageId");
+
+                    b.HasIndex("OrderId");
 
                     b.ToTable("packages", "dbo");
                 });
@@ -141,9 +117,12 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("float")
                         .HasColumnName("amount");
 
-                    b.Property<Guid>("OrderId")
+                    b.Property<Guid?>("PackageEntityPackageId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("PackageId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("order_id");
+                        .HasColumnName("package_id");
 
                     b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime2")
@@ -155,7 +134,9 @@ namespace Proyecto_Poo.Migrations
 
                     b.HasKey("PaymentId");
 
-                    b.HasIndex("OrderId");
+                    b.HasIndex("PackageEntityPackageId");
+
+                    b.HasIndex("PackageId");
 
                     b.ToTable("payments", "dbo");
                 });
@@ -251,34 +232,30 @@ namespace Proyecto_Poo.Migrations
                     b.ToTable("trucks", "dbo");
                 });
 
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderPackagesEntity", b =>
+            modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
                 {
                     b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
-                        .WithMany("Orders")
+                        .WithMany("Package")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "Package")
-                        .WithMany("Packages")
-                        .HasForeignKey("PackageId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
                     b.Navigation("Order");
-
-                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
                 {
-                    b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
-                        .WithMany("Payment")
-                        .HasForeignKey("OrderId")
+                    b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", null)
+                        .WithMany("Total")
+                        .HasForeignKey("PackageEntityPackageId");
+
+                    b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "IdPackage")
+                        .WithMany()
+                        .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Order");
+                    b.Navigation("IdPackage");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
@@ -313,14 +290,12 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderEntity", b =>
                 {
-                    b.Navigation("Orders");
-
-                    b.Navigation("Payment");
+                    b.Navigation("Package");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
                 {
-                    b.Navigation("Packages");
+                    b.Navigation("Total");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>

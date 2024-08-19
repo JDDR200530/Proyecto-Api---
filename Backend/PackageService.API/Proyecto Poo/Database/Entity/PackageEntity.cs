@@ -9,12 +9,18 @@ namespace Proyecto_Poo.Database.Entity
         [Key]
         [Column("package_id")]
         public Guid PackageId { get; set; }
+        [Column("order_id")]
+        public Guid OrderId { get; set; }
 
+        [ForeignKey(nameof(OrderId))]
+
+        public OrderEntity Order { get; set; }
 
         [Column("package_weight")]
         [Display(Name = "Peso")]
         [Required(ErrorMessage = "El {0} es requerido")]
 
         public double PackageWeight { get; set; }
+        public virtual IEnumerable<PaymentEntity> Total { get; set; }
     }
 }

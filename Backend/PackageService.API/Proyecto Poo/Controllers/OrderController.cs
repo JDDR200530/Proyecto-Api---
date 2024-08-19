@@ -44,7 +44,7 @@ namespace Proyecto_Poo.Controllers
             var response = await _orderService.CreateAsync(dto);
             return StatusCode(response.StatusCode, new
             {
-                response.Status, response.Message,
+                response.Status, response.Message,response.Data
             });
         }
 

@@ -1,13 +1,31 @@
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { FaWindowClose, FaPrint } from "react-icons/fa";
 import { useReactToPrint } from "react-to-print";
+import { formatDate } from "../../../utils/format-date";
+import { useOrders } from "../hooks";
 
-export const ShowOrderData = ({
-  orderId,
-  
-}) => {
-   
-        
+export const ShowOrderData = ({ Order }) => {
+  const { packages, loadPackages } = useOrders();
+  const [fetching, setFetching] = useState(true);
+  const [filteredPackages, setFilteredPackages] = useState([]);
+
+  useEffect(() => {
+    if (fetching) {
+      loadPackages();
+      setFetching(false);
+    }
+  }, [fetching, loadPackages]);
+
+  useEffect(() => {
+    if (packages.data) {
+      // Filtra los paquetes para obtener solo los que corresponden al orderId
+      const foundPackages = packages.data.filter(
+        (pkg) => pkg.orderId.toLowerCase() === Order.orderId.trim().toLowerCase()
+      );
+      setFilteredPackages(foundPackages);
+    }
+  }, [packages.data, Order.orderId]);
+
   const [isModalOpen, setIsModalOpen] = useState(false);
   const componentRef = useRef();
   const handlePrint = useReactToPrint({
@@ -16,6 +34,18 @@ export const ShowOrderData = ({
 
   const handleModalToggle = () => {
     setIsModalOpen(!isModalOpen);
+  };
+
+  // Calcular el subtotal
+  const calculateSubtotal = () => {
+    return filteredPackages.reduce((total, pkg) => total + pkg.price, 0);
+  };
+
+  // Calcular el total con impuestos
+  const calculateTotal = () => {
+    const subtotal = calculateSubtotal();
+    const taxes = subtotal * 0.15; // Impuestos del 15%
+    return subtotal + taxes;
   };
 
   return (
@@ -48,75 +78,88 @@ export const ShowOrderData = ({
             <div className="m-6">
               {/* Header */}
               <header className="mb-4">
-                <div className="flex justify-between items-center">
-                  <img src="/Logo.svg" alt="Logo" className="h-12" />
+                <div className="flex justify-between items-right">
+                  <div>
+                    <img src="/Logo.svg" alt="Logo" className="h-12" />
+                    <p className="text-left font-bold">Envios Dynamo</p>
+                    <p className="text-left text-sm font-thin">Santa Rosa de Copán, Honduras</p>
+                    <p className="text-left text-xs">Email: soporte@enviosdynamo.com</p>
+                  </div>
                   <div className="text-right">
                     <h1 className="text-xl font-bold">Factura</h1>
-                    
-                    <p className="text-xs">Fecha de Emisión: 17/08/2024</p>
+                    <p className="text-xs">{formatDate(Order.orderDate)}</p>
                   </div>
                 </div>
               </header>
 
               {/* Info Section */}
-              <section className="mb-4 grid grid-cols-2 gap-2 text-sm">
-                {/* Nombre empresa Info */}
+              <section className="mb-4 mt-2 grid grid-cols-2 gap-2 text-sm">
                 <div>
-                  <h3 className="font-semibold">De:</h3>
-                  <p>Envios Dynamo</p>
+                  <h3 className="font-semibold">
+                    De:<p>{Order.senderName}</p>
+                  </h3>
                   <p>Santa Rosa de Copán, Honduras</p>
-                  <p>Email: soporte@enviosdynamo.com</p>
                 </div>
-
-                {/* Client Info */}
                 <div>
-                  <h3 className="font-semibold">Para:</h3>
-                  {/* Sender */}
-                  <p>{order.SenderName}</p>
-                  <p>Calle Real 456</p>
+                  <h3 className="font-semibold">
+                    Para:<p>{Order.receiverName}</p>
+                  </h3>
+                  <p>{Order.address}</p>
                 </div>
               </section>
-              {/* INFORMACIóN DE LOS PAQUETES */}
-              <h2 className="text-sm font-bold">Orden: <span className="font-semibold"> {orderId}  key={generateId()} </span></h2>   
-              {/* Tabla de Paquetes*/}
+
+              {/* INFORMACIÓN DE LOS PAQUETES */}
+              <h2 className="text-sm font-bold">
+                Orden: <span className="font-semibold"> {Order.orderId} </span>
+              </h2>
+              
+              {/* Tabla de Paquetes */}
               <section>
                 <table className="w-full text-left border-separate border-spacing-y-2 text-sm">
                   <thead>
                     <tr className="bg-gray-200">
-                     <th className="p-1 text-right">N°</th>   
+                      <th className="p-1 text-right">Id</th>
                       <th className="p-1">Descripción</th>
                       <th className="p-1 text-right">Peso (lbs)</th>
                       <th className="p-1 text-right">Precio</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr className="bg-gray-50">
-                     <td className="p-1 text-right">1</td>   
-                      <td className="p-1">Paquete</td>
-                      <td className="p-1 text-right">100</td>
-                      <td className="p-1 text-right">lps 50.00</td>
-                      
-                    </tr>
-                    {/* Más filas... */}
+                    {filteredPackages.length > 0 ? (
+                      filteredPackages.map((pkg) => (
+                        <tr className="bg-gray-50" key={pkg.id}>
+                          <td className="p-1 text-right">{pkg.id}</td>
+                          <td className="p-1">{pkg.description || "Paquete"}</td>
+                          <td className="p-1 text-right">{pkg.packageWeight || "N/A"}</td>
+                          <td className="p-1 text-right">{pkg.price || "N/A"}</td>
+                        </tr>
+                      ))
+                    ) : (
+                      <tr>
+                        <td colSpan="4" className="text-center">
+                          No hay paquetes disponibles
+                        </td>
+                      </tr>
+                    )}
                   </tbody>
                   <tfoot>
                     <tr>
                       <td colSpan="3" className="p-1 text-right font-semibold">
                         Subtotal
                       </td>
-                      <td className="p-1 text-right">lps 95.00</td>
+                      <td className="p-1 text-right">Lps {calculateSubtotal().toFixed(2)}</td>
                     </tr>
                     <tr>
                       <td colSpan="3" className="p-1 text-right font-semibold">
                         Impuestos (15%)
                       </td>
-                      <td className="p-1 text-right">lps 14.25</td>
+                      <td className="p-1 text-right">Lps {(calculateSubtotal() * 0.15).toFixed(2)}</td>
                     </tr>
                     <tr>
                       <td colSpan="3" className="p-1 text-right font-bold">
                         Total
                       </td>
-                      <td className="p-1 text-right">lps 109.25</td>
+                      <td className="p-1 text-right">Lps {calculateTotal().toFixed(2)}</td>
                     </tr>
                   </tfoot>
                 </table>
@@ -142,5 +185,3 @@ export const ShowOrderData = ({
     </div>
   );
 };
-
-
