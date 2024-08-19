@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Proyecto_Poo.Migrations
 {
     /// <inheritdoc />
-    public partial class TABLEoRDES : Migration
+    public partial class init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -37,25 +37,12 @@ namespace Proyecto_Poo.Migrations
                     order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     order_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     sender_name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
-                    adress = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false),
-                    reciver_name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
+                    address = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false),
+                    receiver_name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false)
                 },
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orders", x => x.order_id);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "packages",
-                schema: "dbo",
-                columns: table => new
-                {
-                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    package_weight = table.Column<double>(type: "float", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_packages", x => x.package_id);
                 });
 
             migrationBuilder.CreateTable(
@@ -85,21 +72,19 @@ namespace Proyecto_Poo.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "payments",
+                name: "packages",
                 schema: "dbo",
                 columns: table => new
                 {
-                    payment_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    amount = table.Column<double>(type: "float", maxLength: 250, nullable: false),
-                    payment_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    payment_method = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                    package_weight = table.Column<double>(type: "float", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_payments", x => x.payment_id);
+                    table.PrimaryKey("PK_packages", x => x.package_id);
                     table.ForeignKey(
-                        name: "FK_payments_orders_order_id",
+                        name: "FK_packages_orders_order_id",
                         column: x => x.order_id,
                         principalSchema: "dbo",
                         principalTable: "orders",
@@ -125,6 +110,29 @@ namespace Proyecto_Poo.Migrations
                         column: x => x.RouteId,
                         principalTable: "Routes",
                         principalColumn: "RouteId",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "payments",
+                schema: "dbo",
+                columns: table => new
+                {
+                    payment_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    amount = table.Column<double>(type: "float", maxLength: 250, nullable: false),
+                    payment_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    payment_method = table.Column<string>(type: "nvarchar(max)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_payments", x => x.payment_id);
+                    table.ForeignKey(
+                        name: "FK_payments_packages_package_id",
+                        column: x => x.package_id,
+                        principalSchema: "dbo",
+                        principalTable: "packages",
+                        principalColumn: "package_id",
                         onDelete: ReferentialAction.Cascade);
                 });
 
@@ -158,10 +166,16 @@ namespace Proyecto_Poo.Migrations
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_payments_order_id",
+                name: "IX_packages_order_id",
+                schema: "dbo",
+                table: "packages",
+                column: "order_id");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_payments_package_id",
                 schema: "dbo",
                 table: "payments",
-                column: "order_id");
+                column: "package_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_shipments_payment_id",
@@ -189,10 +203,6 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo");
 
             migrationBuilder.DropTable(
-                name: "packages",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
                 name: "shipments",
                 schema: "dbo");
 
@@ -209,6 +219,10 @@ namespace Proyecto_Poo.Migrations
 
             migrationBuilder.DropTable(
                 name: "Routes");
+
+            migrationBuilder.DropTable(
+                name: "packages",
+                schema: "dbo");
 
             migrationBuilder.DropTable(
                 name: "orders",

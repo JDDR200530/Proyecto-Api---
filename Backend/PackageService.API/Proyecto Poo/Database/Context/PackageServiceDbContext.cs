@@ -34,7 +34,9 @@ namespace Proyecto_Poo.Database.Contex
         public DbSet<PackageEntity> Packages { get; set; }
         public DbSet<CustomerEntity> Customers { get; set; }
         public DbSet<StopPointEntity> StopPoints { get; set; }
+        public DbSet<PaymentEntity> Total {  get; set; }
         public DbSet<RouteEntity> Routes { get; set; } // Corrige el nombre a 'Routes'
+        public DbSet<ShipmentEntity> Pay { get; set; }
     }
 }
 

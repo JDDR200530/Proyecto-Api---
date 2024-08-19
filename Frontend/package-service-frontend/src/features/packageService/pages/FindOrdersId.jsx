@@ -1,63 +1,108 @@
-import {useParams} from "react-router-dom";
-export const FindOrdersId = () =>{
-    const {orderId} = useParams();
+import { useParams, useNavigate } from "react-router-dom";
+import { useOrders } from "../hooks/usesOrder";
+import { useEffect, useState } from "react";
+import EditOrder from "./EditOrder"; // Importa el componente EditOrder
 
-    const orders = [
-        {
-            OrderId: "dcde359e-ffcc-426b-96ba-77ab507c0946",
-            OrderDate:  "8-6-2024",
-            SenderName: "Carlos Pineda",
-            Address: "Santa Rosa de Copan",
-            ReciverName: "Juan Perez",
-          },
-          {
-            OrderId: "7e4d2f82-cb9f-4b67-8257-09a2f3fba4c9",
-            OrderDate: "25-5-2024",
-            SenderName: "Ana Morales",
-            Address: "Tegucigalpa",
-            ReciverName: "Luis Fernández",
-          },
-          {
-            OrderId: "3f2c1d7f-5f0e-4c80-b06e-0d41f5bde7f5",
-            OrderDate: "10-8-2024",
-            SenderName: "Marta López",
-            Address: "San Pedro Sula",
-            ReciverName: "Jorge Martinez",
-          },
-          {
-            OrderId: "d1e67c21-737f-487b-bb5a-7872d568e582",
-            OrderDate: "25-6-2024",
-            SenderName: "Pedro Gómez",
-            Address: "La Ceiba",
-            ReciverName: "María Rodríguez",
-          },
-          {
-            OrderId: "8a4f2d85-8030-4d7d-bb76-f0a1b4b3e5d8",
-            OrderDate: "20-3-23",
-            SenderName: "Sofia Castillo",
-            Address: "Choluteca",
-            ReciverName: "Roberto García",
-          },
-    ];
-    
-    const order = orders.find((o) =>o.OrderId.toLowerCase() === orderId.trim().toLowerCase());
-    if (!order){
-        return(
-                <div>
-                    <h1>Orden No encontrada</h1>
-                </div>
-        );
+export const FindOrdersId = () => {
+  const { orderId } = useParams(); // Obtiene el parámetro 'orderId' de la URL
+  const navigate = useNavigate(); // Hook para la navegación
+  const { orders, loadOrders, removeOrder, loading } = useOrders(); // Obtén removeOrder del hook
+  const [order, setOrder] = useState(null);
+  const [isEditing, setIsEditing] = useState(false); // Estado para controlar la edición
+
+  useEffect(() => {
+    const fetchOrders = async () => {
+      try {
+        await loadOrders();
+      } catch (error) {
+        console.error("Error al cargar las órdenes:", error);
+      }
+    };
+
+    fetchOrders();
+  }, [loadOrders]);
+
+  useEffect(() => {
+    if (!loading && orders?.data?.length > 0) {
+      const foundOrder = orders.data.find(
+        (o) => o.orderId.toLowerCase() === orderId.trim().toLowerCase()
+      );
+      setOrder(foundOrder);
     }
+  }, [orders, loading, orderId]);
 
-    return(
-        <div className="container mx-auto p-4">
-            <h1 className="text-2x1 font-bold mb-4">Detalles de la Orden</h1>
-            <p><strong>Orden Id: </strong>{order.OrderId}</p>
-            <p><strong>Orden Date: </strong>{order.OrderDate}</p>
-            <p><strong>SenderName: </strong>{order.SenderName}</p>
-            <p><strong>ReciverName: </strong>{order.ReciverName}</p>
-            <p><strong>Address: </strong>{order.Address}</p>
-        </div>
+  const handleEditClick = () => {
+    setIsEditing(true); // Muestra el formulario de edición
+  };
+
+  const handleDelete = async () => {
+    try {
+      await removeOrder(orderId); // Elimina la orden usando el hook
+      alert(`Orden con ID ${orderId} eliminada exitosamente.`);
+      navigate('/portal'); // Redirige al portal después de eliminar
+    } catch (error) {
+      console.error("Error al eliminar la orden:", error);
+      alert("Hubo un error al intentar eliminar la orden.");
+    }
+  };
+
+  if (loading && !order) {
+    return <div>Loading...</div>;
+  }
+
+  if (!order) {
+    return (
+      <div>
+        <h1>Orden No encontrada</h1>
+        <button
+          onClick={() => navigate('/')}
+          className="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+        >
+          Regresar al Portal
+        </button>
+      </div>
     );
+  }
+
+  return (
+    <div className="container mx-auto p-4">
+      <h1 className="text-2xl font-bold mb-4">Detalles de la Orden</h1>
+
+      {!isEditing ? (
+        <>
+          <p><strong>Orden Id: </strong>{order.orderId}</p>
+          <p><strong>Fecha de Orden: </strong>{order.orderDate}</p>
+          <p><strong>Nombre del Remitente: </strong>{order.senderName}</p>
+          <p><strong>Nombre del Destinatario: </strong>{order.receiverName}</p>
+          <p><strong>Dirección: </strong>{order.address}</p>
+          <div className="flex space-x-4 mt-4">
+            <button
+              onClick={handleEditClick}
+              className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Editar
+            </button>
+            <button
+              onClick={handleDelete}
+              className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-700"
+            >
+              Eliminar
+            </button>
+          </div>
+        </>
+      ) : (
+        <EditOrder
+          orderId={order.orderId}
+          initialReceiverName={order.receiverName}
+          initialAddress={order.address}
+        />
+      )}
+      <button
+        onClick={() => navigate('/portal')}
+        className="mt-4 bg-gray-500 text-white px-4 py-2 rounded hover:bg-gray-700"
+      >
+        Regresar al Portal
+      </button>
+    </div>
+  );
 };
-export default FindOrdersId;

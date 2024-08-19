@@ -10,6 +10,6 @@
 
         public string Address { get; set; }
 
-        public string ReciverName { get; set; }
+        public string ReceiverName { get; set; }
     }
 }

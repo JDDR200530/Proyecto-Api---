@@ -10,12 +10,12 @@ namespace Proyecto_Poo.Database.Entity
         [Column("payment_id")]
         public Guid PaymentId { get; set; }
 
-        [Column("order_id")]
-        public Guid OrderId { get; set; }
-        
-        [ForeignKey (nameof(OrderId))]
+        [Column("package_id")]
+        public Guid PackageId { get; set; }
 
-        public OrderEntity Order { get; set; }
+        [ForeignKey (nameof(PackageId))]
+
+        public PackageEntity IdPackage { get; set; }
 
         [Display(Name = "Costo Del Envio")]
         [Required(ErrorMessage = "El espacio de {0} no puede estar vacio")]

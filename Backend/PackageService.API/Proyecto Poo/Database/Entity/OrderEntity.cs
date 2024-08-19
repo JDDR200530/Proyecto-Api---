@@ -7,8 +7,6 @@ namespace Proyecto_Poo.Database.Entity
     public class OrderEntity
     {
         [Key]
-
-
         [Column("order_id")]
         public Guid OrderId { get; set; }
 
@@ -26,17 +24,18 @@ namespace Proyecto_Poo.Database.Entity
         [Required(ErrorMessage = "El espacio de {0} no puede estar vacio")]
         [StringLength(350)]
 
-        [Column("adress")]
+        [Column("address")]
         public string Address { get; set; }
 
         [Display(Name = "Nombre del Destinatario")]
         [Required(ErrorMessage = "El {0} del cliente es requerido")]
         [StringLength(200)]
 
-        [Column("reciver_name")]
-        public string ReciverName { get; set; }
+        [Column("receiver_name")]
+        public string ReceiverName { get; set; }
 
-        public virtual IEnumerable<PaymentEntity> Payment { get; set; }
+        public virtual IEnumerable<PackageEntity> Package { get; set; }
+       
       
     }
 }
