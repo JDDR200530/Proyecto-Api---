@@ -1,181 +1,166 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
-using Microsoft.OpenApi.Any;
 using Newtonsoft.Json;
+using Proyecto_Poo.Constanst;
 using Proyecto_Poo.Database.Entity;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Runtime.Loader;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace Proyecto_Poo.Database.Contex
 {
     public class PackageServiceSeeder
     {
-        public static async Task LoadDataAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
+        public static async Task LoadDataAsync(
+            PackageServiceDbContext context,
+            ILoggerFactory loggerFactory,
+            UserManager<UserEntity> userManager,
+            RoleManager<IdentityRole> roleManager)
         {
             try
             {
-                await LoadOrderAsync(context, loggerFactory);
-                await LoadPackageAsync(context, loggerFactory);
-                await LoadCustomerAsync(context, loggerFactory);
-                await LoadRoutesAsync(context, loggerFactory);
-                await LoadStopPointAsync(context, loggerFactory);
+                // Cargar roles y usuarios
+                await LoadRolesAndUsersAsync(userManager, roleManager, loggerFactory);
+
+                // Cargar otras entidades (Orders, Packages, Routes, etc.)
+                await LoadEntitiesAsync(context, loggerFactory);
             }
             catch (Exception e)
             {
                 var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                logger.LogError(e, "Error inicializando la data del API.");
+                logger.LogError(e, "Error inicializando la data del API");
             }
         }
 
-        public static async Task LoadOrderAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
+        private static async Task LoadRolesAndUsersAsync(
+            UserManager<UserEntity> userManager,
+            RoleManager<IdentityRole> roleManager,
+            ILoggerFactory loggerFactory)
         {
             try
             {
-                var jsonFilePath = "SeedData/Order.json";
-                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                var Orders = JsonConvert.DeserializeObject<List<OrderEntity>>(jsonContent) ?? new List<OrderEntity>();
+                // Crear roles si no existen
+                await CreateRolesIfNeededAsync(roleManager);
 
-                if (!await context.Orders.AnyAsync())
+                // Crear usuarios si no existen
+                await CreateUsersIfNeededAsync(userManager, loggerFactory);
+            }
+            catch (Exception e)
+            {
+                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
+                logger.LogError(e, "Error al cargar roles y usuarios");
+            }
+        }
+
+        private static async Task CreateRolesIfNeededAsync(RoleManager<IdentityRole> roleManager)
+        {
+            var roles = new[] { RolesConstant.ADMIN, RolesConstant.USER };
+
+            foreach (var role in roles)
+            {
+                if (!await roleManager.RoleExistsAsync(role))
                 {
-                    foreach (var order in Orders)
-                    {
-                        order.OrderDate = DateTime.Now;
-                    }
-
-                    await context.Orders.AddRangeAsync(Orders);
-                    await context.SaveChangesAsync();
+                    await roleManager.CreateAsync(new IdentityRole(role));
                 }
             }
-            catch (Exception e)
-            {
-                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                logger.LogError(e, "Error al ejecutar el Seed Order.");
-            }
         }
 
-        public static async Task LoadPackageAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
+        private static async Task CreateUsersIfNeededAsync(UserManager<UserEntity> userManager, ILoggerFactory loggerFactory)
         {
-            try
+            if (!await userManager.Users.AnyAsync())
             {
-                var jsonFilePath = "SeedData/Package.json";
-                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                var Packages = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent) ?? new List<PackageEntity>();
-
-                if (!await context.Packages.AnyAsync())
+                var users = new[]
                 {
-                    await context.Packages.AddRangeAsync(Packages);
-                    await context.SaveChangesAsync();
-                }
-            }
-            catch (Exception e)
-            {
-                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                logger.LogError(e, "Error al ejecutar el Seed Package.");
-            }
-        }
+            new UserEntity { FirstName = "Administrador", LastName = "Paquete", Email = "admin@packageservice.com", UserName = "admin@packageservice.com" },
+            new UserEntity { FirstName = "User", LastName = "Paquete", Email = "user@packageservice.com", UserName = "user@packageservice.com" }
+        };
 
-        public static async Task LoadRoutesAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
-        {
-            try
-            {
-                var jsonFilePath = "SeedData/Routes.json";
-                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                var routes = JsonConvert.DeserializeObject<List<RouteEntity>>(jsonContent) ?? new List<RouteEntity>();
-
-                foreach (var route in routes)
+                foreach (var user in users)
                 {
-                    // Validar que RouteName no sea nulo o vacío
-                    if (string.IsNullOrWhiteSpace(route.RouteName))
+                    if (await userManager.FindByEmailAsync(user.Email) == null)
                     {
-                        throw new ArgumentException($"RouteName cannot be null or empty for RouteId: {route.RouteId}");
-                    }
+                        var password = "Temporal01!";  // Asegúrate de que esta contraseña cumpla las políticas de seguridad
 
-                    var existingRoute = await context.Routes
-                        .AsNoTracking()
-                        .FirstOrDefaultAsync(r => r.RouteId == route.RouteId);
-
-                    if (existingRoute == null)
-                    {
-                        await context.Routes.AddAsync(route);
-                    }
-                }
-
-                await context.SaveChangesAsync();
-            }
-            catch (Exception e)
-            {
-                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                logger.LogError(e, "Error al ejecutar el Seed de Routes.");
-            }
-        }
-        public static async Task LoadStopPointAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
-        {
-            try
-            {
-                var jsonFilePath = "SeedData/StopPoint.json";
-                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                var stopPoints = JsonConvert.DeserializeObject<List<StopPointEntity>>(jsonContent) ?? new List<StopPointEntity>();
-
-                foreach (var stopPoint in stopPoints)
-                {
-                    // Comprueba si el StopPoint ya está en el contexto
-                    var existingStopPoint = context.StopPoints.Local
-                        .FirstOrDefault(sp => sp.StopPointId == stopPoint.StopPointId);
-
-                    if (existingStopPoint != null)
-                    {
-                        // Si ya existe en el contexto, desvincúlalo
-                        context.Entry(existingStopPoint).State = EntityState.Detached;
-                    }
-
-                    // Verifica en la base de datos si existe el StopPoint
-                    existingStopPoint = await context.StopPoints
-                        .AsNoTracking()
-                        .FirstOrDefaultAsync(sp => sp.StopPointId == stopPoint.StopPointId);
-
-                    if (existingStopPoint == null)
-                    {
-                        // Añade la entidad si no existe
-                        await context.StopPoints.AddAsync(stopPoint);
+                        var result = await userManager.CreateAsync(user, password);
+                        if (result.Succeeded)
+                        {
+                            var role = user.UserName.Contains("admin") ? RolesConstant.ADMIN : RolesConstant.USER;
+                            await userManager.AddToRoleAsync(user, role);
+                        }
+                        else
+                        {
+                            // Loggear cada error específico
+                            foreach (var error in result.Errors)
+                            {
+                                LogError(loggerFactory, new Exception(error.Description), $"Error creando usuario {user.UserName}");
+                            }
+                        }
                     }
                     else
                     {
-                        // Actualiza la entidad si ya existe
-                        context.Entry(existingStopPoint).CurrentValues.SetValues(stopPoint);
+                        LogError(loggerFactory, new Exception($"Email ya registrado: {user.Email}"), "Error creando usuario");
                     }
                 }
+            }
+        }
 
-                await context.SaveChangesAsync();
+
+        // Métodos refactorizados para cargar entidades desde archivos JSON
+        private static async Task LoadEntitiesAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
+        {
+            await LoadEntityAsync<OrderEntity>(context, loggerFactory, "SeedData/Order.json", context.Orders, entity => entity.OrderDate = DateTime.Now);
+            await LoadEntityAsync<PackageEntity>(context, loggerFactory, "SeedData/Package.json", context.Packages);
+            await LoadEntityAsync<RouteEntity>(context, loggerFactory, "SeedData/Routes.json", context.Routes);
+            await LoadEntityAsync<StopPointEntity>(context, loggerFactory, "SeedData/StopPoint.json", context.StopPoints);
+            await LoadEntityAsync<CustomerEntity>(context, loggerFactory, "SeedData/Customer.json", context.Customers);
+        }
+
+        // Método genérico para cargar una entidad desde un archivo JSON
+        private static async Task LoadEntityAsync<TEntity>(
+            PackageServiceDbContext context,
+            ILoggerFactory loggerFactory,
+            string filePath,
+            DbSet<TEntity> dbSet,
+            Action<TEntity> additionalSetup = null) where TEntity : class
+        {
+            try
+            {
+                // Verificación de existencia de archivo
+                if (!File.Exists(filePath))
+                {
+                    LogError(loggerFactory, new FileNotFoundException($"El archivo {filePath} no fue encontrado."), $"Error al leer archivo {filePath}");
+                    return;
+                }
+
+                var jsonContent = await File.ReadAllTextAsync(filePath);
+                var entities = JsonConvert.DeserializeObject<List<TEntity>>(jsonContent) ?? new List<TEntity>();
+
+                // Verificar si la tabla ya tiene datos
+                if (!await dbSet.AnyAsync())
+                {
+                    foreach (var entity in entities)
+                    {
+                        additionalSetup?.Invoke(entity);  // Ejecutar configuración adicional si es proporcionada (ej. OrderDate para órdenes)
+                    }
+
+                    await dbSet.AddRangeAsync(entities);
+                    await context.SaveChangesAsync();
+                }
             }
             catch (Exception e)
             {
-                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                logger.LogError(e, "Error al ejecutar el Seed de StopPoints.");
+                LogError(loggerFactory, e, $"Error seeding {typeof(TEntity).Name}");
             }
         }
-        public static async Task LoadCustomerAsync(PackageServiceDbContext context, ILoggerFactory loggerFactory)
-            {
-                try
-                {
-                    var jsonFilePath = "SeedData/Customer.json";
-                    var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
-                    var customers = JsonConvert.DeserializeObject<List<CustomerEntity>>(jsonContent) ?? new List<CustomerEntity>();
 
-                    if (!await context.Customers.AnyAsync())
-                    {
-                        await context.Customers.AddRangeAsync(customers);
-                        await context.SaveChangesAsync();
-                    }
-                }
-                catch (Exception e)
-                {
-                    var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
-                    logger.LogError(e, "Error al ejecutar el Seed de Customer.");
-                }
-            }
+        // Método centralizado para loguear errores
+        private static void LogError(ILoggerFactory loggerFactory, Exception exception, string message)
+        {
+            var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
+            logger.LogError(exception, message);
         }
-    } 
-
+    }
+}

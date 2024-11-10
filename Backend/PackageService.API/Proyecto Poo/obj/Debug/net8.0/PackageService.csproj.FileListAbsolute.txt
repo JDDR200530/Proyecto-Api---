@@ -56,7 +56,6 @@ C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto 
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\System.Runtime.Caching.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\System.Security.Permissions.dll
-C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\System.Text.Json.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\System.Windows.Extensions.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\cs\Microsoft.CodeAnalysis.resources.dll
 C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\de\Microsoft.CodeAnalysis.resources.dll
@@ -581,3 +580,15 @@ C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Backend\PackageService.API\
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\PackageService.pdb
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\PackageService.genruntimeconfig.cache
 C:\Users\JOSUE DAVID\Documents\Prueba Proyecto - POO\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\ref\PackageService.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Caching.Memory.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Identity.Core.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Logging.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\JOSUE DAVID\Documents\Proyecto Poo\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\Microsoft.Extensions.Options.dll

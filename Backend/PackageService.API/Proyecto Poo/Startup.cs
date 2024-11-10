@@ -1,20 +1,26 @@
 ﻿using AutoMapper;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Proyecto_Poo.Database.Contex;
+using Proyecto_Poo.Database.Entity;
 using Proyecto_Poo.Helpers;
 using Proyecto_Poo.Service;
 using Proyecto_Poo.Service.Interface;
+using System;
+using System.Text;
 
 namespace Proyecto_Poo
 {
     public class Startup
     {
-        public IConfiguration Configuration { get; }
+        private IConfiguration Configuration { get; }
 
         public Startup(IConfiguration configuration)
         {
@@ -26,32 +32,62 @@ namespace Proyecto_Poo
             services.AddControllers();
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
+            services.AddHttpContextAccessor();
 
-            // Add DbContext
+            var name = Configuration.GetConnectionString("DefaultConnection");
+
+            // Configuración de la conexión a la base de datos
             services.AddDbContext<PackageServiceDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            // Add custom services
-            services.AddTransient<ICustomerService, CustomerService>(); // Cambiado de ICategoriesService a ICustomerService
-            services.AddTransient<IAuthService, AuthService>();
-            services.AddTransient<IOrderService, OrderService>(); // Cambiado de IPostsService a IOrderService
-            services.AddTransient<IPackageService, PackageService>(); // Cambiado de IPostsService a IOrderService
+            // Configuración de Identity
+            services.AddIdentity<UserEntity, IdentityRole>(options => options.SignIn.RequireConfirmedAccount = false)
+                .AddEntityFrameworkStores<PackageServiceDbContext>()
+                .AddDefaultTokenProviders();
 
-            // Add AutoMapper
-            services.AddAutoMapper(typeof(AutoMapperProfile)); // Asegúrate de que AutoMapperProfile esté correctamente definido
-
-            // Remove comment from Add custom services line if necessary
-            // services.AddTransient<IAuthService, AuthService>(); // Remove this line if it's a comment causing error
-            services.AddCors(opt =>
+            // Configuración de autenticación y JWT
+            services.AddAuthentication(options =>
             {
-                var allowURLS = Configuration.GetSection("AllowURLS").Get<string[]>();
-                opt.AddPolicy("CorsPolicy", builder => builder.WithOrigins(allowURLS).AllowAnyMethod().
-                AllowAnyHeader().
-                AllowCredentials());
-
-
+                options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+                options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+            })
+            .AddJwtBearer(options =>
+            {
+                options.SaveToken = true;
+                options.RequireHttpsMetadata = false;
+                options.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuer = true,
+                    ValidateAudience = true,
+                    ValidAudience = Configuration["JWT:ValidAudience"],
+                    ValidIssuer = Configuration["JWT:ValidIssuer"],
+                    ClockSkew = TimeSpan.Zero,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["JWT:Secret"]))
+                };
             });
 
+            // Configuración de servicios personalizados
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IAuthService, AuthService>();
+            services.AddTransient<IOrderService, OrderService>();
+            services.AddTransient<IPackageService, PackageService>();
+            services.AddTransient<IAudtiService,AuditService>();
+
+
+            // Configuración de AutoMapper
+            services.AddAutoMapper(typeof(AutoMapperProfile));
+
+            // Configuración de CORS
+            services.AddCors(opt =>
+            {
+                var allowURLs = Configuration.GetSection("AllowURLS").Get<string[]>();
+                opt.AddPolicy("CorsPolicy", builder =>
+                    builder.WithOrigins(allowURLs)
+                           .AllowAnyMethod()
+                           .AllowAnyHeader()
+                           .AllowCredentials());
+            });
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -64,7 +100,10 @@ namespace Proyecto_Poo
 
             app.UseHttpsRedirection();
             app.UseRouting();
+
+            // Habilitar CORS y autenticación
             app.UseCors("CorsPolicy");
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

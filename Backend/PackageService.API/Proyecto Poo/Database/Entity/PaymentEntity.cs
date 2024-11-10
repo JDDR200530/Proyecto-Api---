@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Poo.Database.Entity
@@ -40,7 +41,8 @@ namespace Proyecto_Poo.Database.Entity
         
 
         public virtual IEnumerable<ShipmentEntity> Pay { get; set; }
-
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
 
     }
 }
