@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Poo.Database.Entity
 {
     [Table("packages", Schema = "dbo")]
-    public class PackageEntity
+    public class PackageEntity : BaseEntity
     {
-        [Key]
         [Column("package_id")]
         public Guid PackageId { get; set; }
         [Column("order_id")]
@@ -22,5 +22,7 @@ namespace Proyecto_Poo.Database.Entity
 
         public double PackageWeight { get; set; }
         public virtual IEnumerable<PaymentEntity> Total { get; set; }
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
     }
 }

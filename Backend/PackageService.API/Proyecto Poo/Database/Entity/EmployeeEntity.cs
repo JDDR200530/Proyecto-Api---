@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using Microsoft.AspNetCore.Identity;
 
 namespace Proyecto_Poo.Database.Entity
 {
@@ -33,6 +34,8 @@ namespace Proyecto_Poo.Database.Entity
         [Column("Cellphone")]
 
         public string? Cellphone {  get; set; }
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
 
     }
 }

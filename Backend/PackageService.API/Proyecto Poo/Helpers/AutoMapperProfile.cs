@@ -13,20 +13,21 @@ namespace Proyecto_Poo.Helpers
             MapsForOrders();
             MapsForPackages();
             MapsForCustomer();
-          
-            
+         
+
+
         }
 
 
         private void MapsForOrders()
         {
-            CreateMap<OrderEntity, Dtos.Order.OrderDto>(); 
-            CreateMap<OrderCreateDto, OrderEntity>(); 
+            CreateMap<OrderEntity, Dtos.Order.OrderDto>();
+            CreateMap<OrderCreateDto, OrderEntity>();
             CreateMap<OrderEditDto, OrderEntity>();
         }
         private void MapsForPackages()
         {
-            CreateMap<PackageEntity, PackageDto>(); 
+            CreateMap<PackageEntity, PackageDto>();
             CreateMap<PackageCreateDto, PackageEntity>();
             CreateMap<PackageEditDto, PackageEntity>();
         }
@@ -37,6 +38,8 @@ namespace Proyecto_Poo.Helpers
             CreateMap<CustomerCreateDto, CustomerEntity>();
             CreateMap<CustomerEditDto, CustomerEntity>();
         }
+
+        
     }
 
     

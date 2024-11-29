@@ -1,0 +1,22 @@
+meta {
+  name: Login
+  type: http
+  seq: 5
+}
+
+post {
+  url: {{PATH}}/auth/login
+  body: none
+  auth: none
+}
+
+vars:pre-request {
+  emailValue: admin@packageservice.com
+  passwordValue: Temporal01!
+}
+
+script:post-response {
+  let response = res.getBody()
+  bru.setEnvVar("TOKEN", response.data?.token?? '')
+  bru.setEnvVar("RERFRESH_TOKEN", response.data?.refreshToken ?? '')
+}

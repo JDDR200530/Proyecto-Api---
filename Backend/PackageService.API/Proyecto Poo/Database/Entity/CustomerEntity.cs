@@ -1,12 +1,12 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Proyecto_Poo.Database.Entity
 {
     [Table("customers", Schema = "dbo")]
-    public class CustomerEntity
+    public class CustomerEntity : BaseEntity
     {
-        [Key]
         [Column("customer_id")]
         public Guid CustomerId { get; set; }
 
@@ -19,6 +19,7 @@ namespace Proyecto_Poo.Database.Entity
         [Column("customer_address")]
         public string CustomerAddress { get; set; }
 
-
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
     }
 }
