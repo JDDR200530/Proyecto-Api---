@@ -4,8 +4,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Proyecto_Poo.Database.Entity
 {
     public class BaseEntity
-    {    
-    
+    {
+        [Key]
         [Column("id")]
         public Guid Id { get; set; }
 
@@ -21,6 +21,6 @@ namespace Proyecto_Poo.Database.Entity
         public string UpdatedBy { get; set; }
 
         [Column("updated_date")]
-        public DateTime UpdatedDate { get; set; }
+        public DateTime? UpdatedDate { get; set; }
     }
 }

@@ -1,24 +1,26 @@
 ﻿using Proyecto_Poo.Service.Interface;
+using System.Security.Claims;
 
 namespace Proyecto_Poo.Service
 {
     public class AuditService : IAudtiService
     {
-        private readonly IHttpContextAccessor httpContextAccessor;
+        private readonly IHttpContextAccessor _httpContextAccessor;
 
-        // Cambia el constructor a público
         public AuditService(IHttpContextAccessor httpContextAccessor)
         {
-            this.httpContextAccessor = httpContextAccessor;
+            _httpContextAccessor = httpContextAccessor;
         }
 
         public string GetUserId()
         {
-            var idClaim = httpContextAccessor.HttpContext
+            var idClaim = _httpContextAccessor.HttpContext
                 .User.Claims.Where(x => x.Type == "UserId").FirstOrDefault();
 
             return idClaim.Value;
         }
+
     }
+
 
 }

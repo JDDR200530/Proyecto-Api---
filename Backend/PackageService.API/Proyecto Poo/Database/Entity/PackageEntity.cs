@@ -7,22 +7,22 @@ namespace Proyecto_Poo.Database.Entity
     [Table("packages", Schema = "dbo")]
     public class PackageEntity : BaseEntity
     {
-        [Column("package_id")]
-        public Guid PackageId { get; set; }
+        [Required]
         [Column("order_id")]
-        public Guid OrderId { get; set; }
-
-        [ForeignKey(nameof(OrderId))]
-
-        public OrderEntity Order { get; set; }
+        public Guid OrderId { get; set; } // Clave foránea a Orders.Id
 
         [Column("package_weight")]
         [Display(Name = "Peso")]
         [Required(ErrorMessage = "El {0} es requerido")]
-
         public double PackageWeight { get; set; }
-        public virtual IEnumerable<PaymentEntity> Total { get; set; }
+
+        // Relación con Orders
+        [ForeignKey(nameof(OrderId))]
+        public virtual OrderEntity Order { get; set; } // Propiedad de navegación
+
+        // Propiedades de auditoría
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }
-}
+
+ }

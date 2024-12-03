@@ -35,7 +35,7 @@ namespace Proyecto_Poo.Database.Contex
                 logger.LogError(e, "Error inicializacion la data del API");
             }
         }
-        public static async Task LoadRolesAndUserAsync(
+        private static async Task LoadRolesAndUserAsync(
             UserManager<UserEntity> userManager,
             RoleManager<IdentityRole> roleManager,
             ILoggerFactory loggerFactory
@@ -79,7 +79,7 @@ namespace Proyecto_Poo.Database.Contex
             }
         }
 
-        public static async Task LoadOrderAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
+        private  static async Task LoadOrderAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
         {
             try
             {
@@ -89,12 +89,13 @@ namespace Proyecto_Poo.Database.Contex
 
                 if (!await context.Orders.AnyAsync())
                 {
-                    var user = await context.UserClaims.FirstOrDefaultAsync();
+                    var user = await context.Users.FirstOrDefaultAsync();
+                    
                     for (int i = 0; i < orders.Count; i++)
                     {
-                        orders[i].CreatedBy = user.UserId;
+                        orders[i].CreatedBy = user.Id;
                         orders[i].CreatedDate = DateTime.Now;
-                        orders[i].UpdatedBy = user.UserId;
+                        orders[i].UpdatedBy = user.Id;
                         orders[i].UpdatedDate = DateTime.Now;
                     }
                     context.AddRange(orders);
@@ -111,24 +112,25 @@ namespace Proyecto_Poo.Database.Contex
         {
             try
             {
+
                 var jsonFilePath = "SeedData/Package.json";
                 var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
                 var Package = JsonConvert.DeserializeObject<List<PackageEntity>>(jsonContent);
- 
+
                 if (!await context.Packages.AnyAsync())
                 {
                     var user = await context.Users.FirstOrDefaultAsync();
-                    for (int i = 0; i < Package.Count; i++)
+                    for (int i = 0; i < Package.Count; i++) 
                     {
-                       
-                         Package[i].CreatedBy = user.Id;
+                        Package[i].CreatedBy = user.Id;
                         Package[i].CreatedDate = DateTime.Now;
                         Package[i].UpdatedBy = user.Id;
                         Package[i].UpdatedDate = DateTime.Now;
                     }
                     context.AddRange(Package);
-                    await context.SaveChangesAsync();
+                    await context.SaveChangesAsync();  
                 }
+
             }
             catch (Exception e)
             {
@@ -136,6 +138,8 @@ namespace Proyecto_Poo.Database.Contex
                 logger.LogError(e, "Error al ejecutar el Seed de Package");
             }
         }
+
+
         public static async Task LoadCustomerAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
         {
             try

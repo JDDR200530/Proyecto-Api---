@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Proyecto_Poo.Migrations
 {
     /// <inheritdoc />
-    public partial class init : Migration
+    public partial class B : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -105,14 +105,13 @@ namespace Proyecto_Poo.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    customer_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    customer_name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    customer_identity = table.Column<long>(type: "bigint", nullable: false),
-                    customer_address = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    customer_name = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
+                    customer_identity = table.Column<long>(type: "bigint", maxLength: 13, nullable: false),
+                    customer_address = table.Column<string>(type: "nvarchar(500)", maxLength: 500, nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
-                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -139,15 +138,14 @@ namespace Proyecto_Poo.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     order_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    sender_name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false, collation: "SQL_Latin1_General_CP1_CI_AS"),
-                    address = table.Column<string>(type: "nvarchar(350)", maxLength: 350, nullable: false),
-                    receiver_name = table.Column<string>(type: "nvarchar(200)", maxLength: 200, nullable: false),
+                    sender_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    address = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    receiver_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
                     created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
-                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -268,13 +266,12 @@ namespace Proyecto_Poo.Migrations
                 columns: table => new
                 {
                     id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     package_weight = table.Column<double>(type: "float", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
                     created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
-                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: false)
+                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {

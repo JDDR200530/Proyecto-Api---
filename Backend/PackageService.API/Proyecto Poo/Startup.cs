@@ -33,13 +33,12 @@ namespace Proyecto_Poo
             services.AddSwaggerGen();
             services.AddHttpContextAccessor();
 
-            var name = Configuration.GetConnectionString("DefaultConnection");
-
             //Context
-            services.AddDbContext<PackageServiceDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+            services.AddDbContext<PackageServiceDbContext>(options => options.UseSqlServer(Configuration
+                .GetConnectionString("DefaultConnection")));
 
             //Servicios
-
+            services.AddTransient<IAudtiService, AuditService>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IPackageService, PackageService>();
             services.AddTransient<IAudtiService, AuditService>();

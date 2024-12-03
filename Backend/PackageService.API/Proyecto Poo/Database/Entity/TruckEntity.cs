@@ -11,7 +11,7 @@ namespace Proyecto_Poo.Database.Entity
         public Guid TruckId { get; set; }
 
         [Display(Name = "Se encuentra disponible")]
-        [Required(ErrorMessage = "El {0} del cliente es requerido")]
+        [Required]
 
         [Column("truck_available")]
         public bool TruckAvailable { get; set; }

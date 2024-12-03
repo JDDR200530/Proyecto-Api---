@@ -11,132 +11,137 @@ using System.Text;
 using Proyecto_Poo.Database.Contex;
 using System.Runtime.CompilerServices;
 using System.Security.Cryptography;
+using Proyecto_Poo.Constanst;
 
 namespace Proyecto_Poo.Service
 {
     public class AuthService : IAuthService
     {
-        private readonly SignInManager<UserEntity> signInManager;
-        private readonly UserManager<UserEntity> userManager;
-        private readonly IConfiguration configuration;
-        private readonly ILogger<AuthService> logger;
-        private readonly PackageServiceDbContext context;
+        private readonly SignInManager<UserEntity> _signInManager;
+        private readonly UserManager<UserEntity> _userManager;
+        private readonly IConfiguration _configuration;
+        private readonly ILogger<AuthService> _logger;
+        private readonly PackageServiceDbContext _context;
 
         public AuthService(
             SignInManager<UserEntity> signInManager,
             UserManager<UserEntity> userManager,
             IConfiguration configuration,
             ILogger<AuthService> logger,
-            PackageServiceDbContext context
-        )
+            PackageServiceDbContext  context
+            )
         {
-            this.signInManager = signInManager;
-            this.userManager = userManager;
-            this.configuration = configuration;
-            this.logger = logger;
-            this.context = context;
+            this._signInManager = signInManager;
+            this._userManager = userManager;
+            this._configuration = configuration;
+            this._logger = logger;
+            this._context = context;
         }
-
-        public ClaimsPrincipal GetTokenPrincipal(string token)
-        {
-            var securityKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration.GetSection("JWT:Secret").Value));
-
-            var validation = new TokenValidationParameters
-            {
-                IssuerSigningKey = securityKey,
-                ValidateLifetime = false,
-                ValidateActor = false,
-                ValidateIssuer = false,
-                ValidateAudience = false,
-            };
-            return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
-        }
-
         public async Task<ResponseDto<LoginResponseDto>> LoginAsync(LoginDto dto)
         {
-            var result = await signInManager
-                .PasswordSignInAsync(dto.Email, dto.Password, isPersistent: false, lockoutOnFailure: false);
-
+            var result = await _signInManager
+                .PasswordSignInAsync(dto.Email,
+                                     dto.Password,
+                                     isPersistent: false,
+                                     lockoutOnFailure: false);
             if (result.Succeeded)
             {
-                var userEntity = await userManager.FindByEmailAsync(dto.Email);
+                // Generación del token
+                var userEntity = await _userManager.FindByEmailAsync(dto.Email);
 
-                // Claim list creation
-                var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Email, userEntity.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("UserId", userEntity.Id)
-                };
+                // ClaimList creation
+                List<Claim> authClaims = await GetClaims(userEntity);
 
-                var userRoles = await userManager.GetRolesAsync(userEntity);
-                foreach (var role in userRoles)
-                {
-                    authClaims.Add(new Claim(ClaimTypes.Role, role));
-                }
+                var jwtToken = GetToken(authClaims);
 
-                var jwtToken = GenerateToken(authClaims);
+                var refreshToken = GenerateRefreshTokenString();
+                userEntity.RefreshToken = refreshToken;
+                userEntity.RefreshTokenExpired = DateTime.Now
+                    .AddMinutes(int.Parse(_configuration["JWT:RefreshTokenExpire"] ?? "30"));
+                _context.Entry(userEntity);
+                await _context.SaveChangesAsync();
 
                 return new ResponseDto<LoginResponseDto>
                 {
                     StatusCode = 200,
                     Status = true,
-                    Message = "Inicio de sesión satisfactorio",
+                    Message = "Inicio de sesion satisfactorio",
                     Data = new LoginResponseDto
                     {
                         FullName = $"{userEntity.FirstName} {userEntity.LastName}",
                         Email = userEntity.Email,
                         Token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
-                        TokenExpiration = jwtToken.ValidTo
+                        TokenExpiration = jwtToken.ValidTo,
+                        RefreshToken = refreshToken
                     }
                 };
             }
-
             return new ResponseDto<LoginResponseDto>
             {
-                StatusCode = 401,
                 Status = false,
-                Message = "Error en el inicio de sesión"
+                StatusCode = 401,
+                Message = "Fallo el inicio de sesión"
             };
+        }
+
+        private async Task<List<Claim>> GetClaims(UserEntity userEntity)
+        {
+            var authClaims = new List<Claim>
+                {
+                    new Claim(ClaimTypes.Email, userEntity.Email),
+                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
+                    new Claim("UserId", userEntity.Id),
+                };
+
+            var userRoles = await _userManager.GetRolesAsync(userEntity);
+
+            foreach (var role in userRoles)
+            {
+                authClaims.Add(new Claim(ClaimTypes.Role, role));
+            }
+
+            return authClaims;
         }
 
         public async Task<ResponseDto<LoginResponseDto>> RefreshTokenAsync(RefreshTokenDto dto)
         {
+            //throw new NotImplementedException();
             string email = "";
             try
             {
                 var principal = GetTokenPrincipal(dto.Token);
-                var emailClaim = principal.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
-                var userIdClaim = principal.Claims.Where(x => x.Type == "UserId").FirstOrDefault();
+                var emailClaim = principal.Claims.FirstOrDefault(c =>
+                c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/emailaddress");
+                var userIdCLaim = principal.Claims.Where(x => x.Type == "UserId").FirstOrDefault();
+                //_logger.LogInformation($"Correo del Usuario es: {emailClaim.Value}");
+                //_logger.LogInformation($"Id del Usuario es: {userIdCLaim.Value}");
                 if (emailClaim is null)
                 {
                     return new ResponseDto<LoginResponseDto>
                     {
                         StatusCode = 401,
                         Status = false,
-                        Message = "Acceso no autorizado, no se encontro un correo valido"
+                        Message = "Acceso no autorizado: No se encontro un correo valido."
                     };
-
                 }
-
                 email = emailClaim.Value;
-                var userEntity = await userManager.FindByEmailAsync(email);
+                var userEntity = await _userManager.FindByEmailAsync(email);
                 if (userEntity is null)
                 {
                     return new ResponseDto<LoginResponseDto>
                     {
                         StatusCode = 401,
                         Status = false,
-                        Message = "Acceso no autorizado : el usuario no existe"
+                        Message = "Acceso no autorizado: El usuario no existe."
                     };
-                };
+                }
                 if (userEntity.RefreshToken != dto.RefreshToken)
                 {
                     return new ResponseDto<LoginResponseDto>
                     {
                         StatusCode = 401,
                         Status = false,
-                        Message = "Acceso no autorizado: la sesion no es valida"
+                        Message = "Acceso no autorizado: La sesión no es valida."
                     };
                 }
                 if (userEntity.RefreshTokenExpired < DateTime.Now)
@@ -145,11 +150,11 @@ namespace Proyecto_Poo.Service
                     {
                         StatusCode = 401,
                         Status = false,
-                        Message = "Acceso no autorizado: La sesion ha expirado"
+                        Message = "Acceso no autorizado: La sesión ha expirado."
                     };
                 }
-                List<Claim> autClaims = await GetClaims(userEntity);
-                var jwtToken = GetToken(autClaims);
+                List<Claim> authClaims = await GetClaims(userEntity);
+                var jwtToken = GetToken(authClaims);
                 var loginResponseDto = new LoginResponseDto
                 {
                     Email = email,
@@ -159,96 +164,29 @@ namespace Proyecto_Poo.Service
                     RefreshToken = GenerateRefreshTokenString()
                 };
                 userEntity.RefreshToken = loginResponseDto.RefreshToken;
-                userEntity.RefreshTokenExpired = DateTime.Now.AddMinutes(int.Parse(configuration["JWT:RefreshTokenExpire"] ?? "30"));
-
-                context.Entry(userEntity);
-                await context.SaveChangesAsync();
+                userEntity.RefreshTokenExpired = DateTime.Now
+                    .AddMinutes(int.Parse(_configuration["JWT:RefreshTokenExpire"] ?? "30"));
+                _context.Entry(userEntity);
+                await _context.SaveChangesAsync();
                 return new ResponseDto<LoginResponseDto>
                 {
-                    Status = true,
                     StatusCode = 200,
-                    Message = "Token renovado exitosamente",
+                    Status = true,
+                    Message = "Token renovado satisfactoriamente",
                     Data = loginResponseDto
                 };
             }
             catch (Exception e)
             {
-                logger.LogError(exception: e, message: e.Message);
+                _logger.LogError(exception: e, message: e.Message);
                 return new ResponseDto<LoginResponseDto>
                 {
                     StatusCode = 500,
                     Status = false,
-                    Message = "Osurrio un error al renovar el token"
+                    Message = "Ocurrio un error al renovar el token"
                 };
             }
         }
-
-        public async Task<ResponseDto<LoginResponseDto>> RegisterAsync(RegisterDto dto)
-        {
-            var user = new UserEntity
-            {
-                FirstName = dto.FirstName,
-                LastName = dto.LastName,
-                UserName = dto.Email,
-                Email = dto.Email
-            };
-
-            var result = await userManager.CreateAsync(user, dto.Password);
-
-            if (result.Succeeded)
-            {
-                var userEntity = await userManager.FindByEmailAsync(dto.Email);
-
-                // Assigning default role
-                await userManager.AddToRoleAsync(userEntity, "USER");
-
-                // Claim list creation
-                var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Email, userEntity.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("UserId", userEntity.Id),
-                    new Claim(ClaimTypes.Role, "USER")
-                };
-
-                var jwtToken = GenerateToken(authClaims);
-
-                return new ResponseDto<LoginResponseDto>
-                {
-                    StatusCode = 200,
-                    Status = true,
-                    Message = "Registro de usuario realizado satisfactoriamente",
-                    Data = new LoginResponseDto
-                    {
-                        FullName = $"{userEntity.FirstName} {userEntity.LastName}",
-                        Email = userEntity.Email,
-                        Token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
-                        TokenExpiration = jwtToken.ValidTo
-                    }
-                };
-            }
-
-            return new ResponseDto<LoginResponseDto>
-            {
-                StatusCode = 400,
-                Status = false,
-                Message = "Error al registrar el usuario"
-            };
-        }
-
-        private JwtSecurityToken GenerateToken(List<Claim> authClaims)
-        {
-            var authSigninKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]));
-
-            return new JwtSecurityToken(
-                issuer: configuration["JWT:ValidIssuer"],
-                audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddMinutes(int.Parse(configuration["JWT:Expires"] ?? "15")),
-                claims: authClaims,
-                signingCredentials: new SigningCredentials(authSigninKey, SecurityAlgorithms.HmacSha256)
-            );
-        }
-
         private string GenerateRefreshTokenString()
         {
             var randomNumber = new byte[64];
@@ -259,35 +197,82 @@ namespace Proyecto_Poo.Service
             return Convert.ToBase64String(randomNumber);
         }
 
-        private JwtSecurityToken GetToken (List<Claim> authClaims)
+        public async Task<ResponseDto<LoginResponseDto>> RegisterAsync(RegisterDto dto)
         {
-            var authSigninKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Secret"]));
-            return new JwtSecurityToken
-                (
-                  issuer: configuration["JWT:ValidIssuer"],
-                audience: configuration["JWT:ValidAudience"],
-                expires: DateTime.Now.AddMinutes(int.Parse(configuration["JWT:Expires"] ?? "15")),
+            var user = new UserEntity
+            {
+                FirstName = dto.FirstName,
+                LastName = dto.LastName,
+                UserName = dto.Email,
+                Email = dto.Email,
+            };
+
+            var result = await _userManager.CreateAsync(user, dto.Password);
+
+            if (result.Succeeded)
+            {
+                var userEntity = await _userManager.FindByEmailAsync(dto.Email);
+                await _userManager.AddToRoleAsync(userEntity, RolesConstant.USER);
+                var authClaims = await GetClaims(userEntity);
+
+                var jwtToken = GetToken(authClaims);
+
+                var refreshToken = GenerateRefreshTokenString();
+                userEntity.RefreshToken = refreshToken;
+                userEntity.RefreshTokenExpired = DateTime.Now
+                    .AddMinutes(int.Parse(_configuration["JWT:RefreshTokenExpire"] ?? "30"));
+                _context.Entry(userEntity);
+                await _context.SaveChangesAsync();
+
+                return new ResponseDto<LoginResponseDto>
+                {
+                    StatusCode = 200,
+                    Status = true,
+                    Message = "Registro de usuario realizado satisfactoriamente.",
+                    Data = new LoginResponseDto
+                    {
+                        FullName = $"{userEntity.FirstName} {userEntity.LastName}",
+                        Email = userEntity.Email,
+                        Token = new JwtSecurityTokenHandler().WriteToken(jwtToken),
+                        TokenExpiration = jwtToken.ValidTo,
+                        RefreshToken = refreshToken,
+                    }
+                };
+            }
+            return new ResponseDto<LoginResponseDto>
+            {
+                StatusCode = 400,
+                Status = false,
+                Message = "Error al registrar el usuario"
+            };
+        }
+        private JwtSecurityToken GetToken(List<Claim> authClaims)
+        {
+            var authSigninKey = new SymmetricSecurityKey(Encoding.UTF8
+                .GetBytes(_configuration["JWT:Secret"]));
+            return new JwtSecurityToken(
+                issuer: _configuration["JWT:ValidIssuer"],
+                audience: _configuration["JWT:ValidAudience"],
+                expires: DateTime.Now.AddMinutes(int.Parse(_configuration["JWT:Expires"] ?? "15")),
                 claims: authClaims,
                 signingCredentials: new SigningCredentials(authSigninKey,
                     SecurityAlgorithms.HmacSha256)
-                );
+            );
         }
-        private async Task<List<Claim>> GetClaims(UserEntity userEntity)
+
+        public ClaimsPrincipal GetTokenPrincipal(string token)
         {
-            var authClaims = new List<Claim>
-                {
-                    new Claim(ClaimTypes.Email, userEntity.Email),
-                    new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
-                    new Claim("UserId", userEntity.Id),
-                };
-
-            var userRoles = await userManager.GetRolesAsync(userEntity);
-            foreach (var role in userRoles)
+            var securityKey = new SymmetricSecurityKey(Encoding
+                .UTF8.GetBytes(_configuration.GetSection("JWT:Secret").Value));
+            var validation = new TokenValidationParameters
             {
-                authClaims.Add(new Claim(ClaimTypes.Role, role));
-            }
-
-            return authClaims;
+                IssuerSigningKey = securityKey,
+                ValidateLifetime = false,
+                ValidateActor = false,
+                ValidateIssuer = false,
+                ValidateAudience = false
+            };
+            return new JwtSecurityTokenHandler().ValidateToken(token, validation, out _);
         }
     }
 }

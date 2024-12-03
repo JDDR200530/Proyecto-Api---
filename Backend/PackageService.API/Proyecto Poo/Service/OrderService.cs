@@ -47,7 +47,7 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+                var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
                 
                 if (orderEntity == null)
                 {
@@ -83,7 +83,7 @@ namespace Proyecto_Poo.Service
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {
             var orderEntity = _mapper.Map<OrderEntity>(dto);
-            orderEntity.OrderId = new Guid();
+            orderEntity.Id = new Guid();
             orderEntity.OrderDate = DateTime.Now;
             
             _context.Orders.Add(orderEntity);
@@ -104,7 +104,7 @@ namespace Proyecto_Poo.Service
         }
         public async Task<ResponseDto<OrderDto>> EditAsync(OrderEditDto dto, Guid id) 
         {
-            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
 
             if (orderEntity == null)
             {
@@ -134,7 +134,7 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<OrderDto>> DeleteAsync(Guid id)
         {
-            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.OrderId == id);
+            var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
 
             if (orderEntity == null)
             {

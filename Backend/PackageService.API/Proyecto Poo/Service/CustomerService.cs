@@ -53,7 +53,7 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                var customerEntity = await _context.Customers.FirstOrDefaultAsync(o => o.CustomerId == id);
+                var customerEntity = await _context.Customers.FirstOrDefaultAsync(o => o.Id == id);
 
                 if (customerEntity == null)
                 {
@@ -115,7 +115,7 @@ namespace Proyecto_Poo.Service
             }
 
             var customerEntity = _mapper.Map<CustomerEntity>(dto);
-            customerEntity.CustomerId = Guid.NewGuid(); 
+            customerEntity.Id = Guid.NewGuid(); 
 
             _context.Customers.Add(customerEntity);
             await _context.SaveChangesAsync();
@@ -131,7 +131,7 @@ namespace Proyecto_Poo.Service
         }
         public async Task<ResponseDto<Dtos.Clientes.CustomerDto>> EditAsync(CustomerEditDto dto, Guid id)
         {
-            var customerEntity = await _context.Customers.FirstOrDefaultAsync(x => x.CustomerId == id);
+            var customerEntity = await _context.Customers.FirstOrDefaultAsync(x => x.Id == id);
             if (customerEntity == null)
             {
                 return new ResponseDto<Dtos.Clientes.CustomerDto>
@@ -158,7 +158,7 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<Dtos.Clientes.CustomerDto>> DeleteAsync(Guid id)
         {
-            var customerEntity = await _context.Customers.FirstOrDefaultAsync(x => x.CustomerId == id);
+            var customerEntity = await _context.Customers.FirstOrDefaultAsync(x => x.Id== id);
             if (customerEntity == null) {
                 return new ResponseDto<Dtos.Clientes.CustomerDto>
                 {

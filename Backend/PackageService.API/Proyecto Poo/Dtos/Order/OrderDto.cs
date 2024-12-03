@@ -2,7 +2,7 @@
 {
     public class OrderDto
     {
-        public Guid OrderId { get; set; }
+        public Guid Id { get; set; }
 
         public DateTime OrderDate  { get; set; }
 
@@ -11,5 +11,7 @@
         public string Address { get; set; }
 
         public string ReceiverName { get; set; }
+
+
     }
 }

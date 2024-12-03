@@ -41,7 +41,7 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                var orderEntity = await _context.Packages.FirstOrDefaultAsync(o => o.PackageId == id);
+                var orderEntity = await _context.Packages.FirstOrDefaultAsync(o => o.Id == id);
 
                 if (orderEntity == null)
                 {
@@ -78,7 +78,7 @@ namespace Proyecto_Poo.Service
         public async Task<ResponseDto<PackageDto>> CreatePackageAsync(PackageCreateDto dto)
         {
             var packageEntity = _mapper.Map<PackageEntity>(dto);
-            packageEntity.PackageId = new Guid();
+            packageEntity.Id = new Guid();
 
             _context.Packages.Add(packageEntity);
 
@@ -98,7 +98,7 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<PackageDto>> EditPackageAsync(PackageEditDto dto, Guid id)
         {
-            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.PackageId == id);
+            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.Id == id);
 
             if (packageEntity == null)
             {
@@ -130,7 +130,7 @@ namespace Proyecto_Poo.Service
        
         public async Task<ResponseDto<PackageDto>> DeletePackageAsync(Guid id)
         {
-            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.PackageId == id);
+            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.Id == id);
 
             if (packageEntity == null)
             {

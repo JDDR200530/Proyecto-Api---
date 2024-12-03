@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto APi\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {}
+    "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {}
   },
   "projects": {
-    "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto APi\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {
+    "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto APi\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
+        "projectUniqueName": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
         "projectName": "PackageService",
-        "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto APi\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
+        "projectPath": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\PackageService.csproj",
         "packagesPath": "C:\\Users\\JOSUE DAVID\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto APi\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\obj\\",
+        "outputPath": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -57,6 +57,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.10, )"
+            },
+            "Microsoft.AspNetCore.Http": {
+              "target": "Package",
+              "version": "[2.2.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",

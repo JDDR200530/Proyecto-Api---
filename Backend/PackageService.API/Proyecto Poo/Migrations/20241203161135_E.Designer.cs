@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20241111172344_init")]
-    partial class init
+    [Migration("20241203161135_E")]
+    partial class E
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -178,19 +178,20 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnName("created_date");
 
                     b.Property<string>("CustomerAddress")
-                        .HasColumnType("nvarchar(max)")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
                         .HasColumnName("customer_address");
 
-                    b.Property<Guid>("CustomerId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("customer_id");
-
                     b.Property<long>("CustomerIdentity")
+                        .HasMaxLength(13)
                         .HasColumnType("bigint")
                         .HasColumnName("customer_identity");
 
                     b.Property<string>("CustomerName")
-                        .HasColumnType("nvarchar(max)")
+                        .IsRequired()
+                        .HasMaxLength(500)
+                        .HasColumnType("nvarchar(500)")
                         .HasColumnName("customer_name");
 
                     b.Property<string>("UpdatedBy")
@@ -199,7 +200,7 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("updated_by");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("updated_date");
 
@@ -221,8 +222,8 @@ namespace Proyecto_Poo.Migrations
 
                     b.Property<string>("Address")
                         .IsRequired()
-                        .HasMaxLength(350)
-                        .HasColumnType("nvarchar(350)")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
                         .HasColumnName("address");
 
                     b.Property<string>("CreatedBy")
@@ -238,35 +239,36 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("order_date");
 
-                    b.Property<Guid>("OrderId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("order_id");
-
                     b.Property<string>("ReceiverName")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
                         .HasColumnName("receiver_name");
 
                     b.Property<string>("SenderName")
                         .IsRequired()
-                        .HasMaxLength(200)
-                        .HasColumnType("nvarchar(200)")
-                        .HasColumnName("sender_name")
-                        .UseCollation("SQL_Latin1_General_CP1_CI_AS");
+                        .HasMaxLength(300)
+                        .HasColumnType("nvarchar(300)")
+                        .HasColumnName("sender_name");
+
+                    b.Property<Guid>("TruckId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("truck_id");
 
                     b.Property<string>("UpdatedBy")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("updated_by");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("updated_date");
 
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedBy");
+
+                    b.HasIndex("TruckId");
 
                     b.HasIndex("UpdatedBy");
 
@@ -294,10 +296,6 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("order_id");
 
-                    b.Property<Guid>("PackageId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("package_id");
-
                     b.Property<double>("PackageWeight")
                         .HasColumnType("float")
                         .HasColumnName("package_weight");
@@ -308,7 +306,7 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("nvarchar(450)")
                         .HasColumnName("updated_by");
 
-                    b.Property<DateTime>("UpdatedDate")
+                    b.Property<DateTime?>("UpdatedDate")
                         .HasColumnType("datetime2")
                         .HasColumnName("updated_date");
 
@@ -575,12 +573,20 @@ namespace Proyecto_Poo.Migrations
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", "Truck")
+                        .WithMany()
+                        .HasForeignKey("TruckId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
                         .WithMany()
                         .HasForeignKey("UpdatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("CreatedByUser");
+
+                    b.Navigation("Truck");
 
                     b.Navigation("UpdatedByUser");
                 });
@@ -594,7 +600,7 @@ namespace Proyecto_Poo.Migrations
                         .IsRequired();
 
                     b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
-                        .WithMany("Package")
+                        .WithMany("Packages")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -620,7 +626,7 @@ namespace Proyecto_Poo.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "IdPackage")
-                        .WithMany("Total")
+                        .WithMany()
                         .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -658,12 +664,7 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderEntity", b =>
                 {
-                    b.Navigation("Package");
-                });
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
-                {
-                    b.Navigation("Total");
+                    b.Navigation("Packages");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>

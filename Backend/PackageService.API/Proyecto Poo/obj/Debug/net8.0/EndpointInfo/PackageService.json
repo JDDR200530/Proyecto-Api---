@@ -903,7 +903,7 @@
       "OrderDto": {
         "type": "object",
         "properties": {
-          "orderId": {
+          "id": {
             "type": "string",
             "format": "uuid"
           },
@@ -997,7 +997,7 @@
       "PackageDto": {
         "type": "object",
         "properties": {
-          "packageId": {
+          "id": {
             "type": "string",
             "format": "uuid"
           },

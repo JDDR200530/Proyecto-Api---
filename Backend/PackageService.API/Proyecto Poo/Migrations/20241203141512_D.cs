@@ -5,7 +5,7 @@
 namespace Proyecto_Poo.Migrations
 {
     /// <inheritdoc />
-    public partial class Tablas : Migration
+    public partial class D : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
