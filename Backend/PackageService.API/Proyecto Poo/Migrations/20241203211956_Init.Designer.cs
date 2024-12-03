@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20241203131827_C")]
-    partial class C
+    [Migration("20241203211956_Init")]
+    partial class Init
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,6 +251,10 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasColumnName("sender_name");
 
+                    b.Property<Guid>("TruckId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("truck_id");
+
                     b.Property<string>("UpdatedBy")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)")
@@ -263,6 +267,8 @@ namespace Proyecto_Poo.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedBy");
+
+                    b.HasIndex("TruckId");
 
                     b.HasIndex("UpdatedBy");
 
@@ -567,12 +573,20 @@ namespace Proyecto_Poo.Migrations
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
+                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", "Truck")
+                        .WithMany("Order")
+                        .HasForeignKey("TruckId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
                         .WithMany()
                         .HasForeignKey("UpdatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("CreatedByUser");
+
+                    b.Navigation("Truck");
 
                     b.Navigation("UpdatedByUser");
                 });
@@ -660,6 +674,8 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>
                 {
+                    b.Navigation("Order");
+
                     b.Navigation("Truck");
                 });
 #pragma warning restore 612, 618

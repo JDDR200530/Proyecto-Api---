@@ -29,12 +29,6 @@ namespace Proyecto_Poo.Database.Entity
         [Column("receiver_name")]
         public string ReceiverName { get; set; }
 
-        [Column("truck_id")]
-        public Guid TruckId { get; set; }
-
-        [ForeignKey(nameof(TruckId))]
-        public virtual TruckEntity Truck { get; set; }
-
         public virtual ICollection<PackageEntity> Packages { get; set; } = new List<PackageEntity>();
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }

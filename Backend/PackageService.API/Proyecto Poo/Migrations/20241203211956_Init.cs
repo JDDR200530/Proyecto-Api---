@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Proyecto_Poo.Migrations
 {
     /// <inheritdoc />
-    public partial class B : Migration
+    public partial class Init : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -142,6 +142,7 @@ namespace Proyecto_Poo.Migrations
                     sender_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     address = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     receiver_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
+                    truck_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
                     created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
@@ -150,6 +151,13 @@ namespace Proyecto_Poo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orders", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_orders_trucks_truck_id",
+                        column: x => x.truck_id,
+                        principalSchema: "dbo",
+                        principalTable: "trucks",
+                        principalColumn: "truck_id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_orders_users_created_by",
                         column: x => x.created_by,
@@ -386,6 +394,12 @@ namespace Proyecto_Poo.Migrations
                 column: "created_by");
 
             migrationBuilder.CreateIndex(
+                name: "IX_orders_truck_id",
+                schema: "dbo",
+                table: "orders",
+                column: "truck_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_orders_updated_by",
                 schema: "dbo",
                 table: "orders",
@@ -522,10 +536,6 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo");
 
             migrationBuilder.DropTable(
-                name: "trucks",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
                 name: "roles",
                 schema: "security");
 
@@ -535,6 +545,10 @@ namespace Proyecto_Poo.Migrations
 
             migrationBuilder.DropTable(
                 name: "orders",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
+                name: "trucks",
                 schema: "dbo");
 
             migrationBuilder.DropTable(

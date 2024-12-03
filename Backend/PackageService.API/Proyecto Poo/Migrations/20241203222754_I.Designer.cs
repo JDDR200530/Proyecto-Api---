@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20241203141512_D")]
-    partial class D
+    [Migration("20241203222754_I")]
+    partial class I
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

@@ -4,192 +4,167 @@
     "SenderName": "Carlos Pineda",
     "Address": "Santa Rosa de Copan",
     "ReceiverName": "Juan Perez",
-    "OrderDate": "2024-11-29",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
-
+    "OrderDate": "2024-11-29"
   },
   {
     "Id": "7e4d2f82-cb9f-4b67-8257-09a2f3fba4c9",
     "SenderName": "Ana Morales",
     "Address": "Tegucigalpa",
     "ReceiverName": "Luis Fernández",
-    "OrderDate": "2024-12-01",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-01"
   },
   {
     "Id": "3f2c1d7f-5f0e-4c80-b06e-0d41f5bde7f5",
     "SenderName": "Marta López",
     "Address": "San Pedro Sula",
     "ReceiverName": "Jorge Martinez",
-    "OrderDate": "2024-12-02",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-02"
   },
   {
     "Id": "d1e67c21-737f-487b-bb5a-7872d568e582",
     "SenderName": "Pedro Gómez",
     "Address": "La Ceiba",
     "ReceiverName": "María Rodríguez",
-    "OrderDate": "2024-12-03",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-03"
   },
   {
     "Id": "8a4f2d85-8030-4d7d-bb76-f0a1b4b3e5d8",
     "SenderName": "Sofia Castillo",
     "Address": "Choluteca",
     "ReceiverName": "Roberto García",
-    "OrderDate": "2024-12-04",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-04"
   },
   {
     "Id": "e61c78e4-6d45-47ff-8769-c5b7f09201da",
     "SenderName": "Raúl Hernández",
     "Address": "Gracias",
     "ReceiverName": "Valeria Martínez",
-    "OrderDate": "2024-12-05",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-05"
   },
   {
     "Id": "9dbeef67-6340-4669-bc76-94a40a58e16d",
     "SenderName": "Patricia Morales",
     "Address": "Comayagua",
     "ReceiverName": "Felipe González",
-    "OrderDate": "2024-12-06",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-06"
   },
   {
     "Id": "c5c78d88-69c2-43f2-b5c2-6e1d8d02d4e3",
     "SenderName": "Antonio Ruiz",
     "Address": "El Paraíso",
     "ReceiverName": "Claudia Castro",
-    "OrderDate": "2024-12-07",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-07"
   },
   {
     "Id": "4b7c8d6a-c7d0-4b68-8b63-92d21f3be89a",
     "SenderName": "Laura Vargas",
     "Address": "Yoro",
     "ReceiverName": "Miguel Reyes",
-    "OrderDate": "2024-12-08",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-08"
   },
   {
     "Id": "a6b8c2d4-81b3-4b66-87a7-9b3e5b85e12f",
     "SenderName": "Oscar Fernández",
     "Address": "Olancho",
     "ReceiverName": "Sandra Morales",
-    "OrderDate": "2024-12-09",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-09"
   },
   {
     "Id": "a4d3b5ef-5d21-4d2b-8d34-76fa1bfc43a0",
     "SenderName": "Carla Pérez",
     "Address": "Colón",
     "ReceiverName": "Eduardo López",
-    "OrderDate": "2024-12-10",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-10"
   },
   {
     "Id": "8f6b2e0d-00c5-4c1f-8a9e-cc735ef6b93e",
     "SenderName": "Javier Rivas",
     "Address": "Atlantida",
     "ReceiverName": "Angela Vega",
-    "OrderDate": "2024-12-11",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-11"
   },
   {
     "Id": "4e12c2de-8e1c-4d76-bec4-8dcf3a12454e",
     "SenderName": "Nadia Morales",
     "Address": "Santa Bárbara",
     "ReceiverName": "Sergio Pérez",
-    "OrderDate": "2024-12-12",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-12"
   },
   {
     "Id": "ab4c5d1b-34dc-43b7-88eb-08909a7c7f8a",
     "SenderName": "Daniela Ortega",
     "Address": "Islas de la Bahía",
     "ReceiverName": "Alejandro Mendoza",
-    "OrderDate": "2024-12-13",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-13"
   },
   {
     "Id": "d0a2e4f3-2f67-456d-b5e3-4c5f917f5e7d",
     "SenderName": "Gabriel Medina",
     "Address": "Lempira",
     "ReceiverName": "Julia Rivera",
-    "OrderDate": "2024-12-14",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-14"
   },
   {
     "Id": "b2a1c0f6-4176-4d8b-8a64-22a9f4f3a877",
     "SenderName": "Jessica Ramírez",
     "Address": "Cortés",
     "ReceiverName": "Diego Morales",
-    "OrderDate": "2024-12-15",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-15"
   },
   {
     "Id": "7b90a6d2-885d-4a68-8bde-8c3c8a29d7f3",
     "SenderName": "Héctor Sánchez",
     "Address": "Francisco Morazán",
     "ReceiverName": "Rosa López",
-    "OrderDate": "2024-12-16",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-16"
   },
   {
     "Id": "6e4f1a62-69d2-4c62-9177-cdf3d8e4c67e",
     "SenderName": "Claudia Jiménez",
     "Address": "Gracias a Dios",
     "ReceiverName": "Ricardo Salgado",
-    "OrderDate": "2024-12-17",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-17"
   },
   {
     "Id": "2d9c0e4b-3a5e-409c-ae8b-d026b2c0a003",
     "SenderName": "Luis Aguilar",
     "Address": "El Paraíso",
     "ReceiverName": "Mónica Hernández",
-    "OrderDate": "2024-12-18",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-18"
   },
   {
     "Id": "e2c9a7e5-d0c6-4e58-a6d4-1e5b0f34e5a7",
     "SenderName": "Patricia Vargas",
     "Address": "Choluteca",
     "ReceiverName": "Jorge Martínez",
-    "OrderDate": "2024-12-19",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-19"
   },
   {
     "Id": "f5e5a9c7-659b-4d4d-b6a0-745d5b7e7a9c",
     "SenderName": "Ricardo Ruiz",
     "Address": "Comayagua",
     "ReceiverName": "Sara López",
-    "OrderDate": "2024-12-20",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-20"
   },
   {
     "Id": "b6c2a5f4-3d1c-4c0c-9b0e-d5a63e8d3a7a",
     "SenderName": "Diana Martínez",
     "Address": "San Pedro Sula",
     "ReceiverName": "Antonio Castro",
-    "OrderDate": "2024-12-21",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-21"
   },
   {
     "Id": "ae4e1fbd-90a5-4b6e-b0a5-009ba84d3a3e",
     "SenderName": "Oscar Salgado",
     "Address": "Tegucigalpa",
     "ReceiverName": "Natalia Morales",
-    "OrderDate": "2024-12-22",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-22"
   },
   {
     "Id": "b1f4d2f6-1a8e-4b3d-9b4d-67d93bcd4d3e",
     "SenderName": "Sandra Reyes",
     "Address": "Santa Rosa de Copan",
     "ReceiverName": "Pedro Fernández",
-    "OrderDate": "2024-12-23",
-    "TruckId": "ce5e3d84-f7ca-4961-a891-24311c5969de"
+    "OrderDate": "2024-12-23"
   }
 ]

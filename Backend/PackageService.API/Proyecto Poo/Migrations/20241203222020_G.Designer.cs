@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20241203161135_E")]
-    partial class E
+    [Migration("20241203222020_G")]
+    partial class G
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,9 +251,8 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasColumnName("sender_name");
 
-                    b.Property<Guid>("TruckId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("truck_id");
+                    b.Property<Guid?>("TruckEntityTruckId")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<string>("UpdatedBy")
                         .HasMaxLength(450)
@@ -268,7 +267,7 @@ namespace Proyecto_Poo.Migrations
 
                     b.HasIndex("CreatedBy");
 
-                    b.HasIndex("TruckId");
+                    b.HasIndex("TruckEntityTruckId");
 
                     b.HasIndex("UpdatedBy");
 
@@ -573,11 +572,10 @@ namespace Proyecto_Poo.Migrations
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", "Truck")
-                        .WithMany()
-                        .HasForeignKey("TruckId")
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", null)
+                        .WithMany("Order")
+                        .HasForeignKey("TruckEntityTruckId")
+                        .OnDelete(DeleteBehavior.Restrict);
 
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
                         .WithMany()
@@ -585,8 +583,6 @@ namespace Proyecto_Poo.Migrations
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("CreatedByUser");
-
-                    b.Navigation("Truck");
 
                     b.Navigation("UpdatedByUser");
                 });
@@ -674,6 +670,8 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>
                 {
+                    b.Navigation("Order");
+
                     b.Navigation("Truck");
                 });
 #pragma warning restore 612, 618

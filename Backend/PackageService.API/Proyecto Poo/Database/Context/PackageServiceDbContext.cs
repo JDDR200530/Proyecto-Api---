@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using Microsoft.EntityFrameworkCore.Query.Internal;
 using Proyecto_Poo.Database.Configuration;
 using Proyecto_Poo.Database.Entity;
@@ -64,40 +65,35 @@ namespace Proyecto_Poo.Database.Contex
             .HasForeignKey(a => a.OrderId)
             .OnDelete(DeleteBehavior.Restrict);
 
-            modelBuilder.Entity<TruckEntity>()
-        .HasMany(t => t.Orders) 
-        .WithOne(o => o.Truck)  
-        .HasForeignKey(o => o.TruckId) 
-        .OnDelete(DeleteBehavior.Restrict); 
+           
 
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
-            var entries = ChangeTracker.Entries()
-                .Where(e => e.Entity is BaseEntity &&
-                            (e.State == EntityState.Added || e.State == EntityState.Modified));
-            var userId = _audtiService.GetUserId();
+        //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        //{
+        //    var entries = ChangeTracker.Entries()
+        //        .Where(e => e.Entity is BaseEntity &&
+        //                    (e.State == EntityState.Added || e.State == EntityState.Modified));
 
-            foreach (var entry in entries)
-            {
-                var entity = entry.Entity as BaseEntity;
-                if (entity != null)
-                {
-                    if (entry.State == EntityState.Added)
-                    {
-                        entity.CreatedBy = userId;
-                        entity.CreatedDate = DateTime.Now;
-                    }
-                    else if (entry.State == EntityState.Modified)
-                    {
-                        entity.UpdatedBy = userId;
-                        entity.UpdatedDate = DateTime.Now;
-                    }
-                }
-            }
-            return base.SaveChangesAsync(cancellationToken);
-        }
+        //    foreach (var entry in entries)
+        //    {
+        //        var entity = entry.Entity as BaseEntity;
+        //        if (entity != null)
+        //        {
+        //            if (entry.State == EntityState.Added)
+        //            {
+        //                entity.CreatedBy = _audtiService.GetUserId();
+        //                entity.CreatedDate = DateTime.Now;
+        //            }
+        //            else if (entry.State == EntityState.Modified)
+        //            {
+        //                entity.UpdatedBy = _audtiService.GetUserId();
+        //                entity.UpdatedDate = DateTime.Now;
+        //            }
+        //        }
+        //    }
+        //    return base.SaveChangesAsync(cancellationToken);
+        //}
 
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PackageEntity> Packages { get; set; }

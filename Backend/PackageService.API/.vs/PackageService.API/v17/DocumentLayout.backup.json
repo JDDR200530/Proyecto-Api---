@@ -3,56 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\service\\truckservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\service\\truckservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\entity\\truckentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203162958_F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20241203162958_F.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\helpers\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\helpers\\automapperprofile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\dtos\\trucks\\truckdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\dtos\\trucks\\truckdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\dtos\\order\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\dtos\\order\\orderdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\context\\packageservicedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\context\\packageservicedbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\seeddata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\seeddata\\order.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\service\\interface\\itruckservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\service\\interface\\itruckservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\context\\packageserviceseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\context\\packageserviceseeder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\seeddata\\trucks.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\seeddata\\trucks.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222754_I.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20241203222754_I.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\entity\\orderentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\entity\\orderentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\configuration\\customerconfiguration.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\database\\entity\\packageentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222020_G.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20241203222020_G.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|c:\\users\\josue david\\documents\\lenguaje de programacion\\proyecto lenguajes\\proyecto-api---\\backend\\packageservice.api\\proyecto poo\\service\\interface\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FFC0CB5F-CBC7-49B9-B5AF-EF87098F5E96}|Proyecto Poo\\PackageService.csproj|solutionrelative:proyecto poo\\service\\interface\\iauthservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203211956_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Proyecto Poo\\Migrations\\20241203211956_Init.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -62,110 +50,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 10,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "20241203162958_F.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203162958_F.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20241203162958_F.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203162958_F.cs",
-              "RelativeToolTip": "Proyecto Poo\\Migrations\\20241203162958_F.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:29:58.529Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "AutoMapperProfile.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
-              "RelativeToolTip": "Proyecto Poo\\Helpers\\AutoMapperProfile.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAADwvy8AAAAzAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:23:27.74Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "TruckDto.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
-              "RelativeToolTip": "Proyecto Poo\\Dtos\\Trucks\\TruckDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAHAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:21:31.826Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "OrderDto.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
-              "RelativeToolTip": "Proyecto Poo\\Dtos\\Order\\OrderDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:21:16.263Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "TruckEntity.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAABoAAAAAAAAAAAAAAA==",
+              "Title": "PackageServiceDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Context\\PackageServiceDbContext.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAEMAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T16:14:38.809Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "trucks.json",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\trucks.json",
-              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\trucks.json",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\trucks.json",
-              "RelativeToolTip": "Proyecto Poo\\SeedData\\trucks.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-03T16:13:18.202Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Order.json",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Order.json",
-              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Order.json",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Order.json",
-              "RelativeToolTip": "Proyecto Poo\\SeedData\\Order.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-03T16:03:20.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "OrderEntity.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
-              "ViewState": "AgIAAA4AAAAAAAAAAAAgwCsAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T15:58:26.121Z",
+              "WhenOpened": "2024-12-03T22:50:48.715Z",
               "EditorCaption": ""
             },
             {
@@ -174,67 +71,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "ITruckService.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\Interface\\ITruckService.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\Interface\\ITruckService.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\Interface\\ITruckService.cs",
-              "RelativeToolTip": "Proyecto Poo\\Service\\Interface\\ITruckService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "TruckEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\TruckEntity.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAowBYAAAAiAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T14:52:31.57Z",
+              "WhenOpened": "2024-12-03T22:45:21.819Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "TruckService.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\TruckService.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\TruckService.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\TruckService.cs",
-              "RelativeToolTip": "Proyecto Poo\\Service\\TruckService.cs",
-              "ViewState": "AgIAAEwAAAAAAAAAAAAmwFAAAAAvAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "20241203222754_I.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222754_I.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20241203222754_I.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222754_I.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20241203222754_I.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T14:52:05.412Z",
+              "WhenOpened": "2024-12-03T22:27:55.059Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "20241203222020_G.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222020_G.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20241203222020_G.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203222020_G.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20241203222020_G.cs",
+              "ViewState": "AgIAAAcAAACApUfHQNMowAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T22:20:20.518Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "PackageEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\PackageEntity.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T22:19:13.817Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "OrderEntity.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "RelativeToolTip": "Proyecto Poo\\Database\\Entity\\OrderEntity.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T22:18:53.713Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Order.json",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Order.json",
+              "RelativeDocumentMoniker": "Proyecto Poo\\SeedData\\Order.json",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\SeedData\\Order.json",
+              "RelativeToolTip": "Proyecto Poo\\SeedData\\Order.json",
+              "ViewState": "AgIAAI4AAAAAAAAAAAAUwKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-12-03T22:13:26.477Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Startup.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Startup.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Startup.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Startup.cs",
+              "RelativeToolTip": "Proyecto Poo\\Startup.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-03T21:27:32.393Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "PackageServiceSeeder.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Context\\PackageServiceSeeder.cs",
-              "ViewState": "AgIAAI4AAAAAAAAAAAAkwJwAAAA3AAAAAAAAAA==",
+              "Title": "IAuthService.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\Interface\\IAuthService.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Service\\Interface\\IAuthService.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Service\\Interface\\IAuthService.cs",
+              "RelativeToolTip": "Proyecto Poo\\Service\\Interface\\IAuthService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T14:20:57.439Z",
+              "WhenOpened": "2024-12-03T21:26:26.874Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "CustomerConfiguration.cs",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Configuration\\CustomerConfiguration.cs",
-              "RelativeDocumentMoniker": "Proyecto Poo\\Database\\Configuration\\CustomerConfiguration.cs",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Database\\Configuration\\CustomerConfiguration.cs",
-              "RelativeToolTip": "Proyecto Poo\\Database\\Configuration\\CustomerConfiguration.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "20241203211956_Init.cs",
+              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203211956_Init.cs",
+              "RelativeDocumentMoniker": "Proyecto Poo\\Migrations\\20241203211956_Init.cs",
+              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\Migrations\\20241203211956_Init.cs",
+              "RelativeToolTip": "Proyecto Poo\\Migrations\\20241203211956_Init.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-12-03T14:14:42.909Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Proyecto Poo\\appsettings.Development.json",
-              "ToolTip": "C:\\Users\\JOSUE DAVID\\Documents\\Lenguaje de Programacion\\Proyecto Lenguajes\\Proyecto-Api---\\Backend\\PackageService.API\\Proyecto Poo\\appsettings.Development.json",
-              "RelativeToolTip": "Proyecto Poo\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-12-03T13:49:46.861Z",
+              "WhenOpened": "2024-12-03T21:19:57.156Z",
               "EditorCaption": ""
             }
           ]

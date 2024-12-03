@@ -58,10 +58,7 @@ namespace Proyecto_Poo.Service
             try
             {
                 // Cargar el camión con sus órdenes asociadas
-                var truckEntity = await context.Trucks
-                    .Include(t => t.Orders)  
-                    .ThenInclude(o => o.Packages)
-                    .FirstOrDefaultAsync(t => t.TruckId == id);
+                var truckEntity = await context.Trucks.FirstOrDefaultAsync(o => o.TruckId == id);
 
                 if (truckEntity == null)
                 {
@@ -75,10 +72,6 @@ namespace Proyecto_Poo.Service
 
                 // Mapear el camión y sus órdenes a TruckDto
                 var truckDto = mapper.Map<TruckDto>(truckEntity);
-
-                double totalPackageWeigth = truckEntity.Orders
-                    .SelectMany(o => o.Packages)
-                    .Sum(p => p.PackageWeight);
 
                 return new ResponseDto<TruckDto>
                 {
