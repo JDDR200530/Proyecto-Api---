@@ -916,3 +916,4 @@ C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proye
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\obj\Debug\net8.0\ref\PackageService.dll
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Shipments.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Payments.json
+C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Truck.json

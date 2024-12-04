@@ -29,6 +29,7 @@ namespace Proyecto_Poo.Database.Contex
                 await LoadOrderAsync(loggerFactory, context);
                 await LoadPackageAsync(loggerFactory, context);
                 await LoadPaymentsAsync(loggerFactory, context);
+                await LoadTruckAsync(loggerFactory, context);
                 await LoadShipmentAsync(loggerFactory, context);
                 
 
@@ -200,6 +201,35 @@ namespace Proyecto_Poo.Database.Contex
                 var logger = loggerFactory.CreateLogger(typeof(PackageServiceSeeder));
                 logger.LogError(e, "Error al ejecutar el Seed Payments");
             }
+        }
+
+        public static async Task LoadTruckAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
+        {
+            try
+            {
+                var jsonFilePath = "SeedData/Truck.json";
+                var jsonContext = await File.ReadAllTextAsync(jsonFilePath);
+                var truck = JsonConvert.DeserializeObject<List<TruckEntity>>(jsonContext);
+
+                if (!await context.Trucks.AnyAsync())
+                {
+                    var user = await context.Users.FirstOrDefaultAsync();
+                    for (int i = 0; i < truck.Count; i++)
+                    {
+                        truck[i].CreatedBy = user.Id;
+                        truck[i].CreatedDate = DateTime.Now;
+                        truck[i].UpdatedBy = user.Id;
+                        truck[i].UpdatedDate = DateTime.Now;
+                    }
+                    context.AddRange(truck);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception e)
+            {
+                var logger = loggerFactory.CreateLogger<PackageServiceSeeder>();
+                logger.LogError(e, "Error al ejecucion el Seeed de Trucks");
+            }; 
         }
 
         public static async Task LoadShipmentAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)

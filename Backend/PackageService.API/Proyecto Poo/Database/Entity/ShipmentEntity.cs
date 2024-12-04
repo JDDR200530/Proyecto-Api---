@@ -27,7 +27,12 @@ namespace Proyecto_Poo.Database.Entity
         [ForeignKey(nameof(OrderId))]
         public virtual OrderEntity Order { get; set; }
 
-        public virtual UserEntity CreatedByUser { get; set; }
+        [Column("truck_id")]
+        public Guid TruckId { get; set; }
+        [ForeignKey(nameof(TruckId))]
+        public virtual TruckEntity Truck { get; set; }
+
+          public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }
 

@@ -58,7 +58,7 @@ namespace Proyecto_Poo.Service
             try
             {
                 // Cargar el camión con sus órdenes asociadas
-                var truckEntity = await context.Trucks.FirstOrDefaultAsync(o => o.TruckId == id);
+                var truckEntity = await context.Trucks.FirstOrDefaultAsync(o => o.Id == id);
 
                 if (truckEntity == null)
                 {

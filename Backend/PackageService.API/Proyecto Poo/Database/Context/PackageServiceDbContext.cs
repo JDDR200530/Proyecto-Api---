@@ -49,6 +49,7 @@ namespace Proyecto_Poo.Database.Contex
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
             modelBuilder.ApplyConfiguration(new ShipmentConfiguration());
             modelBuilder.ApplyConfiguration(new PaymentConfiguration());
+            modelBuilder.ApplyConfiguration(new TruckConfiguration());
 
         
             var eTypes = modelBuilder.Model.GetEntityTypes();
@@ -80,6 +81,11 @@ namespace Proyecto_Poo.Database.Contex
             .HasForeignKey(s => s.PaymentId)
             .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<ShipmentEntity>()
+                .HasOne(s => s.Truck)
+                .WithMany(tp =>tp.Shipment)
+                .HasForeignKey(s => s.TruckId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
         }

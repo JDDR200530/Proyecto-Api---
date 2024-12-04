@@ -4,12 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Proyecto_Poo.Database.Entity
 {
     [Table("trucks", Schema = "dbo")]
-    public class TruckEntity
+    public class TruckEntity : BaseEntity
     {
-        [Key]
-        [Column("truck_id")]
-        public Guid TruckId { get; set; }
-
+      
         [Display(Name = "Se encuentra disponible")]
         [Required]
         [Column("truck_available")]
@@ -19,7 +16,11 @@ namespace Proyecto_Poo.Database.Entity
         [Column("truck_capacity")]
         public double TruckCapacity { get; set; }
 
-       
+        public virtual ICollection<ShipmentEntity> Shipment { get; set; }
+
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
+
     }
 
 }
