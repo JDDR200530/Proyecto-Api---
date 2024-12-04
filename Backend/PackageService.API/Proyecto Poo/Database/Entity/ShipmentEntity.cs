@@ -4,30 +4,32 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace Proyecto_Poo.Database.Entity
 {
     [Table("shipments", Schema = "dbo")]
-    public class ShipmentEntity
+    public class ShipmentEntity : BaseEntity
     {
-        [Key]
-        [Column("shipment_id")]
-        public Guid ShipmentId { get; set; }
-        
         [Column("payment_id")]
-        [Display(Name = "Pago")]
-
+        [Required]
         public Guid PaymentId { get; set; }
 
+
+        [Column("shipment_number")]
+        [Display(Name = "Número de Envío")]
+        [Required(ErrorMessage = "El número de envío es requerido")]
+        [StringLength(50)]
+        public string ShipmentNumber { get; set; }
+
+
         [ForeignKey(nameof(PaymentId))]
-        public PaymentEntity Pay { get; set; }
+        public virtual PaymentEntity Payment { get; set; }
 
+        [Column("order_id")]
+        public Guid OrderId { get; set; }
 
+        [ForeignKey(nameof(OrderId))]
+        public virtual OrderEntity Order { get; set; }
 
-        [Column("truck_available")]
-        public Guid TruckId  { get; set; }
-        [ForeignKey(nameof(TruckId))]
-
-        public TruckEntity Truck { get; set; }
-
-        [Column("shipped")]
-        public bool IsShipped { get; set; }
-
+        public virtual UserEntity CreatedByUser { get; set; }
+        public virtual UserEntity UpdatedByUser { get; set; }
     }
+
+
 }

@@ -47,6 +47,8 @@ namespace Proyecto_Poo.Database.Contex
             modelBuilder.ApplyConfiguration(new OrderCofiguration());
             modelBuilder.ApplyConfiguration(new PackageConfiguration());
             modelBuilder.ApplyConfiguration(new CustomerConfiguration());
+            modelBuilder.ApplyConfiguration(new ShipmentConfiguration());
+            modelBuilder.ApplyConfiguration(new PaymentConfiguration());
 
         
             var eTypes = modelBuilder.Model.GetEntityTypes();
@@ -64,8 +66,21 @@ namespace Proyecto_Poo.Database.Contex
             .WithMany(tp => tp.Packages)
             .HasForeignKey(a => a.OrderId)
             .OnDelete(DeleteBehavior.Restrict);
+        
+            modelBuilder.Entity<ShipmentEntity>()
+            .HasOne(s => s.Order)
+            .WithMany(tp => tp.Shipments)
+            .HasForeignKey(s => s.OrderId)
+            .OnDelete(DeleteBehavior.Restrict);
 
-           
+
+            modelBuilder.Entity<ShipmentEntity>()
+            .HasOne(s => s.Payment)
+            .WithMany(tp => tp.Shipments)
+            .HasForeignKey(s => s.PaymentId)
+            .OnDelete(DeleteBehavior.Restrict);
+
+
 
         }
 
@@ -98,9 +113,8 @@ namespace Proyecto_Poo.Database.Contex
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PackageEntity> Packages { get; set; }
         public DbSet<CustomerEntity> Customers { get; set; }
-        public DbSet<PaymentEntity> Total { get; set; }
-        public DbSet<ShipmentEntity> Pay { get; set; }
-
+        public DbSet<PaymentEntity> Payments { get; set; }
+        public DbSet<ShipmentEntity> Shipments { get; set; }
         public DbSet<TruckEntity> Trucks { get; set; }
 
     }

@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Proyecto_Poo.Migrations
 {
     /// <inheritdoc />
-    public partial class Init : Migration
+    public partial class A : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -142,7 +142,6 @@ namespace Proyecto_Poo.Migrations
                     sender_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     address = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
                     receiver_name = table.Column<string>(type: "nvarchar(300)", maxLength: 300, nullable: false),
-                    truck_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
                     created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
                     updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
@@ -151,13 +150,6 @@ namespace Proyecto_Poo.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_orders", x => x.id);
-                    table.ForeignKey(
-                        name: "FK_orders_trucks_truck_id",
-                        column: x => x.truck_id,
-                        principalSchema: "dbo",
-                        principalTable: "trucks",
-                        principalColumn: "truck_id",
-                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_orders_users_created_by",
                         column: x => x.created_by,
@@ -312,17 +304,18 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    payment_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     package_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     amount = table.Column<double>(type: "float", maxLength: 250, nullable: false),
                     payment_date = table.Column<DateTime>(type: "datetime2", nullable: false),
-                    payment_method = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    CreatedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true),
-                    UpdatedByUserId = table.Column<string>(type: "nvarchar(450)", nullable: true)
+                    created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: true),
+                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_payments", x => x.payment_id);
+                    table.PrimaryKey("PK_payments", x => x.id);
                     table.ForeignKey(
                         name: "FK_payments_packages_package_id",
                         column: x => x.package_id,
@@ -331,15 +324,15 @@ namespace Proyecto_Poo.Migrations
                         principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_payments_users_CreatedByUserId",
-                        column: x => x.CreatedByUserId,
+                        name: "FK_payments_users_created_by",
+                        column: x => x.created_by,
                         principalSchema: "security",
                         principalTable: "users",
                         principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_payments_users_UpdatedByUserId",
-                        column: x => x.UpdatedByUserId,
+                        name: "FK_payments_users_updated_by",
+                        column: x => x.updated_by,
                         principalSchema: "security",
                         principalTable: "users",
                         principalColumn: "Id",
@@ -351,27 +344,46 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 columns: table => new
                 {
-                    shipment_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
                     payment_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    truck_available = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
-                    shipped = table.Column<bool>(type: "bit", nullable: false)
+                    shipment_number = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    order_id = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    shipped = table.Column<bool>(type: "bit", nullable: false),
+                    created_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    created_date = table.Column<DateTime>(type: "datetime2", nullable: false),
+                    updated_by = table.Column<string>(type: "nvarchar(450)", maxLength: 450, nullable: false),
+                    updated_date = table.Column<DateTime>(type: "datetime2", nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_shipments", x => x.shipment_id);
+                    table.PrimaryKey("PK_shipments", x => x.id);
+                    table.ForeignKey(
+                        name: "FK_shipments_orders_order_id",
+                        column: x => x.order_id,
+                        principalSchema: "dbo",
+                        principalTable: "orders",
+                        principalColumn: "id",
+                        onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
                         name: "FK_shipments_payments_payment_id",
                         column: x => x.payment_id,
                         principalSchema: "dbo",
                         principalTable: "payments",
-                        principalColumn: "payment_id",
+                        principalColumn: "id",
                         onDelete: ReferentialAction.Restrict);
                     table.ForeignKey(
-                        name: "FK_shipments_trucks_truck_available",
-                        column: x => x.truck_available,
-                        principalSchema: "dbo",
-                        principalTable: "trucks",
-                        principalColumn: "truck_id",
+                        name: "FK_shipments_users_created_by",
+                        column: x => x.created_by,
+                        principalSchema: "security",
+                        principalTable: "users",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                    table.ForeignKey(
+                        name: "FK_shipments_users_updated_by",
+                        column: x => x.updated_by,
+                        principalSchema: "security",
+                        principalTable: "users",
+                        principalColumn: "Id",
                         onDelete: ReferentialAction.Restrict);
                 });
 
@@ -392,12 +404,6 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo",
                 table: "orders",
                 column: "created_by");
-
-            migrationBuilder.CreateIndex(
-                name: "IX_orders_truck_id",
-                schema: "dbo",
-                table: "orders",
-                column: "truck_id");
 
             migrationBuilder.CreateIndex(
                 name: "IX_orders_updated_by",
@@ -424,10 +430,10 @@ namespace Proyecto_Poo.Migrations
                 column: "updated_by");
 
             migrationBuilder.CreateIndex(
-                name: "IX_payments_CreatedByUserId",
+                name: "IX_payments_created_by",
                 schema: "dbo",
                 table: "payments",
-                column: "CreatedByUserId");
+                column: "created_by");
 
             migrationBuilder.CreateIndex(
                 name: "IX_payments_package_id",
@@ -436,10 +442,10 @@ namespace Proyecto_Poo.Migrations
                 column: "package_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_payments_UpdatedByUserId",
+                name: "IX_payments_updated_by",
                 schema: "dbo",
                 table: "payments",
-                column: "UpdatedByUserId");
+                column: "updated_by");
 
             migrationBuilder.CreateIndex(
                 name: "RoleNameIndex",
@@ -456,16 +462,28 @@ namespace Proyecto_Poo.Migrations
                 column: "RoleId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_shipments_created_by",
+                schema: "dbo",
+                table: "shipments",
+                column: "created_by");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_shipments_order_id",
+                schema: "dbo",
+                table: "shipments",
+                column: "order_id");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_shipments_payment_id",
                 schema: "dbo",
                 table: "shipments",
                 column: "payment_id");
 
             migrationBuilder.CreateIndex(
-                name: "IX_shipments_truck_available",
+                name: "IX_shipments_updated_by",
                 schema: "dbo",
                 table: "shipments",
-                column: "truck_available");
+                column: "updated_by");
 
             migrationBuilder.CreateIndex(
                 name: "EmailIndex",
@@ -516,6 +534,10 @@ namespace Proyecto_Poo.Migrations
                 schema: "dbo");
 
             migrationBuilder.DropTable(
+                name: "trucks",
+                schema: "dbo");
+
+            migrationBuilder.DropTable(
                 name: "users_claims",
                 schema: "security");
 
@@ -545,10 +567,6 @@ namespace Proyecto_Poo.Migrations
 
             migrationBuilder.DropTable(
                 name: "orders",
-                schema: "dbo");
-
-            migrationBuilder.DropTable(
-                name: "trucks",
                 schema: "dbo");
 
             migrationBuilder.DropTable(

@@ -12,20 +12,14 @@ namespace Proyecto_Poo.Database.Entity
 
         [Display(Name = "Se encuentra disponible")]
         [Required]
-
         [Column("truck_available")]
         public bool TruckAvailable { get; set; }
-        
 
-
-        [Display(Name = "Capacidaad de Carga")]
-
+        [Display(Name = "Capacidad de Carga")]
         [Column("truck_capacity")]
         public double TruckCapacity { get; set; }
-      
-        
-        public virtual IEnumerable<ShipmentEntity> Truck { get; set; }
-        
-        
+
+       
     }
+
 }

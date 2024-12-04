@@ -12,8 +12,8 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    [Migration("20241203222020_G")]
-    partial class G
+    [Migration("20241204144519_F")]
+    partial class F
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -251,9 +251,6 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("nvarchar(300)")
                         .HasColumnName("sender_name");
 
-                    b.Property<Guid?>("TruckEntityTruckId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("UpdatedBy")
                         .HasMaxLength(450)
                         .HasColumnType("nvarchar(450)")
@@ -266,8 +263,6 @@ namespace Proyecto_Poo.Migrations
                     b.HasKey("Id");
 
                     b.HasIndex("CreatedBy");
-
-                    b.HasIndex("TruckEntityTruckId");
 
                     b.HasIndex("UpdatedBy");
 
@@ -322,18 +317,24 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
                 {
-                    b.Property<Guid>("PaymentId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("payment_id");
+                        .HasColumnName("id");
 
                     b.Property<double>("Amount")
                         .HasMaxLength(250)
                         .HasColumnType("float")
                         .HasColumnName("amount");
 
-                    b.Property<string>("CreatedByUserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<string>("CreatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("created_by");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_date");
 
                     b.Property<Guid>("PackageId")
                         .HasColumnType("uniqueidentifier")
@@ -343,48 +344,76 @@ namespace Proyecto_Poo.Migrations
                         .HasColumnType("datetime2")
                         .HasColumnName("payment_date");
 
-                    b.Property<string>("PaymentMethod")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("payment_method");
+                    b.Property<string>("UpdatedBy")
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("updated_by");
 
-                    b.Property<string>("UpdatedByUserId")
-                        .HasColumnType("nvarchar(450)");
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_date");
 
-                    b.HasKey("PaymentId");
+                    b.HasKey("Id");
 
-                    b.HasIndex("CreatedByUserId");
+                    b.HasIndex("CreatedBy");
 
                     b.HasIndex("PackageId");
 
-                    b.HasIndex("UpdatedByUserId");
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("payments", "dbo");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
                 {
-                    b.Property<Guid>("ShipmentId")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("shipment_id");
+                        .HasColumnName("id");
 
-                    b.Property<bool>("IsShipped")
-                        .HasColumnType("bit")
-                        .HasColumnName("shipped");
+                    b.Property<string>("CreatedBy")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("created_by");
+
+                    b.Property<DateTime>("CreatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("created_date");
+
+                    b.Property<Guid>("OrderId")
+                        .HasColumnType("uniqueidentifier")
+                        .HasColumnName("order_id");
 
                     b.Property<Guid>("PaymentId")
                         .HasColumnType("uniqueidentifier")
                         .HasColumnName("payment_id");
 
-                    b.Property<Guid>("TruckId")
-                        .HasColumnType("uniqueidentifier")
-                        .HasColumnName("truck_available");
+                    b.Property<string>("ShipmentNumber")
+                        .IsRequired()
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("shipment_number");
 
-                    b.HasKey("ShipmentId");
+                    b.Property<string>("UpdatedBy")
+                        .IsRequired()
+                        .HasMaxLength(450)
+                        .HasColumnType("nvarchar(450)")
+                        .HasColumnName("updated_by");
+
+                    b.Property<DateTime?>("UpdatedDate")
+                        .HasColumnType("datetime2")
+                        .HasColumnName("updated_date");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CreatedBy");
+
+                    b.HasIndex("OrderId");
 
                     b.HasIndex("PaymentId");
 
-                    b.HasIndex("TruckId");
+                    b.HasIndex("UpdatedBy");
 
                     b.ToTable("shipments", "dbo");
                 });
@@ -572,11 +601,6 @@ namespace Proyecto_Poo.Migrations
                         .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", null)
-                        .WithMany("Order")
-                        .HasForeignKey("TruckEntityTruckId")
-                        .OnDelete(DeleteBehavior.Restrict);
-
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
                         .WithMany()
                         .HasForeignKey("UpdatedBy")
@@ -618,10 +642,10 @@ namespace Proyecto_Poo.Migrations
                 {
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "CreatedByUser")
                         .WithMany()
-                        .HasForeignKey("CreatedByUserId")
+                        .HasForeignKey("CreatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "IdPackage")
+                    b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "Package")
                         .WithMany()
                         .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Restrict)
@@ -629,50 +653,61 @@ namespace Proyecto_Poo.Migrations
 
                     b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
                         .WithMany()
-                        .HasForeignKey("UpdatedByUserId")
+                        .HasForeignKey("UpdatedBy")
                         .OnDelete(DeleteBehavior.Restrict);
 
                     b.Navigation("CreatedByUser");
 
-                    b.Navigation("IdPackage");
+                    b.Navigation("Package");
 
                     b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.ShipmentEntity", b =>
                 {
-                    b.HasOne("Proyecto_Poo.Database.Entity.PaymentEntity", "Pay")
-                        .WithMany("Pay")
+                    b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "CreatedByUser")
+                        .WithMany()
+                        .HasForeignKey("CreatedBy")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Proyecto_Poo.Database.Entity.OrderEntity", "Order")
+                        .WithMany("Shipments")
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+                    b.HasOne("Proyecto_Poo.Database.Entity.PaymentEntity", "Payment")
+                        .WithMany("Shipments")
                         .HasForeignKey("PaymentId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.HasOne("Proyecto_Poo.Database.Entity.TruckEntity", "Truck")
-                        .WithMany("Truck")
-                        .HasForeignKey("TruckId")
+                    b.HasOne("Proyecto_Poo.Database.Entity.UserEntity", "UpdatedByUser")
+                        .WithMany()
+                        .HasForeignKey("UpdatedBy")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
-                    b.Navigation("Pay");
+                    b.Navigation("CreatedByUser");
 
-                    b.Navigation("Truck");
+                    b.Navigation("Order");
+
+                    b.Navigation("Payment");
+
+                    b.Navigation("UpdatedByUser");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.OrderEntity", b =>
                 {
                     b.Navigation("Packages");
+
+                    b.Navigation("Shipments");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>
                 {
-                    b.Navigation("Pay");
-                });
-
-            modelBuilder.Entity("Proyecto_Poo.Database.Entity.TruckEntity", b =>
-                {
-                    b.Navigation("Order");
-
-                    b.Navigation("Truck");
+                    b.Navigation("Shipments");
                 });
 #pragma warning restore 612, 618
         }

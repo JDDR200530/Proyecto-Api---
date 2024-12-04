@@ -28,6 +28,10 @@ namespace Proyecto_Poo.Database.Contex
                 await LoadCustomerAsync(loggerFactory, context);
                 await LoadOrderAsync(loggerFactory, context);
                 await LoadPackageAsync(loggerFactory, context);
+                await LoadPaymentsAsync(loggerFactory, context);
+                await LoadShipmentAsync(loggerFactory, context);
+                
+
             }
             catch (Exception e)
             {
@@ -167,5 +171,65 @@ namespace Proyecto_Poo.Database.Contex
                 logger.LogError(e, "Error al ejecutar el Seed de Customer");
             }
         }
+
+        public static async Task LoadPaymentsAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context) 
+        {
+            try
+            {
+                var jsonFilePath = "SeedData/Payments.json";
+                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
+                var payment = JsonConvert.DeserializeObject<List<PaymentEntity>>(jsonContent);
+
+                if (!await context.Payments.AnyAsync())
+                {
+                    var user = await context.Users.FirstOrDefaultAsync();
+                    for (int i = 0; i < payment.Count; i++)
+                    {
+                        payment[i].CreatedBy = user.Id;
+                        payment[i].CreatedDate = DateTime.Now;
+                        payment[i].UpdatedBy = user.Id;
+                        payment[i].UpdatedDate = DateTime.Now;
+                    }
+                    context.AddRange(payment);
+                    await context.SaveChangesAsync();
+                }
+            }
+
+            catch (Exception e) 
+            {
+                var logger = loggerFactory.CreateLogger(typeof(PackageServiceSeeder));
+                logger.LogError(e, "Error al ejecutar el Seed Payments");
+            }
+        }
+
+        public static async Task LoadShipmentAsync(ILoggerFactory loggerFactory, PackageServiceDbContext context)
+        {
+            try
+            {
+                var jsonFilePath = "SeedData/Shipments.json";
+                var jsonContent = await File.ReadAllTextAsync(jsonFilePath);
+                var shipments = JsonConvert.DeserializeObject<List<ShipmentEntity>>(jsonContent);
+                if (!await context.Shipments.AnyAsync())
+                {
+                    var user = await context.Users.FirstOrDefaultAsync();
+                    for (int i = 0; i < shipments.Count; i++)
+                    {
+                        shipments[i].CreatedBy = user.Id;
+                        shipments[i].CreatedDate = DateTime.Now;
+                        shipments[i].UpdatedBy = user.Id;
+                        shipments[i].UpdatedDate = DateTime.Now;
+                    }
+                    context.AddRange(shipments);
+                    await context.SaveChangesAsync();
+                }
+            }
+            catch (Exception e) 
+            {
+                var logger= loggerFactory.CreateLogger<PackageServiceSeeder>();
+                logger.LogError(e, "Error al ejecutar el Seed de Shipments");
+            }
+        }
+
+
     }
 }

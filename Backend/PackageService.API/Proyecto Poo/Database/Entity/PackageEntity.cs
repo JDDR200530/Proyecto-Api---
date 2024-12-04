@@ -21,6 +21,8 @@ namespace Proyecto_Poo.Database.Entity
         public virtual OrderEntity Order { get; set; } // Propiedad de navegación
 
         // Propiedades de auditoría
+
+        
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }
