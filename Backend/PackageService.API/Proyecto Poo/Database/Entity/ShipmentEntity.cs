@@ -29,9 +29,5 @@ namespace Proyecto_Poo.Database.Entity
         [Column("shipped")]
         public bool IsShipped { get; set; }
 
-        
-
-
-
     }
 }

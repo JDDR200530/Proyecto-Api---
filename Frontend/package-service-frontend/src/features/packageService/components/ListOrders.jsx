@@ -5,27 +5,23 @@ import { formatDate } from "../../../utils/format-date";
 
 export const ListOrder = () => {
   const { orders, loadOrders, loading } = useOrders();
-  const [fetching, setFetching] = useState(true);
   const [searchId, setSearchId] = useState(""); // Estado para almacenar el ID de búsqueda
   const [filteredOrders, setFilteredOrders] = useState([]);
 
+  // Cargar órdenes al iniciar el componente
   useEffect(() => {
-    if (fetching) {
-      loadOrders();
-      setFetching(false);
-    }
-  }, [fetching, loadOrders]);
+    loadOrders();
+  }, [loadOrders]);
 
+  // Filtrar las órdenes en base al ID buscado
   useEffect(() => {
-    if (!loading && orders?.data?.length > 0) {
-      if (searchId) {
-        const filtered = orders.data.filter(order =>
-          order.orderId.toLowerCase().includes(searchId.toLowerCase())
-        );
-        setFilteredOrders(filtered);
-      } else {
-        setFilteredOrders(orders.data);
-      }
+    if (!loading && orders?.data) {
+      const filtered = searchId
+        ? orders.data.filter((order) =>
+            order.orderId?.toLowerCase().includes(searchId.toLowerCase())
+          )
+        : orders.data;
+      setFilteredOrders(filtered);
     }
   }, [orders, searchId, loading]);
 
@@ -66,10 +62,12 @@ export const ListOrder = () => {
               filteredOrders.map((order) => (
                 <tr key={order.orderId}>
                   <td className="border px-4 text-center py-2">{order.orderId}</td>
-                  <td className="border px-4 text-center py-2">{formatDate(order.orderDate)}</td>
-                  <td className="border px-4 text-center py-2">{order.senderName}</td>
-                  <td className="border px-4 text-center py-2">{order.receiverName}</td>
-                  <td className="border px-4 text-center py-2">{order.address}</td>
+                  <td className="border px-4 text-center py-2">
+                    {order.orderDate ? formatDate(order.orderDate) : "N/A"}
+                  </td>
+                  <td className="border px-4 text-center py-2">{order.senderName || "N/A"}</td>
+                  <td className="border px-4 text-center py-2">{order.receiverName || "N/A"}</td>
+                  <td className="border px-4 text-center py-2">{order.address || "N/A"}</td>
                   <td className="border px-4 text-center py-2">
                     <ShowOrderData Order={order} />
                   </td>
