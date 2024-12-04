@@ -41,8 +41,9 @@ namespace Proyecto_Poo
             services.AddTransient<IAudtiService, AuditService>();
             services.AddTransient<IOrderService, OrderService>();
             services.AddTransient<IPackageService, PackageService>();
-            services.AddTransient<IAudtiService, AuditService>();
+            services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<ITruckService, TruckService>();
 
             //Identity
 

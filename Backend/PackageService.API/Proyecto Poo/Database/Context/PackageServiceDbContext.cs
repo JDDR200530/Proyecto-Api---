@@ -87,34 +87,36 @@ namespace Proyecto_Poo.Database.Contex
                 .HasForeignKey(s => s.TruckId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            modelBuilder.Entity<TruckEntity>();
+
 
         }
 
-        //public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        //{
-        //    var entries = ChangeTracker.Entries()
-        //        .Where(e => e.Entity is BaseEntity &&
-        //                    (e.State == EntityState.Added || e.State == EntityState.Modified));
+        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        {
+            var entries = ChangeTracker.Entries()
+                .Where(e => e.Entity is BaseEntity &&
+                            (e.State == EntityState.Added || e.State == EntityState.Modified));
 
-        //    foreach (var entry in entries)
-        //    {
-        //        var entity = entry.Entity as BaseEntity;
-        //        if (entity != null)
-        //        {
-        //            if (entry.State == EntityState.Added)
-        //            {
-        //                entity.CreatedBy = _audtiService.GetUserId();
-        //                entity.CreatedDate = DateTime.Now;
-        //            }
-        //            else if (entry.State == EntityState.Modified)
-        //            {
-        //                entity.UpdatedBy = _audtiService.GetUserId();
-        //                entity.UpdatedDate = DateTime.Now;
-        //            }
-        //        }
-        //    }
-        //    return base.SaveChangesAsync(cancellationToken);
-        //}
+            foreach (var entry in entries)
+            {
+                var entity = entry.Entity as BaseEntity;
+                if (entity != null)
+                {
+                    if (entry.State == EntityState.Added)
+                    {
+                        entity.CreatedBy = _audtiService.GetUserId();
+                        entity.CreatedDate = DateTime.Now;
+                    }
+                    else if (entry.State == EntityState.Modified)
+                    {
+                        entity.UpdatedBy = _audtiService.GetUserId();
+                        entity.UpdatedDate = DateTime.Now;
+                    }
+                }
+            }
+            return base.SaveChangesAsync(cancellationToken);
+        }
 
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PackageEntity> Packages { get; set; }

@@ -5,15 +5,19 @@ meta {
 }
 
 post {
-  url: 
+  url: {{PATH}}/orders
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{TOKEN}}
 }
 
 body:json {
   {
-    "senderName": "string",
-    "address": "string",
-    "reciverName": "string"
+    "senderName": "Micky",
+    "address": "Copan",
+    "receiverName": "Hector"
   }
 }

@@ -1,6 +1,12 @@
-﻿namespace Proyecto_Poo.Service.Interface
+﻿using Proyecto_Poo.Dtos.Common;
+using Proyecto_Poo.Dtos.Truck;
+
+namespace Proyecto_Poo.Service.Interface
 {
     public interface ITruckService
     {
+        Task<ResponseDto<TruckDto>> CreateAsync(TruckCreateDto dto);
+        Task<ResponseDto<TruckDto>> GetByIdAsync(Guid id);
+        Task<ResponseDto<List<TruckDto>>> GetTruckListAsync();
     }
 }

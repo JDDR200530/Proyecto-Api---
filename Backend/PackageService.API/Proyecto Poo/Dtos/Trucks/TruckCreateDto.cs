@@ -8,12 +8,12 @@ namespace Proyecto_Poo.Dtos.Truck
 
         [Display(Name = "estado")]
         [Required(ErrorMessage = "El {0} del cliente es requerido")]
-        public bool IsAvailable { get; set; }
-       
+        public bool TruckAvailable { get; set; }
+      
         [Display(Name = "peso_máximo")]
         [Required(ErrorMessage = "El {0} del cliente es requerido")]
         public double TruckCapacity { get; set; }
-        
+
     }
 
 }

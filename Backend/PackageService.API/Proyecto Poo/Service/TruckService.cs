@@ -1,10 +1,12 @@
 ﻿using AutoMapper;
 using Microsoft.EntityFrameworkCore;
 using Proyecto_Poo.Database.Contex;
+using Proyecto_Poo.Database.Entity;
 using Proyecto_Poo.Dtos.Common;
 using Proyecto_Poo.Dtos.Order;
 using Proyecto_Poo.Dtos.Truck;
 using Proyecto_Poo.Service.Interface;
+using System.Diagnostics;
 using System.Transactions;
 
 namespace Proyecto_Poo.Service
@@ -25,11 +27,15 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                // Obtener la lista de camiones
-                var truckEntities = await context.Trucks.ToListAsync();
-
-                // Mapear las entidades a DTOs
-                var truckDtos = mapper.Map<List<TruckDto>>(truckEntities);
+                // Seleccionar directamente las propiedades necesarias
+                var truckDtos = await context.Trucks
+                    .Select(truck => new TruckDto
+                    {
+                        Id = truck.Id,
+                        TruckCapacity = truck.TruckCapacity,
+                        TruckAvailable = truck.TruckCapacity > 0 // Estado basado en la capacidad
+                    })
+                    .ToListAsync();
 
                 return new ResponseDto<List<TruckDto>>
                 {
@@ -41,15 +47,17 @@ namespace Proyecto_Poo.Service
             }
             catch (Exception ex)
             {
-                logger.LogError(ex, "Error al obtener la lista de camiones");
+                // Manejo de errores
                 return new ResponseDto<List<TruckDto>>
                 {
                     StatusCode = 500,
                     Status = false,
-                    Message = "Se produjo un error al obtener la lista de camiones"
+                    Message = $"Error al obtener la lista de camiones: {ex.Message}",
+                    Data = null
                 };
             }
         }
+
 
 
 
@@ -57,8 +65,17 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                // Cargar el camión con sus órdenes asociadas
-                var truckEntity = await context.Trucks.FirstOrDefaultAsync(o => o.Id == id);
+                // Cargar el camión y las órdenes asociadas
+                var truckEntity = await context.Trucks
+                    .Where(t => t.Id == id)
+                    .Select(truck => new TruckDto
+                    {
+                        Id = truck.Id,
+                        TruckCapacity = truck.TruckCapacity,
+                        TruckAvailable = truck.TruckCapacity > 0,
+                        OrderIds = truck.Shipment.Select(s => s.OrderId).ToList() // Obtener IDs de las órdenes
+                    })
+                    .FirstOrDefaultAsync();
 
                 if (truckEntity == null)
                 {
@@ -70,15 +87,12 @@ namespace Proyecto_Poo.Service
                     };
                 }
 
-                // Mapear el camión y sus órdenes a TruckDto
-                var truckDto = mapper.Map<TruckDto>(truckEntity);
-
                 return new ResponseDto<TruckDto>
                 {
                     StatusCode = 200,
                     Status = true,
                     Message = "Camión encontrado correctamente",
-                    Data = truckDto
+                    Data = truckEntity
                 };
             }
             catch (Exception ex)
@@ -92,6 +106,31 @@ namespace Proyecto_Poo.Service
                 };
             }
         }
+
+        public async Task<ResponseDto<TruckDto>> CreateAsync(TruckCreateDto dto)
+        {
+            // Mapea el DTO de entrada a una entidad
+            var truckEntity = mapper.Map<TruckEntity>(dto);
+
+            // Agrega la entidad al contexto
+            context.Trucks.Add(truckEntity);
+
+            // Guarda los cambios en la base de datos
+            await context.SaveChangesAsync();
+
+            // Mapea la entidad creada de vuelta a un DTO
+            var truckDto = mapper.Map<TruckDto>(truckEntity);
+
+            // Retorna la respuesta
+            return new ResponseDto<TruckDto>
+            {
+                StatusCode = 201,
+                Status = true,
+                Message = "Se ha Creado Correctamente",
+                Data = truckDto
+            };
+        }
+
 
 
     }

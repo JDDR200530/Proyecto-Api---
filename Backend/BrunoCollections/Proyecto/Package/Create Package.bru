@@ -7,12 +7,16 @@ meta {
 post {
   url: {{PATH}}/packages
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{TOKEN}}
 }
 
 body:json {
   {
-    "orderId": "CFB634A7-2E06-4A2F-1A7C-08DCC0476632",
-    "packageWeight": 200
+    "orderId": "b1f4d2f6-1a8e-4b3d-9b4d-67d93bcd4d3e",
+    "packageWeight": 20
   }
 }

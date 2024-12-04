@@ -5,15 +5,19 @@ meta {
 }
 
 put {
-  url: {{PATH}}/orders/64E79CDD-D4AD-412F-C0E2-08DCAD021188
+  url: {{PATH}}/orders/81141106-EE1F-4B2F-DCC8-08DD14B1380F
   body: json
-  auth: none
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{TOKEN}}
 }
 
 body:json {
   {
     "senderName": "Jonathan",
     "address": "Esperanza",
-    "reciverName": "Hector"
+    "receiverName": "Hector"
   }
 }

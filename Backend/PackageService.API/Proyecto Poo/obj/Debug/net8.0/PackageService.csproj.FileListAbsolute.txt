@@ -760,7 +760,6 @@ C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proye
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Package.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Routes.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\StopPoint.json
-C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\trucks.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PackageService.staticwebassets.endpoints.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PackageService.exe
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PackageService.deps.json

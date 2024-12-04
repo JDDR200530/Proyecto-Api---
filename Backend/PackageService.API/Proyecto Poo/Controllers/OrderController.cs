@@ -22,7 +22,7 @@ namespace Proyecto_Poo.Controllers
 
 
         [HttpGet]
-        [AllowAnonymous]
+        [Authorize(Roles = $"{RolesConstant.ADMIN}")]
         public async Task<ActionResult<Response<OrderDto>>> GetAll()
         {
             var response = await _orderService.GetOrderListAsync();
@@ -30,7 +30,7 @@ namespace Proyecto_Poo.Controllers
         }
 
         [HttpGet("{id}")]
-        [AllowAnonymous]
+        [Authorize(Roles = $"{RolesConstant.USER}")]
         public async Task<ActionResult<Response<OrderDto>>> GetOneById(Guid id)
         {
             var response = await _orderService.GetByIdAsync(id);

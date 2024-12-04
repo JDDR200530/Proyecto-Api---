@@ -1,0 +1,18 @@
+meta {
+  name: Created Truck
+  type: http
+  seq: 2
+}
+
+post {
+  url: {{PATH}}/trucks
+  body: json
+  auth: none
+}
+
+body:json {
+  {
+    "truckAvailable": true,
+    "truckCapacity": 50
+  }
+}
