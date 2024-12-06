@@ -29,8 +29,8 @@ namespace Proyecto_Poo.Service
         {
             var ordersEntity = await _context.Orders.ToListAsync();
 
-            var ordersDtos = _mapper.Map<List<OrderDto>>(ordersEntity); 
-            
+            var ordersDtos = _mapper.Map<List<OrderDto>>(ordersEntity);
+
             return new ResponseDto<List<OrderDto>>
             {
                 StatusCode = 200,
@@ -48,7 +48,7 @@ namespace Proyecto_Poo.Service
             try
             {
                 var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
-                
+
                 if (orderEntity == null)
                 {
                     return new ResponseDto<OrderDto>
@@ -82,27 +82,30 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {
-            var orderEntity = _mapper.Map<OrderEntity>(dto);
-            orderEntity.Id = new Guid();
-            orderEntity.OrderDate = DateTime.Now;
-            
+            var orderEntity = new OrderEntity
+            {
+                OrderDate = dto.OrderDate,
+                SenderName = dto.SenderName,
+                Address = dto.Address,
+                ReceiverName = dto.ReceiverName,
+                TotalWeight = 0
+
+            };
             _context.Orders.Add(orderEntity);
-            // Guardar cambios
             await _context.SaveChangesAsync();
-
-            // mapeamos cuando posee el category entity el id para poder obtenerlo una vez creado
-            // Pues al crear no existe debe generarse
-            var orderDto = _mapper.Map<OrderDto>(orderEntity);
-
             return new ResponseDto<OrderDto>
             {
                 StatusCode = 201,
                 Status = true,
-                Message = "El pedido sea  creado correctamnete",
-                Data = orderDto,
+                Message = "Orden Creada Correctamente",
+                Data = new OrderDto
+                {
+                    Id = orderEntity.Id,
+                }
             };
+
         }
-        public async Task<ResponseDto<OrderDto>> EditAsync(OrderEditDto dto, Guid id) 
+        public async Task<ResponseDto<OrderDto>> EditAsync(OrderEditDto dto, Guid id)
         {
             var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
 
@@ -115,9 +118,9 @@ namespace Proyecto_Poo.Service
                     Message = $"El pedido {id} no fue encontrado"
                 };
 
-            
+
             }
-             _mapper.Map(dto, orderEntity);
+            _mapper.Map(dto, orderEntity);
             orderEntity.OrderDate = DateTime.Now;
 
             _context.Orders.Update(orderEntity);
@@ -159,6 +162,85 @@ namespace Proyecto_Poo.Service
             };
         }
 
-        
+        // Prueba para agragar el peso de la orden y eliminarloo de manera automatica 
+
+
+        public async Task<ResponseDto<OrderDto>> AddPackagestoOrdersAsync(Guid orderId, List<PackageEntity> packages)
+        {
+            var orderEntity = await _context.Orders
+            .Include(o => o.Packages)
+            .FirstOrDefaultAsync(o => o.Id == orderId);
+
+            if (orderEntity == null) 
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 404,
+                    Status = false,
+                    Message = "Orden no encontrada "
+                };
+            }
+
+            foreach (var package in packages) 
+            {
+                var PackageEntity = new PackageEntity
+                {
+                    OrderId = orderId,
+                    PackageWeight = package.PackageWeight
+                };
+
+                _context.Packages.Add(PackageEntity);
+                orderEntity.Packages.Add(PackageEntity);
+            }
+            orderEntity.TotalWeight = orderEntity.Packages.Sum(p => p.PackageWeight); 
+            
+            await _context.SaveChangesAsync();
+
+            return new ResponseDto<OrderDto>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "Paquetes agregados y peso total actualizado",
+                Data = new OrderDto 
+                {
+                    Id = orderEntity.Id,
+                    TotalWeigth = orderEntity.TotalWeight
+                }
+            };
+        }
+
+        public async Task<ResponseDto<OrderDto>> RemovePackageAsync(Guid packageId) 
+        {
+            var packageEntity = await _context.Packages
+            .Include(p => p.Order)
+            .FirstOrDefaultAsync(p => p.Id == packageId);
+
+            if (packageEntity == null)
+            {
+                return new ResponseDto<OrderDto> 
+                {
+                    StatusCode = 404,
+                    Status = false,
+                    Message = "Paquete no encontrado"
+                };
+            }
+
+            var orderEntity = packageEntity.Order;
+            _context.Packages.Remove(packageEntity);
+
+            orderEntity.TotalWeight = orderEntity.Packages.Where(p => p.Id != packageId).Sum(p => p.PackageWeight);
+            await _context.SaveChangesAsync();
+            return new ResponseDto<OrderDto>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "Pauqe Asido removido y el peso a sido actualizado",
+                Data = new OrderDto
+                {
+                    Id = orderEntity.Id,
+                    TotalWeigth = orderEntity.TotalWeight
+                }
+            };
+        }
     }
 }

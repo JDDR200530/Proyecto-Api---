@@ -1032,6 +1032,14 @@
           "receiverName": {
             "minLength": 1,
             "type": "string"
+          },
+          "orderDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "totalWeigth": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false
@@ -1058,6 +1066,10 @@
           "receiverName": {
             "type": "string",
             "nullable": true
+          },
+          "totalWeigth": {
+            "type": "number",
+            "format": "double"
           }
         },
         "additionalProperties": false

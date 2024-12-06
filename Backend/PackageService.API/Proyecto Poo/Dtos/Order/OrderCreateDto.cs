@@ -19,7 +19,9 @@ namespace Proyecto_Poo.Dtos.Order
         [Required(ErrorMessage ="El {0} es requerido")]
         public string ReceiverName { get; set; }
 
+        public DateTime OrderDate { get; set; }
 
+        public double TotalWeigth { get; set; }
 
     }
 }

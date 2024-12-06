@@ -29,6 +29,10 @@ namespace Proyecto_Poo.Database.Entity
         [Column("receiver_name")]
         public string ReceiverName { get; set; }
 
+        [Column("total_weight")]
+        [Display(Name= "Peso Total")]
+        public double TotalWeight { get; set; }
+
         public virtual ICollection<PackageEntity> Packages { get; set; } = new List<PackageEntity>();
         public virtual ICollection<ShipmentEntity> Shipments { get; set; } = new List<ShipmentEntity>();
         public virtual UserEntity CreatedByUser { get; set; }

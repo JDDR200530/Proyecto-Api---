@@ -92,31 +92,71 @@ namespace Proyecto_Poo.Database.Contex
 
         }
 
-        public override Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
+        public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
         {
-            var entries = ChangeTracker.Entries()
-                .Where(e => e.Entity is BaseEntity &&
-                            (e.State == EntityState.Added || e.State == EntityState.Modified));
+            // Obtener los paquetes que han sido añadidos, modificados o eliminados
+            var packageEntries = ChangeTracker.Entries<PackageEntity>()
+                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted)
+                .ToList();
 
-            foreach (var entry in entries)
+            // Actualizar el peso total de las órdenes afectadas
+            foreach (var packageEntry in packageEntries)
             {
-                var entity = entry.Entity as BaseEntity;
-                if (entity != null)
+                var package = packageEntry.Entity;
+
+                // Cargar la orden asociada y sus paquetes
+                var order = await Orders
+                    .Include(o => o.Packages)
+                    .FirstOrDefaultAsync(o => o.Id == package.OrderId, cancellationToken);
+
+                if (order != null)
                 {
-                    if (entry.State == EntityState.Added)
+                    // Recalcular el peso total basado en el estado del paquete
+                    switch (packageEntry.State)
                     {
-                        entity.CreatedBy = _audtiService.GetUserId();
-                        entity.CreatedDate = DateTime.Now;
-                    }
-                    else if (entry.State == EntityState.Modified)
-                    {
-                        entity.UpdatedBy = _audtiService.GetUserId();
-                        entity.UpdatedDate = DateTime.Now;
+                        case EntityState.Added:
+                            order.TotalWeight += package.PackageWeight; // Sumar peso
+                            break;
+
+                        case EntityState.Deleted:
+                            order.TotalWeight -= package.PackageWeight; // Restar peso
+                            break;
+
+                        case EntityState.Modified:
+                            // Ajustar peso considerando el cambio en el peso del paquete
+                            var originalWeight = packageEntry.OriginalValues.GetValue<double>(nameof(PackageEntity.PackageWeight));
+                            var currentWeight = package.PackageWeight;
+                            order.TotalWeight += (currentWeight - originalWeight);
+                            break;
                     }
                 }
             }
-            return base.SaveChangesAsync(cancellationToken);
+
+            // Auditar las entidades que heredan de BaseEntity
+            var baseEntityEntries = ChangeTracker.Entries<BaseEntity>()
+                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
+
+            foreach (var baseEntityEntry in baseEntityEntries)
+            {
+                var entity = baseEntityEntry.Entity;
+                var userId = _audtiService.GetUserId() ?? "System";
+
+                if (baseEntityEntry.State == EntityState.Added)
+                {
+                    entity.CreatedBy = userId;
+                    entity.CreatedDate = DateTime.UtcNow;
+                }
+                else if (baseEntityEntry.State == EntityState.Modified)
+                {
+                    entity.UpdatedBy = userId;
+                    entity.UpdatedDate = DateTime.UtcNow;
+                }
+            }
+
+            // Llamar al método base para guardar los cambios
+            return await base.SaveChangesAsync(cancellationToken);
         }
+
 
         public DbSet<OrderEntity> Orders { get; set; }
         public DbSet<PackageEntity> Packages { get; set; }

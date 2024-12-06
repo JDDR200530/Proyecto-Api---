@@ -14,13 +14,14 @@ namespace Proyecto_Poo.Service
         private readonly PackageServiceDbContext _context;
         private readonly ILogger<PackageService> _logger;
         private readonly IMapper _mapper;
-        private readonly IAuthService _authService;
+        private readonly IAudtiService audtiService;
 
-        public PackageService(PackageServiceDbContext context, ILogger<PackageService> logger, IMapper mapper)
+        public PackageService(PackageServiceDbContext context, ILogger<PackageService> logger, IMapper mapper, IAudtiService audtiService)
         {
             this._context = context;
             this._logger = logger;
             this._mapper = mapper;
+            this.audtiService = audtiService;
         }
 
         public async Task<ResponseDto<List<PackageDto>>> GetPackageListAsync()
@@ -79,6 +80,7 @@ namespace Proyecto_Poo.Service
         {
             var packageEntity = _mapper.Map<PackageEntity>(dto);
             packageEntity.Id = new Guid();
+            packageEntity.UpdatedBy = audtiService.GetUserId();
 
             _context.Packages.Add(packageEntity);
 

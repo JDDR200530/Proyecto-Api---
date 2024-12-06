@@ -12,6 +12,6 @@
 
         public string ReceiverName { get; set; }
 
-
+        public double TotalWeigth { get; set; }
     }
 }
