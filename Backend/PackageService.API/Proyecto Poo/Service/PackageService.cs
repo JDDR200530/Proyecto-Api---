@@ -128,34 +128,37 @@ namespace Proyecto_Poo.Service
             };
         }
 
-    
-       
-        public async Task<ResponseDto<PackageDto>> DeletePackageAsync(Guid id)
-        {
-            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.Id == id);
 
-            if (packageEntity == null)
+
+        public async Task<ResponseDto<PackageDto>> DeleteAsync(Guid id)
+        {
+            var packageEntity = await _context.Packages
+                 .Include(t => t.Order)
+                 .FirstOrDefaultAsync(o => o.Id == id);
+
+            if (packageEntity == null) 
             {
                 return new ResponseDto<PackageDto>
                 {
                     StatusCode = 404,
                     Status = false,
-                    Message = $"El pedido {id} no fue encontrado"
+                    Message = $"El paquete con Id {id} no fue encontrado "
                 };
-
-
             }
 
-            _context.Packages.Remove(packageEntity);
+           _context.Packages .Remove(packageEntity);
             await _context.SaveChangesAsync();
-
             return new ResponseDto<PackageDto>
             {
                 StatusCode = 200,
-                Status = true,
-                Message = "El paquete se a eliminado correctamente "
+                Status =  true,
+                Message = "El paquete se ha eliminado correctamente"
             };
         }
-    
+
+
+
+
+
     }
 }

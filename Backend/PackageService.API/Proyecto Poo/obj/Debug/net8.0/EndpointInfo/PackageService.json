@@ -1194,15 +1194,8 @@
         "additionalProperties": false
       },
       "PackageEditDto": {
-        "required": [
-          "packageWeight"
-        ],
         "type": "object",
         "properties": {
-          "orderId": {
-            "type": "string",
-            "format": "uuid"
-          },
           "packageWeight": {
             "type": "number",
             "format": "double"

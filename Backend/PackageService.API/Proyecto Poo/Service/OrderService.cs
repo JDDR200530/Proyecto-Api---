@@ -27,19 +27,28 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<List<OrderDto>>> GetOrderListAsync()
         {
-            var ordersEntity = await _context.Orders.ToListAsync();
-
-            var ordersDtos = _mapper.Map<List<OrderDto>>(ordersEntity);
+            var ordersDtos = await _context.Orders
+                .Include(o => o.Packages) // Incluye los paquetes para calcular el peso
+                .Select(o => new OrderDto
+                {
+                    Id = o.Id,
+                    OrderDate = o.OrderDate,
+                    SenderName = o.SenderName,
+                    Address = o.Address,
+                    ReceiverName = o.ReceiverName,
+                    TotalWeigth = o.Packages.Sum(p => p.PackageWeight) // Calcula el peso total directamente en la consulta
+                })
+                .ToListAsync();
 
             return new ResponseDto<List<OrderDto>>
             {
                 StatusCode = 200,
                 Status = true,
-                Message = "Lista de Registros obtenida correctamnete",
+                Message = "Lista de registros obtenida correctamente",
                 Data = ordersDtos
             };
-
         }
+
 
 
 
@@ -47,9 +56,20 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == id);
+                var order = await _context.Orders
+                    .Where(o => o.Id == id)
+                    .Select(o => new OrderDto
+                    {
+                        Id = o.Id,
+                        OrderDate = o.OrderDate,
+                        SenderName = o.SenderName,
+                        Address = o.Address,
+                        ReceiverName = o.ReceiverName,
+                        TotalWeigth = o.Packages.Sum(p => p.PackageWeight) // Suma directa desde la base de datos
+                    })
+                    .FirstOrDefaultAsync();
 
-                if (orderEntity == null)
+                if (order == null)
                 {
                     return new ResponseDto<OrderDto>
                     {
@@ -59,13 +79,12 @@ namespace Proyecto_Poo.Service
                     };
                 }
 
-                var orderDto = _mapper.Map<OrderDto>(orderEntity);
                 return new ResponseDto<OrderDto>
                 {
                     StatusCode = 200,
                     Status = true,
                     Message = "Registro encontrado correctamente",
-                    Data = orderDto,
+                    Data = order
                 };
             }
             catch (Exception ex)
@@ -75,10 +94,13 @@ namespace Proyecto_Poo.Service
                 {
                     StatusCode = 500,
                     Status = false,
-                    Message = $"Se produjo un error al obtener el pedido"
+                    Message = "Se produjo un error al obtener el pedido"
                 };
             }
         }
+
+
+
 
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {

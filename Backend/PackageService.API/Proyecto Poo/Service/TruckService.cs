@@ -16,12 +16,14 @@ namespace Proyecto_Poo.Service
         private readonly PackageServiceDbContext context;
         private readonly ILogger<TruckService> logger;
         private readonly IMapper mapper;
+        private readonly IAudtiService audtiService;
 
-        public TruckService(PackageServiceDbContext context, ILogger<TruckService> logger, IMapper mapper)
+        public TruckService(PackageServiceDbContext context, ILogger<TruckService> logger, IMapper mapper, IAudtiService audtiService)
         {
             this.context = context;
             this.logger = logger;
             this.mapper = mapper;
+            this.audtiService = audtiService;
         }
         public async Task<ResponseDto<List<TruckDto>>> GetTruckListAsync()
         {
@@ -109,25 +111,20 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<TruckDto>> CreateAsync(TruckCreateDto dto)
         {
-            // Mapea el DTO de entrada a una entidad
             var truckEntity = mapper.Map<TruckEntity>(dto);
+            truckEntity.Id = new Guid();
+            truckEntity.UpdatedBy = audtiService.GetUserId();
 
-            // Agrega la entidad al contexto
             context.Trucks.Add(truckEntity);
-
-            // Guarda los cambios en la base de datos
             await context.SaveChangesAsync();
 
-            // Mapea la entidad creada de vuelta a un DTO
             var truckDto = mapper.Map<TruckDto>(truckEntity);
-
-            // Retorna la respuesta
             return new ResponseDto<TruckDto>
             {
                 StatusCode = 201,
                 Status = true,
-                Message = "Se ha Creado Correctamente",
-                Data = truckDto
+                Message ="El camion se creo correctamenmte",
+                Data = truckDto,
             };
         }
 

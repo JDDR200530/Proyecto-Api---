@@ -10,9 +10,8 @@ namespace Proyecto_Poo.Service.Interface
         Task<ResponseDto<PackageDto>> GetPackageByIdAsync(Guid id);
         Task<ResponseDto<List<PackageDto>>> GetPackageListAsync();
         Task<ResponseDto<PackageDto>> CreatePackageAsync(PackageCreateDto dto);
-        Task<ResponseDto<PackageDto>> DeletePackageAsync(Guid id);
+       
         Task<ResponseDto<PackageDto>> EditPackageAsync(PackageEditDto dto, Guid id);
-        
-        
+        Task<ResponseDto<PackageDto>> DeleteAsync(Guid id);
     }
 }

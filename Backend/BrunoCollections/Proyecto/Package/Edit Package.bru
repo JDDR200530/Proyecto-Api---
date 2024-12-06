@@ -5,11 +5,17 @@ meta {
 }
 
 put {
-  url: 
-  body: none
+  url: {{PATH}}/packages/82FCFADD-EA92-4FCA-885B-08DD15E88F25
+  body: json
   auth: bearer
 }
 
 auth:bearer {
   token: {{TOKEN}}
+}
+
+body:json {
+  {
+    "packageWeight": 150
+  }
 }

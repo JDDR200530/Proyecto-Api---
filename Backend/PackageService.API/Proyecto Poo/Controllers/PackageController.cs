@@ -75,7 +75,7 @@ namespace Proyecto_Poo.Controllers
         [Authorize(Roles = $"{RolesConstant.USER}")]
         public async Task<ActionResult> Delete(Guid id)
         {
-            var response = await _packageService.DeletePackageAsync(id);
+            var response = await _packageService.DeleteAsync(id);
             return StatusCode(response.StatusCode, response);
         }
     }

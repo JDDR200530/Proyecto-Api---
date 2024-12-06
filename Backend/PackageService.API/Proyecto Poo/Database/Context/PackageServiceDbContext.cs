@@ -90,6 +90,7 @@ namespace Proyecto_Poo.Database.Contex
             modelBuilder.Entity<TruckEntity>();
 
 
+
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
