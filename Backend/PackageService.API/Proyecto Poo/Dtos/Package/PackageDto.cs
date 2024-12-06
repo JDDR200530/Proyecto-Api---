@@ -6,7 +6,6 @@ namespace Proyecto_Poo.Dtos.Package
     {
         public Guid Id { get; set; }
         public Guid OrderId { get; set; }
-
         public double PackageWeight { get; set; }
     }
 }

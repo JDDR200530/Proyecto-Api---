@@ -131,6 +131,46 @@ namespace Proyecto_Poo.Service
             };
         }
 
+        public async Task<ResponseDto<TruckDto>> DeleteTruckAsync(Guid id)
+        {
+            // Busca el camión en la base de datos
+            var truckEntity = await context.Trucks
+                .Include(t => t.Shipment) // Asegúrate de incluir las órdenes relacionadas
+                .FirstOrDefaultAsync(o => o.Id == id);
+
+            // Si el camión no existe, devuelve un error
+            if (truckEntity == null)
+            {
+                return new ResponseDto<TruckDto>
+                {
+                    StatusCode = 404,
+                    Status = false,
+                    Message = $"El camión con ID {id} no fue encontrado"
+                };
+            }
+
+            // Verifica si el camión tiene órdenes asociadas
+            if (truckEntity.Shipment != null && truckEntity.Shipment.Any())
+            {
+                return new ResponseDto<TruckDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = $"El camión con ID {id} no se puede eliminar porque tiene órdenes asociadas"
+                };
+            }
+
+            // Elimina el camión si no tiene órdenes asociadas
+            context.Trucks.Remove(truckEntity);
+            await context.SaveChangesAsync();
+
+            return new ResponseDto<TruckDto>
+            {
+                StatusCode = 200,
+                Status = true,
+                Message = "El camión se ha eliminado correctamente"
+            };
+        }
 
 
     }

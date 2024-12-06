@@ -44,7 +44,7 @@ namespace Proyecto_Poo.Controllers
         }
 
         [HttpPost]
-        [AllowAnonymous]
+        [Authorize(Roles = $"{RolesConstant.ADMIN}")]
         public async Task<ActionResult<ResponseDto<TruckDto>>> Create(TruckCreateDto dto) 
         {
             var response = await truckService.CreateAsync(dto);
@@ -54,6 +54,14 @@ namespace Proyecto_Poo.Controllers
                 response.Message,
                 response.Data,
             });
+        }
+
+        [HttpDelete("{id}")]
+        [Authorize(Roles = $"{RolesConstant.ADMIN}")]
+        public async Task<ActionResult> Delete(Guid id)
+        {
+            var response = await truckService.DeleteTruckAsync(id);
+            return StatusCode(response.StatusCode, response);
         }
     }
 }

@@ -388,6 +388,22 @@
     ]
   },
   {
+    "ContainingType": "Proyecto_Poo.Controllers.TrucksController",
+    "Method": "Delete",
+    "RelativePath": "api/trucks/{id}",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Guid",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Proyecto_Poo.Controllers.CustomerController",
     "Method": "GetAll",
     "RelativePath": "Customer",
