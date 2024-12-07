@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -29,14 +30,27 @@ namespace Proyecto_Poo.Database.Entity
         [Column("receiver_name")]
         public string ReceiverName { get; set; }
 
+        [Column("distance")]
+        [Display(Name = "Distancia")]
+        [Range(0, double.MaxValue, ErrorMessage = "La distancia debe ser mayor o igual a 0")]
+        public double Distance { get; set; }
+
+
         [Column("total_weight")]
-        [Display(Name= "Peso Total")]
+        [Display(Name = "Peso Total")]
         public double TotalWeight { get; set; }
 
+        [Column("payment_status")]
+        [Display(Name = "Estado de Pago")]
+        [DefaultValue(false)]
+        public bool PaymentStatus { get; set; } = false;
+
+        public virtual ICollection<PaymentEntity> Payments { get; set; } = new List<PaymentEntity>();
         public virtual ICollection<PackageEntity> Packages { get; set; } = new List<PackageEntity>();
         public virtual ICollection<ShipmentEntity> Shipments { get; set; } = new List<ShipmentEntity>();
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }
+
 
 }

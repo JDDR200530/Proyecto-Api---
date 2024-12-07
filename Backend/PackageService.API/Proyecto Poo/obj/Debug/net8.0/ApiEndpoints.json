@@ -316,6 +316,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Proyecto_Poo.Controllers.PaymentController",
+    "Method": "Create",
+    "RelativePath": "api/pay",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Proyecto_Poo.Dtos.Payments.PaymentCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Azure.Response\u00601[[Proyecto_Poo.Dtos.Payments.PaymentDto, PackageService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Proyecto_Poo.Controllers.TrucksController",
     "Method": "GetAll",
     "RelativePath": "api/trucks",

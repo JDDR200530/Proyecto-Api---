@@ -22,6 +22,9 @@ namespace Proyecto_Poo.Dtos.Order
         public DateTime OrderDate { get; set; }
 
         public double TotalWeigth { get; set; }
+        public double Distance { get; set; }
+
+        public bool PaymentStatus { get; set; } = false;
 
     }
 }

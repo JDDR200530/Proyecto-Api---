@@ -104,25 +104,51 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<OrderDto>> CreateAsync(OrderCreateDto dto)
         {
+            // Validar que la distancia sea mayor a 0
+            if (dto.Distance <= 0)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "La distancia debe ser mayor a cero"
+                };
+            }
+
+            // Validar explícitamente que PaymentStatus y TotalWeight sean correctos
+            if (dto.PaymentStatus != false || dto.TotalWeigth != 0)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "El estado de pago debe ser falso y el peso total debe ser cero al crear una orden"
+                };
+            }
+
+            // Crear la entidad con valores válidos
             var orderEntity = new OrderEntity
             {
                 OrderDate = dto.OrderDate,
                 SenderName = dto.SenderName,
                 Address = dto.Address,
                 ReceiverName = dto.ReceiverName,
-                TotalWeight = 0
-
+                TotalWeight = 0,
+                Distance = dto.Distance,
+                PaymentStatus = false
             };
+
             _context.Orders.Add(orderEntity);
             await _context.SaveChangesAsync();
+
             return new ResponseDto<OrderDto>
             {
                 StatusCode = 201,
                 Status = true,
-                Message = "Orden Creada Correctamente",
+                Message = "Orden creada correctamente",
                 Data = new OrderDto
                 {
-                    Id = orderEntity.Id,
+                    Id = orderEntity.Id
                 }
             };
 
@@ -193,7 +219,7 @@ namespace Proyecto_Poo.Service
             .Include(o => o.Packages)
             .FirstOrDefaultAsync(o => o.Id == orderId);
 
-            if (orderEntity == null) 
+            if (orderEntity == null)
             {
                 return new ResponseDto<OrderDto>
                 {
@@ -203,7 +229,7 @@ namespace Proyecto_Poo.Service
                 };
             }
 
-            foreach (var package in packages) 
+            foreach (var package in packages)
             {
                 var PackageEntity = new PackageEntity
                 {
@@ -214,8 +240,8 @@ namespace Proyecto_Poo.Service
                 _context.Packages.Add(PackageEntity);
                 orderEntity.Packages.Add(PackageEntity);
             }
-            orderEntity.TotalWeight = orderEntity.Packages.Sum(p => p.PackageWeight); 
-            
+            orderEntity.TotalWeight = orderEntity.Packages.Sum(p => p.PackageWeight);
+
             await _context.SaveChangesAsync();
 
             return new ResponseDto<OrderDto>
@@ -223,7 +249,7 @@ namespace Proyecto_Poo.Service
                 StatusCode = 200,
                 Status = true,
                 Message = "Paquetes agregados y peso total actualizado",
-                Data = new OrderDto 
+                Data = new OrderDto
                 {
                     Id = orderEntity.Id,
                     TotalWeigth = orderEntity.TotalWeight
@@ -231,7 +257,7 @@ namespace Proyecto_Poo.Service
             };
         }
 
-        public async Task<ResponseDto<OrderDto>> RemovePackageAsync(Guid packageId) 
+        public async Task<ResponseDto<OrderDto>> RemovePackageAsync(Guid packageId)
         {
             var packageEntity = await _context.Packages
             .Include(p => p.Order)
@@ -239,7 +265,7 @@ namespace Proyecto_Poo.Service
 
             if (packageEntity == null)
             {
-                return new ResponseDto<OrderDto> 
+                return new ResponseDto<OrderDto>
                 {
                     StatusCode = 404,
                     Status = false,
@@ -265,4 +291,5 @@ namespace Proyecto_Poo.Service
             };
         }
     }
+
 }

@@ -7,26 +7,34 @@ namespace Proyecto_Poo.Database.Entity
     [Table("payments", Schema = "dbo")]
     public class PaymentEntity : BaseEntity
     {
-
-        [Column("package_id")]
-        public Guid PackageId { get; set; }
-
-        [ForeignKey(nameof(PackageId))]
-        public virtual PackageEntity Package { get; set; }
-
         [Display(Name = "Costo Del Envio")]
         [Required(ErrorMessage = "El espacio de {0} no puede estar vacio")]
-        [StringLength(250)]
-        [Column("amount")]
         public double Amount { get; set; }
 
         [Column("payment_date")]
         [Display(Name = "Fecha de Pago")]
         [Required(ErrorMessage = "El espacio de {0} no puede estar vacio")]
         public DateTime PaymentDate { get; set; }
+
+        [Required]
+        [Column("order_id")]
+        public Guid OrderId { get; set; } // Relación con la orden
+
+        [ForeignKey(nameof(OrderId))]
+       public virtual OrderEntity Order { get; set; }
+
+        [Display(Name = "Método de Pago")]
+        [Required(ErrorMessage = "El espacio de {0} no puede estar vacío")]
+        public string PaymentMethod { get; set; }
+
+        [NotMapped] // No guardar esta propiedad en la base de datos
+        public long CardNumber { get; set; }
+
         public virtual ICollection<ShipmentEntity> Shipments { get; set; } = new List<ShipmentEntity>();
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }
+
+
 
 }

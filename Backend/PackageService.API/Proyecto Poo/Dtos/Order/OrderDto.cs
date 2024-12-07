@@ -12,6 +12,9 @@
 
         public string ReceiverName { get; set; }
 
+        public double Distance { get; set; }
+
+        public bool PaymentStatus { get; set; } = false;
         public double TotalWeigth { get; set; }
     }
 }

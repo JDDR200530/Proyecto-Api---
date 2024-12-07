@@ -728,6 +728,54 @@
         }
       }
     },
+    "/api/pay": {
+      "post": {
+        "tags": [
+          "Payment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/PaymentCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentDtoResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentDtoResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PaymentDtoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/trucks": {
       "get": {
         "tags": [
@@ -1040,6 +1088,13 @@
           "totalWeigth": {
             "type": "number",
             "format": "double"
+          },
+          "distance": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentStatus": {
+            "type": "boolean"
           }
         },
         "additionalProperties": false
@@ -1066,6 +1121,13 @@
           "receiverName": {
             "type": "string",
             "nullable": true
+          },
+          "distance": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentStatus": {
+            "type": "boolean"
           },
           "totalWeigth": {
             "type": "number",
@@ -1199,6 +1261,79 @@
           "packageWeight": {
             "type": "number",
             "format": "double"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentCreateDto": {
+        "type": "object",
+        "properties": {
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumber": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "expirationMonth": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "expirationYear": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cvv": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentDto": {
+        "type": "object",
+        "properties": {
+          "amount": {
+            "type": "number",
+            "format": "double"
+          },
+          "paymentDate": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentMethod": {
+            "type": "string",
+            "nullable": true
+          },
+          "cardNumber": {
+            "type": "integer",
+            "format": "int64"
+          }
+        },
+        "additionalProperties": false
+      },
+      "PaymentDtoResponse": {
+        "type": "object",
+        "properties": {
+          "hasValue": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "value": {
+            "$ref": "#/components/schemas/PaymentDto"
           }
         },
         "additionalProperties": false

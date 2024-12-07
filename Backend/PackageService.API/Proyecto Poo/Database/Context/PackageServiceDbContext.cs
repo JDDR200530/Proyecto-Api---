@@ -89,6 +89,11 @@ namespace Proyecto_Poo.Database.Contex
 
             modelBuilder.Entity<TruckEntity>();
 
+            modelBuilder.Entity<PaymentEntity>()
+                .HasOne(s => s.Order)
+                .WithMany(tp => tp.Payments)
+                .HasForeignKey(s => s.OrderId)
+                .OnDelete(DeleteBehavior.Restrict);
 
 
         }
