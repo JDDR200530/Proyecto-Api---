@@ -29,13 +29,13 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                // Seleccionar directamente las propiedades necesarias
+                // Seleccionar directamente las propiedades necesarias con la lógica de disponibilidad
                 var truckDtos = await context.Trucks
                     .Select(truck => new TruckDto
                     {
                         Id = truck.Id,
                         TruckCapacity = truck.TruckCapacity,
-                        TruckAvailable = truck.TruckCapacity > 0 // Estado basado en la capacidad
+                        TruckAvailable = truck.TruckCapacity > 0 // Disponible solo si la capacidad es mayor a 0
                     })
                     .ToListAsync();
 
@@ -67,15 +67,15 @@ namespace Proyecto_Poo.Service
         {
             try
             {
-                // Cargar el camión y las órdenes asociadas
+                // Cargar el camión y calcular su disponibilidad
                 var truckEntity = await context.Trucks
                     .Where(t => t.Id == id)
                     .Select(truck => new TruckDto
                     {
                         Id = truck.Id,
                         TruckCapacity = truck.TruckCapacity,
-                        TruckAvailable = truck.TruckCapacity > 0,
-                        OrderIds = truck.Shipment.Select(s => s.OrderId).ToList() // Obtener IDs de las órdenes
+                        TruckAvailable = truck.TruckCapacity > 0, // Disponible solo si la capacidad es mayor a 0
+                        ShipmentIds = truck.Shipment.Select(s => s.Id).ToList() // Obtener IDs de los envíos asociados
                     })
                     .FirstOrDefaultAsync();
 
@@ -109,22 +109,50 @@ namespace Proyecto_Poo.Service
             }
         }
 
+
+
         public async Task<ResponseDto<TruckDto>> CreateAsync(TruckCreateDto dto)
         {
+            // Validar que la capacidad no sea menor a 0
+            if (dto.TruckCapacity <= 0)
+            {
+                return new ResponseDto<TruckDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "La capacidad del camión no puede ser menor o igual a 0."
+                };
+            }
+
+            // Validar que el valor de la capacidad no sea decimal
+            if (dto.TruckCapacity % 1 != 0)
+            {
+                return new ResponseDto<TruckDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "La capacidad del camión debe ser un número entero."
+                };
+            }
+
+            // Mapeo del DTO a la entidad
             var truckEntity = mapper.Map<TruckEntity>(dto);
-            truckEntity.Id = new Guid();
+            truckEntity.Id = Guid.NewGuid();
             truckEntity.UpdatedBy = audtiService.GetUserId();
 
+            // Guardar en la base de datos
             context.Trucks.Add(truckEntity);
             await context.SaveChangesAsync();
 
+            // Mapeo de la entidad al DTO de respuesta
             var truckDto = mapper.Map<TruckDto>(truckEntity);
+
             return new ResponseDto<TruckDto>
             {
                 StatusCode = 201,
                 Status = true,
-                Message ="El camion se creo correctamenmte",
-                Data = truckDto,
+                Message = "El camión se creó correctamente.",
+                Data = truckDto
             };
         }
 

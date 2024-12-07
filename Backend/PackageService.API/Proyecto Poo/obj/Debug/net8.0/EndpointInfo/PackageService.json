@@ -776,6 +776,54 @@
         }
       }
     },
+    "/api/shipments": {
+      "post": {
+        "tags": [
+          "Shipment"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShipmentsCreateDto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShipmentsCreateDto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/ShipmentsCreateDto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/trucks": {
       "get": {
         "tags": [
@@ -1393,6 +1441,63 @@
         },
         "additionalProperties": false
       },
+      "ShipmentDto": {
+        "type": "object",
+        "properties": {
+          "shipmentNumber": {
+            "type": "string",
+            "nullable": true
+          },
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "truckId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "packageIds": {
+            "type": "array",
+            "items": {
+              "type": "string",
+              "format": "uuid"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShipmentDtoResponse": {
+        "type": "object",
+        "properties": {
+          "hasValue": {
+            "type": "boolean",
+            "readOnly": true
+          },
+          "value": {
+            "$ref": "#/components/schemas/ShipmentDto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ShipmentsCreateDto": {
+        "type": "object",
+        "properties": {
+          "orderId": {
+            "type": "string",
+            "format": "uuid"
+          },
+          "paymentId": {
+            "type": "string",
+            "format": "uuid"
+          }
+        },
+        "additionalProperties": false
+      },
       "TruckCreateDto": {
         "required": [
           "truckAvailable",
@@ -1424,7 +1529,7 @@
             "type": "number",
             "format": "double"
           },
-          "orderIds": {
+          "shipmentIds": {
             "type": "array",
             "items": {
               "type": "string",

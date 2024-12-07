@@ -36,7 +36,9 @@ namespace Proyecto_Poo.Service
                     SenderName = o.SenderName,
                     Address = o.Address,
                     ReceiverName = o.ReceiverName,
-                    TotalWeigth = o.Packages.Sum(p => p.PackageWeight) // Calcula el peso total directamente en la consulta
+                    Distance = o.Distance,
+                    TotalWeigth = o.Packages.Sum(p => p.PackageWeight)
+                    ,PaymentStatus = o.PaymentStatus,
                 })
                 .ToListAsync();
 
@@ -65,7 +67,9 @@ namespace Proyecto_Poo.Service
                         SenderName = o.SenderName,
                         Address = o.Address,
                         ReceiverName = o.ReceiverName,
-                        TotalWeigth = o.Packages.Sum(p => p.PackageWeight) // Suma directa desde la base de datos
+                        Distance = o.Distance,
+                        TotalWeigth = o.Packages.Sum(p => p.PackageWeight), // Suma directa desde la base de datos
+                        PaymentStatus = o.PaymentStatus,
                     })
                     .FirstOrDefaultAsync();
 

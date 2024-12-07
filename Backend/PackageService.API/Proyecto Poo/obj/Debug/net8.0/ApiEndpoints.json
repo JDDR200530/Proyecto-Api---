@@ -342,6 +342,32 @@
     ]
   },
   {
+    "ContainingType": "Proyecto_Poo.Controllers.ShipmentController",
+    "Method": "Create",
+    "RelativePath": "api/shipments",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "Proyecto_Poo.Dtos.Shipments.ShipmentsCreateDto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Azure.Response\u00601[[Proyecto_Poo.Dtos.Shipments.ShipmentDto, PackageService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
     "ContainingType": "Proyecto_Poo.Controllers.TrucksController",
     "Method": "GetAll",
     "RelativePath": "api/trucks",

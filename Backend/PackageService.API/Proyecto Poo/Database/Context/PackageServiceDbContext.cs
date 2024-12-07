@@ -14,11 +14,13 @@ namespace Proyecto_Poo.Database.Contex
     public class PackageServiceDbContext : IdentityDbContext<UserEntity>
     {
         private readonly IAudtiService _audtiService;
+    
 
         public PackageServiceDbContext(DbContextOptions<PackageServiceDbContext> options, IAudtiService audtiService)
             : base(options)
         {
             _audtiService = audtiService;
+          
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -86,82 +88,87 @@ namespace Proyecto_Poo.Database.Contex
                 .WithMany(tp =>tp.Shipment)
                 .HasForeignKey(s => s.TruckId)
                 .OnDelete(DeleteBehavior.Restrict);
-
-            modelBuilder.Entity<TruckEntity>();
+          
 
             modelBuilder.Entity<PaymentEntity>()
                 .HasOne(s => s.Order)
                 .WithMany(tp => tp.Payments)
                 .HasForeignKey(s => s.OrderId)
                 .OnDelete(DeleteBehavior.Restrict);
-
+            
+          
 
         }
 
         public override async Task<int> SaveChangesAsync(CancellationToken cancellationToken = default)
-        {
+{
+         
+
             // Obtener los paquetes que han sido añadidos, modificados o eliminados
             var packageEntries = ChangeTracker.Entries<PackageEntity>()
-                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted)
-                .ToList();
+        .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified || e.State == EntityState.Deleted)
+        .ToList();
 
-            // Actualizar el peso total de las órdenes afectadas
-            foreach (var packageEntry in packageEntries)
+    // Actualizar el peso total de las órdenes afectadas
+    foreach (var packageEntry in packageEntries)
+    {
+        var package = packageEntry.Entity;
+
+        // Cargar la orden asociada y sus paquetes
+        var order = await Orders
+            .Include(o => o.Packages)
+            .FirstOrDefaultAsync(o => o.Id == package.OrderId, cancellationToken);
+
+        if (order != null)
+        {
+            // Recalcular el peso total basado en el estado del paquete
+            switch (packageEntry.State)
             {
-                var package = packageEntry.Entity;
+                case EntityState.Added:
+                    order.TotalWeight += package.PackageWeight; // Sumar peso
+                    break;
 
-                // Cargar la orden asociada y sus paquetes
-                var order = await Orders
-                    .Include(o => o.Packages)
-                    .FirstOrDefaultAsync(o => o.Id == package.OrderId, cancellationToken);
+                case EntityState.Deleted:
+                    order.TotalWeight -= package.PackageWeight; // Restar peso
+                    break;
 
-                if (order != null)
-                {
-                    // Recalcular el peso total basado en el estado del paquete
-                    switch (packageEntry.State)
-                    {
-                        case EntityState.Added:
-                            order.TotalWeight += package.PackageWeight; // Sumar peso
-                            break;
-
-                        case EntityState.Deleted:
-                            order.TotalWeight -= package.PackageWeight; // Restar peso
-                            break;
-
-                        case EntityState.Modified:
-                            // Ajustar peso considerando el cambio en el peso del paquete
-                            var originalWeight = packageEntry.OriginalValues.GetValue<double>(nameof(PackageEntity.PackageWeight));
-                            var currentWeight = package.PackageWeight;
-                            order.TotalWeight += (currentWeight - originalWeight);
-                            break;
-                    }
-                }
+                case EntityState.Modified:
+                    // Ajustar peso considerando el cambio en el peso del paquete
+                    var originalWeight = packageEntry.OriginalValues.GetValue<double>(nameof(PackageEntity.PackageWeight));
+                    var currentWeight = package.PackageWeight;
+                    order.TotalWeight += (currentWeight - originalWeight);
+                    break;
             }
-
-            // Auditar las entidades que heredan de BaseEntity
-            var baseEntityEntries = ChangeTracker.Entries<BaseEntity>()
-                .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
-
-            foreach (var baseEntityEntry in baseEntityEntries)
-            {
-                var entity = baseEntityEntry.Entity;
-                var userId = _audtiService.GetUserId() ?? "System";
-
-                if (baseEntityEntry.State == EntityState.Added)
-                {
-                    entity.CreatedBy = userId;
-                    entity.CreatedDate = DateTime.UtcNow;
-                }
-                else if (baseEntityEntry.State == EntityState.Modified)
-                {
-                    entity.UpdatedBy = userId;
-                    entity.UpdatedDate = DateTime.UtcNow;
-                }
-            }
-
-            // Llamar al método base para guardar los cambios
-            return await base.SaveChangesAsync(cancellationToken);
         }
+    }
+
+   
+
+    // Auditar las entidades que heredan de BaseEntity
+    var baseEntityEntries = ChangeTracker.Entries<BaseEntity>()
+        .Where(e => e.State == EntityState.Added || e.State == EntityState.Modified);
+
+    foreach (var baseEntityEntry in baseEntityEntries)
+    {
+        var entity = baseEntityEntry.Entity;
+        var userId = _audtiService.GetUserId() ?? "System";
+
+        if (baseEntityEntry.State == EntityState.Added)
+        {
+            entity.CreatedBy = userId;
+            entity.CreatedDate = DateTime.UtcNow;
+        }
+        else if (baseEntityEntry.State == EntityState.Modified)
+        {
+            entity.UpdatedBy = userId;
+            entity.UpdatedDate = DateTime.UtcNow;
+        }
+    }
+
+    // Llamar al método base para guardar los cambios
+    return await base.SaveChangesAsync(cancellationToken);
+}
+
 
 
         public DbSet<OrderEntity> Orders { get; set; }

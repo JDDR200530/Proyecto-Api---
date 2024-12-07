@@ -20,9 +20,7 @@ namespace Proyecto_Poo.Database.Entity
         [ForeignKey(nameof(OrderId))]
         public virtual OrderEntity Order { get; set; } // Propiedad de navegación
 
-        // Propiedades de auditoría
-
-        
+        public virtual ShipmentEntity Shipment { get; set; }
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }
     }

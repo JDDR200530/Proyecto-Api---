@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Proyecto_Poo.Database.Contex;
 
@@ -11,9 +12,11 @@ using Proyecto_Poo.Database.Contex;
 namespace Proyecto_Poo.Migrations
 {
     [DbContext(typeof(PackageServiceDbContext))]
-    partial class PackageServiceDbContextModelSnapshot : ModelSnapshot
+    [Migration("20241207171848_Shipments")]
+    partial class Shipments
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -398,7 +401,7 @@ namespace Proyecto_Poo.Migrations
 
                     b.Property<Guid>("PackageId")
                         .HasColumnType("uniqueidentifier")
-                        .HasColumnName("package_id");
+                        .HasColumnName("Package_id");
 
                     b.Property<Guid>("PaymentId")
                         .HasColumnType("uniqueidentifier")
@@ -430,8 +433,7 @@ namespace Proyecto_Poo.Migrations
 
                     b.HasIndex("OrderId");
 
-                    b.HasIndex("PackageId")
-                        .IsUnique();
+                    b.HasIndex("PackageId");
 
                     b.HasIndex("PaymentId");
 
@@ -724,8 +726,8 @@ namespace Proyecto_Poo.Migrations
                         .IsRequired();
 
                     b.HasOne("Proyecto_Poo.Database.Entity.PackageEntity", "Package")
-                        .WithOne("Shipment")
-                        .HasForeignKey("Proyecto_Poo.Database.Entity.ShipmentEntity", "PackageId")
+                        .WithMany("Shipments")
+                        .HasForeignKey("PackageId")
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
 
@@ -788,7 +790,7 @@ namespace Proyecto_Poo.Migrations
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PackageEntity", b =>
                 {
-                    b.Navigation("Shipment");
+                    b.Navigation("Shipments");
                 });
 
             modelBuilder.Entity("Proyecto_Poo.Database.Entity.PaymentEntity", b =>

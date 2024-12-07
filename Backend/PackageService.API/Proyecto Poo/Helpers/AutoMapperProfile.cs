@@ -4,6 +4,7 @@ using Proyecto_Poo.Dtos.Clientes;
 using Proyecto_Poo.Dtos.Order;
 using Proyecto_Poo.Dtos.Package;
 using Proyecto_Poo.Dtos.Payments;
+using Proyecto_Poo.Dtos.Shipments;
 using Proyecto_Poo.Dtos.Truck;
 
 namespace Proyecto_Poo.Helpers
@@ -17,6 +18,7 @@ namespace Proyecto_Poo.Helpers
             MapsForCustomer();
             MapsForTrucks();
             MapsForPayments();
+            MapsForShipments();
          
 
 
@@ -56,6 +58,11 @@ namespace Proyecto_Poo.Helpers
             CreateMap<PaymentCreateDto, PaymentEntity>();
        }
         
+        private void MapsForShipments()
+        {
+            CreateMap<ShipmentEntity, ShipmentDto>();
+            CreateMap<ShipmentsCreateDto, ShipmentEntity>();
+        }
     }
 
     

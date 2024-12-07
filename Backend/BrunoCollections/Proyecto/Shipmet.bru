@@ -1,11 +1,11 @@
 meta {
-  name: Create Package
+  name: Shipmet
   type: http
-  seq: 3
+  seq: 2
 }
 
 post {
-  url: {{PATH}}/packages
+  url: {{PATH}}/shipments
   body: json
   auth: bearer
 }
@@ -17,6 +17,6 @@ auth:bearer {
 body:json {
   {
     "orderId": "b6723596-4cee-427d-800e-08dd170e2bd7",
-    "packageWeight": 30
+    "paymentId": "B1BB4B2E-EBD6-469F-816A-A2FC346E01AF"
   }
 }

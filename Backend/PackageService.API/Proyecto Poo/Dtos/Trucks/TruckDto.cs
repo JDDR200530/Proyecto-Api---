@@ -10,7 +10,6 @@ namespace Proyecto_Poo.Dtos.Truck
         public bool TruckAvailable { get; set; }
         public double TruckCapacity { get; set; }
 
-        public List<Guid> OrderIds { get; set; } = new List<Guid>();
+        public List<Guid> ShipmentIds { get; set; }
     }
-
 }

@@ -114,6 +114,9 @@ namespace Proyecto_Poo.Service
                 };
 
                 context.Payments.Add(paymentEntity);
+
+                orderEntity.PaymentStatus = true;
+                context.Orders.Update(orderEntity);
                 await context.SaveChangesAsync();
 
                 logger.LogInformation("Pago creado con éxito para la orden {OrderId}", dto.OrderId);
