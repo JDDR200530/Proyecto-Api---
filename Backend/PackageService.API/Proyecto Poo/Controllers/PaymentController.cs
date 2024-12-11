@@ -30,6 +30,17 @@ namespace Proyecto_Poo.Controllers
             });
         }
 
+        [HttpGet("{id}")]
+        [Authorize(Roles =$"{RolesConstant.USER}")]
+        public async Task<ActionResult<Response<PaymentDto>>> GetOneById (Guid id)
+        {
+            var response = await paymentService.GetPaymentByIdAsync(id);
+            return StatusCode(response.StatusCode, new
+            {
+                response.Status,
+                response.Message, response.Data
+            });
+        }
 
         [HttpPost("paypal")]
         [Authorize(Roles =$"{RolesConstant.USER}")]

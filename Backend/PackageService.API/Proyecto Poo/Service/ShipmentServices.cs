@@ -236,9 +236,9 @@ namespace Proyecto_Poo.Service
             {
                 // Obtener todos los envíos desde la base de datos
                 var shipments = await _context.Shipments
-                    .Include(s => s.Order)    // Incluir la información de la orden asociada
-                    .Include(s => s.Payment)  // Incluir la información del pago asociado
-                    .Include(s => s.Truck)    // Incluir la información del camión asociado
+                    .Include(s => s.Order)   
+                    .Include(s => s.Payment) 
+                    .Include(s => s.Truck)   
                     .ToListAsync();
 
                 // Verificar si no se encontraron envíos

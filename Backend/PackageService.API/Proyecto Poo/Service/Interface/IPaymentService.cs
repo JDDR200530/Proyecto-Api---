@@ -7,5 +7,6 @@ namespace Proyecto_Poo.Service.Interface
     {
         Task<ResponseDto<PaymentDto>> CreatePaymentWithDebitCardAsync(PaymentCreateDto dto);
         Task<ResponseDto<PaymentDto>> CreatePaymentWithPayPalAsync(PaymentPayPalCreatedDto dto);
+        Task<ResponseDto<PaymentDto>> GetPaymentByIdAsync(Guid paymentId);
     }
 }

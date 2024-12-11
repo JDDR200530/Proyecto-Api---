@@ -158,6 +158,57 @@ namespace Proyecto_Poo.Service
             }
         }
 
+        public async Task<ResponseDto<PaymentDto>> GetPaymentByIdAsync(Guid paymentId)
+        {
+            try
+            {
+                // Validar el ID
+                if (paymentId == Guid.Empty)
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "ID de pago inválido."
+                    };
+                }
+
+                // Buscar el pago en la base de datos
+                var paymentEntity = await context.Payments.FirstOrDefaultAsync(p => p.Id == paymentId);
+                if (paymentEntity == null)
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 404,
+                        Status = false,
+                        Message = "El pago no fue encontrado."
+                    };
+                }
+
+                // Mapear la entidad a un DTO
+                var paymentDto = mapper.Map<PaymentDto>(paymentEntity);
+
+                return new ResponseDto<PaymentDto>
+                {
+                    StatusCode = 200,
+                    Status = true,
+                    Message = "Pago encontrado exitosamente.",
+                    Data = paymentDto
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error al obtener el pago con ID {PaymentId}.", paymentId);
+                return new ResponseDto<PaymentDto>
+                {
+                    StatusCode = 500,
+                    Status = false,
+                    Message = "Error interno al obtener el pago."
+                };
+            }
+        }
+
+
         public bool IsCardExpired(int expirationYear, int expirationMonth)
         {
             var currentDate = DateTime.UtcNow;

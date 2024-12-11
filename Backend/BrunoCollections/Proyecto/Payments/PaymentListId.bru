@@ -1,0 +1,15 @@
+meta {
+  name: PaymentListId
+  type: http
+  seq: 3
+}
+
+get {
+  url: {{PATH}}/pay/aaf4106d-09cd-4374-b84e-28541ee30364
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{TOKEN}}
+}
