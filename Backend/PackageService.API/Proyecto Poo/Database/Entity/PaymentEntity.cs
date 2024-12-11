@@ -30,6 +30,9 @@ namespace Proyecto_Poo.Database.Entity
         [NotMapped] // No guardar esta propiedad en la base de datos
         public long CardNumber { get; set; }
 
+        public string? PayPalEmail { get; set; }
+
+
         public virtual ICollection<ShipmentEntity> Shipments { get; set; } = new List<ShipmentEntity>();
         public virtual UserEntity CreatedByUser { get; set; }
         public virtual UserEntity UpdatedByUser { get; set; }

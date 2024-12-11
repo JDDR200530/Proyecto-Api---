@@ -169,23 +169,34 @@ namespace Proyecto_Poo.Service
                     Status = false,
                     Message = $"El pedido {id} no fue encontrado"
                 };
-
-
             }
+
+            if (orderEntity.PaymentStatus)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "No se puede editar el pedido porque el estado de pago es verdadero"
+                };
+            }
+
             _mapper.Map(dto, orderEntity);
             orderEntity.OrderDate = DateTime.Now;
 
             _context.Orders.Update(orderEntity);
             await _context.SaveChangesAsync();
             var orderDto = _mapper.Map<OrderDto>(orderEntity);
+
             return new ResponseDto<OrderDto>
             {
                 StatusCode = 200,
                 Status = true,
-                Message = "El pedido sea editado correctamente",
+                Message = "El pedido se ha editado correctamente",
                 Data = orderDto,
             };
         }
+
 
         public async Task<ResponseDto<OrderDto>> DeleteAsync(Guid id)
         {
@@ -199,8 +210,16 @@ namespace Proyecto_Poo.Service
                     Status = false,
                     Message = $"El pedido {id} no fue encontrado"
                 };
+            }
 
-
+            if (orderEntity.PaymentStatus)
+            {
+                return new ResponseDto<OrderDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "No se puede borrar el pedido porque el estado de pago es verdadero"
+                };
             }
 
             _context.Orders.Remove(orderEntity);
@@ -210,9 +229,10 @@ namespace Proyecto_Poo.Service
             {
                 StatusCode = 200,
                 Status = true,
-                Message = "El pedido se a borrado correctamente "
+                Message = "El pedido se ha borrado correctamente"
             };
         }
+
 
         // Prueba para agragar el peso de la orden y eliminarloo de manera automatica 
 

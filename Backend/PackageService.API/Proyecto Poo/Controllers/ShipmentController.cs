@@ -2,7 +2,10 @@
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Proyecto_Poo.Constanst;
+using Proyecto_Poo.Dtos.Auth;
+using Proyecto_Poo.Dtos.Common;
 using Proyecto_Poo.Dtos.Shipments;
+using Proyecto_Poo.Service;
 using Proyecto_Poo.Service.Interface;
 
 namespace Proyecto_Poo.Controllers
@@ -31,5 +34,14 @@ namespace Proyecto_Poo.Controllers
                 response.Status, response.Message, response.Data
             });
         }
+
+        [HttpPost("list")]
+        public async Task<ActionResult<Response<ShipmentDto>>> GetOneById([FromBody] Guid id)
+        {
+            // Asegúrate de que shipmentServices esté definido y que GetAllShipmentsByUserAsync sea un método válido.
+            var response = await shipmentServices.GetAllShipmentsByUserAsync(id);
+            return StatusCode(response.StatusCode, response);
+        }
+
     }
 }

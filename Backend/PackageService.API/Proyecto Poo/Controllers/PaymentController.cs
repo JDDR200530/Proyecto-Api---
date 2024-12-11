@@ -30,5 +30,19 @@ namespace Proyecto_Poo.Controllers
             });
         }
 
+
+        [HttpPost("pay/paypal")]
+        [Authorize(Roles =$"{RolesConstant.USER}")]
+
+        public async Task<ActionResult<Response<PaymentDto>>> CreatePayPal (PaymentPayPalCreatedDto dto)
+        
+        {
+            var response = await paymentService.CreatePaymentWithPayPalAsync(dto);
+            return StatusCode(response.StatusCode, new
+            {
+                response.Status, response.Message, response.Data
+            });
+        }
+ 
     }
 }

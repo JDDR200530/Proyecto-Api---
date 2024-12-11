@@ -1,11 +1,11 @@
 meta {
-  name: Create Package
+  name: PaymentPaypal
   type: http
-  seq: 3
+  seq: 2
 }
 
 post {
-  url: {{PATH}}/packages
+  url: {{PATH}}
   body: json
   auth: bearer
 }
@@ -17,6 +17,7 @@ auth:bearer {
 body:json {
   {
     "orderId": "293378cf-de9c-4ef0-e586-08dd19cf4596",
-    "packageWeight": 50
+    "paymentMethod": "PayPal",
+    "payPalEmail": "Paypal@gmial.com"
   }
 }

@@ -5,7 +5,21 @@ meta {
 }
 
 post {
-  url: 
-  body: none
-  auth: none
+  url: {{PATH}}/auth/register
+  body: json
+  auth: bearer
+}
+
+auth:bearer {
+  token: {{TOKEN}}
+}
+
+body:json {
+  {
+    "email": "david@gmail.com",
+    "password": "JuanLopez24*",
+    "confirmPassword": "JuanLopez24*",
+    "firstName": "Juan",
+    "lastName": "Lopez"
+  }
 }

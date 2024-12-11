@@ -7,5 +7,6 @@ namespace Proyecto_Poo.Service.Interface
     {
         Task<ResponseDto<ShipmentDto>> CreateShipmentAsync(ShipmentsCreateDto dto);
         Task<ResponseDto<bool>> DeleteShipmentAsync(Guid shipmentId);
+        Task<ResponseDto<List<ShipmentDto>>> GetAllShipmentsByUserAsync(Guid createdById);
     }
 }

@@ -78,29 +78,69 @@ namespace Proyecto_Poo.Service
 
         public async Task<ResponseDto<PackageDto>> CreatePackageAsync(PackageCreateDto dto)
         {
-            var packageEntity = _mapper.Map<PackageEntity>(dto);
-            packageEntity.Id = new Guid();
-            packageEntity.UpdatedBy = audtiService.GetUserId();
-
-            _context.Packages.Add(packageEntity);
-
-            await _context.SaveChangesAsync();
-
-
-            var packageDto = _mapper.Map<PackageDto>(packageEntity);
-
-            return new ResponseDto<PackageDto>
+            try
             {
-                StatusCode = 201,
-                Status = true,
-                Message = "El pedido sea  creado correctamnete",
-                Data = packageDto,
-            };
+                // Verificar si la orden existe
+                var orderEntity = await _context.Orders.FirstOrDefaultAsync(o => o.Id == dto.OrderId);
+                if (orderEntity == null)
+                {
+                    return new ResponseDto<PackageDto>
+                    {
+                        StatusCode = 404,
+                        Status = false,
+                        Message = "La orden asociada no fue encontrada."
+                    };
+                }
+
+                // Validar que el payment_status de la orden no sea true
+                if (orderEntity.PaymentStatus)
+                {
+                    return new ResponseDto<PackageDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "No se pueden crear paquetes para una orden con el estado de pago completado."
+                    };
+                }
+
+                // Crear la entidad del paquete
+                var packageEntity = _mapper.Map<PackageEntity>(dto);
+                packageEntity.Id = Guid.NewGuid(); // Generar un nuevo ID
+                packageEntity.UpdatedBy = audtiService.GetUserId();
+
+                _context.Packages.Add(packageEntity);
+                await _context.SaveChangesAsync();
+
+                // Mapear la entidad a DTO
+                var packageDto = _mapper.Map<PackageDto>(packageEntity);
+
+                return new ResponseDto<PackageDto>
+                {
+                    StatusCode = 201,
+                    Status = true,
+                    Message = "El paquete ha sido creado correctamente.",
+                    Data = packageDto
+                };
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                _logger.LogError(ex, "Error al crear el paquete.");
+                return new ResponseDto<PackageDto>
+                {
+                    StatusCode = 500,
+                    Status = false,
+                    Message = "Ocurrió un error interno al crear el paquete."
+                };
+            }
         }
+
 
         public async Task<ResponseDto<PackageDto>> EditPackageAsync(PackageEditDto dto, Guid id)
         {
-            var packageEntity = await _context.Packages.FirstOrDefaultAsync(o => o.Id == id);
+            var packageEntity = await _context.Packages
+                .Include(p => p.Order) // Incluir la orden asociada
+                .FirstOrDefaultAsync(p => p.Id == id);
 
             if (packageEntity == null)
             {
@@ -108,53 +148,77 @@ namespace Proyecto_Poo.Service
                 {
                     StatusCode = 404,
                     Status = false,
-                    Message = $"El pedido {id} no fue encontrado"
+                    Message = $"El paquete {id} no fue encontrado"
                 };
-
-
             }
+
+            // Validar el estado de pago de la orden asociada
+            if (packageEntity.Order.PaymentStatus)
+            {
+                return new ResponseDto<PackageDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "No se puede editar el paquete porque el estado de pago de la orden es verdadero"
+                };
+            }
+
             _mapper.Map(dto, packageEntity);
-            
 
             _context.Packages.Update(packageEntity);
             await _context.SaveChangesAsync();
             var packageDto = _mapper.Map<PackageDto>(packageEntity);
+
             return new ResponseDto<PackageDto>
             {
                 StatusCode = 200,
                 Status = true,
-                Message = "El pedido sea editado correctamente",
+                Message = "El paquete se ha editado correctamente",
                 Data = packageDto,
             };
         }
 
 
 
+
         public async Task<ResponseDto<PackageDto>> DeleteAsync(Guid id)
         {
             var packageEntity = await _context.Packages
-                 .Include(t => t.Order)
-                 .FirstOrDefaultAsync(o => o.Id == id);
+                .Include(p => p.Order) // Incluir la orden asociada
+                .FirstOrDefaultAsync(p => p.Id == id);
 
-            if (packageEntity == null) 
+            if (packageEntity == null)
             {
                 return new ResponseDto<PackageDto>
                 {
                     StatusCode = 404,
                     Status = false,
-                    Message = $"El paquete con Id {id} no fue encontrado "
+                    Message = $"El paquete con Id {id} no fue encontrado"
                 };
             }
 
-           _context.Packages .Remove(packageEntity);
+            // Validar el estado de pago de la orden asociada
+            if (packageEntity.Order.PaymentStatus)
+            {
+                return new ResponseDto<PackageDto>
+                {
+                    StatusCode = 400,
+                    Status = false,
+                    Message = "No se puede eliminar el paquete porque el estado de pago de la orden es verdadero"
+                };
+            }
+
+            _context.Packages.Remove(packageEntity);
             await _context.SaveChangesAsync();
+
             return new ResponseDto<PackageDto>
             {
                 StatusCode = 200,
-                Status =  true,
+                Status = true,
                 Message = "El paquete se ha eliminado correctamente"
             };
         }
+
 
 
 

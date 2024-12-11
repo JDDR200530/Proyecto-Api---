@@ -62,6 +62,19 @@
           }
         }
       },
+      "BCrypt.Net-Next/4.0.3": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net6.0/BCrypt.Net-Next.dll": {
+            "related": ".xml"
+          }
+        }
+      },
       "Humanizer.Core/2.14.1": {
         "type": "package",
         "compile": {
@@ -123,59 +136,6 @@
           }
         }
       },
-      "Microsoft.AspNetCore.Http/2.2.2": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Abstractions": "2.2.0",
-          "Microsoft.AspNetCore.WebUtilities": "2.2.0",
-          "Microsoft.Extensions.ObjectPool": "2.2.0",
-          "Microsoft.Extensions.Options": "2.2.0",
-          "Microsoft.Net.Http.Headers": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.AspNetCore.Http.Features": "2.2.0",
-          "System.Text.Encodings.Web": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.Http.Features/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "2.2.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.10": {
         "type": "package",
         "dependencies": {
@@ -189,23 +149,6 @@
         },
         "runtime": {
           "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll": {
-            "related": ".xml"
-          }
-        }
-      },
-      "Microsoft.AspNetCore.WebUtilities/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Net.Http.Headers": "2.2.0",
-          "System.Text.Encodings.Web": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll": {
             "related": ".xml"
           }
         }
@@ -840,19 +783,6 @@
           "buildTransitive/net6.0/Microsoft.Extensions.Logging.Abstractions.targets": {}
         }
       },
-      "Microsoft.Extensions.ObjectPool/2.2.0": {
-        "type": "package",
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.Extensions.Options/8.0.2": {
         "type": "package",
         "dependencies": {
@@ -1018,23 +948,6 @@
           }
         }
       },
-      "Microsoft.Net.Http.Headers/2.2.0": {
-        "type": "package",
-        "dependencies": {
-          "Microsoft.Extensions.Primitives": "2.2.0",
-          "System.Buffers": "4.5.0"
-        },
-        "compile": {
-          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {
-            "related": ".xml"
-          }
-        },
-        "runtime": {
-          "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll": {
-            "related": ".xml"
-          }
-        }
-      },
       "Microsoft.OpenApi/1.6.14": {
         "type": "package",
         "compile": {
@@ -1108,6 +1021,43 @@
           }
         }
       },
+      "PayPal/1.9.1": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "7.0.1"
+        },
+        "compile": {
+          "lib/net451/PayPal.dll": {
+            "related": ".xml"
+          }
+        },
+        "runtime": {
+          "lib/net451/PayPal.dll": {
+            "related": ".xml"
+          }
+        }
+      },
+      "PayPalCheckoutSdk/1.0.4": {
+        "type": "package",
+        "dependencies": {
+          "PayPalHttp": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/PayPalCheckoutSdk.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PayPalCheckoutSdk.dll": {}
+        }
+      },
+      "PayPalHttp/1.0.1": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/PayPalHttp-Dotnet.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PayPalHttp-Dotnet.dll": {}
+        }
+      },
       "Swashbuckle.AspNetCore/6.9.0": {
         "type": "package",
         "dependencies": {
@@ -1173,15 +1123,6 @@
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
-      },
-      "System.Buffers/4.5.0": {
-        "type": "package",
-        "compile": {
-          "ref/netcoreapp2.0/_._": {}
-        },
-        "runtime": {
-          "lib/netcoreapp2.0/_._": {}
-        }
       },
       "System.CodeDom/4.4.0": {
         "type": "package",
@@ -1828,6 +1769,37 @@
         "lib/netstandard2.0/Azure.Identity.xml"
       ]
     },
+    "BCrypt.Net-Next/4.0.3": {
+      "sha512": "W+U9WvmZQgi5cX6FS5GDtDoPzUCV4LkBLkywq/kRZhuDwcbavOzcDAr3LXJFqHUi952Yj3LEYoWW0jbEUQChsA==",
+      "type": "package",
+      "path": "bcrypt.net-next/4.0.3",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "bcrypt.net-next.4.0.3.nupkg.sha512",
+        "bcrypt.net-next.nuspec",
+        "ico.png",
+        "lib/net20/BCrypt.Net-Next.dll",
+        "lib/net20/BCrypt.Net-Next.xml",
+        "lib/net35/BCrypt.Net-Next.dll",
+        "lib/net35/BCrypt.Net-Next.xml",
+        "lib/net462/BCrypt.Net-Next.dll",
+        "lib/net462/BCrypt.Net-Next.xml",
+        "lib/net472/BCrypt.Net-Next.dll",
+        "lib/net472/BCrypt.Net-Next.xml",
+        "lib/net48/BCrypt.Net-Next.dll",
+        "lib/net48/BCrypt.Net-Next.xml",
+        "lib/net5.0/BCrypt.Net-Next.dll",
+        "lib/net5.0/BCrypt.Net-Next.xml",
+        "lib/net6.0/BCrypt.Net-Next.dll",
+        "lib/net6.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.0/BCrypt.Net-Next.dll",
+        "lib/netstandard2.0/BCrypt.Net-Next.xml",
+        "lib/netstandard2.1/BCrypt.Net-Next.dll",
+        "lib/netstandard2.1/BCrypt.Net-Next.xml",
+        "readme.md"
+      ]
+    },
     "Humanizer.Core/2.14.1": {
       "sha512": "lQKvtaTDOXnoVJ20ibTuSIOf2i0uO0MPbDhd1jm238I+U/2ZnRENj0cktKZhtchBMtCUSRQ5v4xBCUbKNmyVMw==",
       "type": "package",
@@ -1899,45 +1871,6 @@
         "microsoft.aspnetcore.cryptography.keyderivation.nuspec"
       ]
     },
-    "Microsoft.AspNetCore.Http/2.2.2": {
-      "sha512": "BAibpoItxI5puk7YJbIGj95arZueM8B8M5xT1fXBn3hb3L2G3ucrZcYXv1gXdaroLbntUs8qeV8iuBrpjQsrKw==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.http/2.2.2",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.xml",
-        "microsoft.aspnetcore.http.2.2.2.nupkg.sha512",
-        "microsoft.aspnetcore.http.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Http.Abstractions/2.2.0": {
-      "sha512": "Nxs7Z1q3f1STfLYKJSVXCs1iBl+Ya6E8o4Oy1bCxJ/rNI44E/0f6tbsrVqAWfB7jlnJfyaAtIalBVxPKUPQb4Q==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.http.abstractions/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Abstractions.xml",
-        "microsoft.aspnetcore.http.abstractions.2.2.0.nupkg.sha512",
-        "microsoft.aspnetcore.http.abstractions.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.Http.Features/2.2.0": {
-      "sha512": "ziFz5zH8f33En4dX81LW84I6XrYXKf9jg6aM39cM+LffN9KJahViKZ61dGMSO2gd3e+qe5yBRwsesvyqlZaSMg==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.http.features/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.Http.Features.xml",
-        "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512",
-        "microsoft.aspnetcore.http.features.nuspec"
-      ]
-    },
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/8.0.10": {
       "sha512": "vMeY9F3Sq+AiZlquf84rwHOAQBS8nb8kd1RcuoXKPBhHNGBxMLYnr8/e/FCwu7kb14hH/rqWoEuyO4WXpAO6Rw==",
       "type": "package",
@@ -1951,19 +1884,6 @@
         "lib/net8.0/Microsoft.AspNetCore.Identity.EntityFrameworkCore.xml",
         "microsoft.aspnetcore.identity.entityframeworkcore.8.0.10.nupkg.sha512",
         "microsoft.aspnetcore.identity.entityframeworkcore.nuspec"
-      ]
-    },
-    "Microsoft.AspNetCore.WebUtilities/2.2.0": {
-      "sha512": "9ErxAAKaDzxXASB/b5uLEkLgUWv1QbeVxyJYEHQwMaxXOeFFVkQxiq8RyfVcifLU7NR0QY0p3acqx4ZpYfhHDg==",
-      "type": "package",
-      "path": "microsoft.aspnetcore.webutilities/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.dll",
-        "lib/netstandard2.0/Microsoft.AspNetCore.WebUtilities.xml",
-        "microsoft.aspnetcore.webutilities.2.2.0.nupkg.sha512",
-        "microsoft.aspnetcore.webutilities.nuspec"
       ]
     },
     "Microsoft.Bcl.AsyncInterfaces/6.0.0": {
@@ -3171,19 +3091,6 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "Microsoft.Extensions.ObjectPool/2.2.0": {
-      "sha512": "gA8H7uQOnM5gb+L0uTNjViHYr+hRDqCdfugheGo/MxQnuHzmhhzCBTIPm19qL1z1Xe0NEMabfcOBGv9QghlZ8g==",
-      "type": "package",
-      "path": "microsoft.extensions.objectpool/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.dll",
-        "lib/netstandard2.0/Microsoft.Extensions.ObjectPool.xml",
-        "microsoft.extensions.objectpool.2.2.0.nupkg.sha512",
-        "microsoft.extensions.objectpool.nuspec"
-      ]
-    },
     "Microsoft.Extensions.Options/8.0.2": {
       "sha512": "dWGKvhFybsaZpGmzkGCbNNwBD1rVlWzrZKANLW/CcbFJpCEceMCGzT7zZwHOGBCbwM0SzBuceMj5HN1LKV1QqA==",
       "type": "package",
@@ -3448,19 +3355,6 @@
         "microsoft.identitymodel.tokens.nuspec"
       ]
     },
-    "Microsoft.Net.Http.Headers/2.2.0": {
-      "sha512": "iZNkjYqlo8sIOI0bQfpsSoMTmB/kyvmV2h225ihyZT33aTp48ZpF6qYnXxzSXmHt8DpBAwBTX+1s1UFLbYfZKg==",
-      "type": "package",
-      "path": "microsoft.net.http.headers/2.2.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "lib/netstandard2.0/Microsoft.Net.Http.Headers.dll",
-        "lib/netstandard2.0/Microsoft.Net.Http.Headers.xml",
-        "microsoft.net.http.headers.2.2.0.nupkg.sha512",
-        "microsoft.net.http.headers.nuspec"
-      ]
-    },
     "Microsoft.OpenApi/1.6.14": {
       "sha512": "tTaBT8qjk3xINfESyOPE2rIellPvB7qpVqiWiyA/lACVvz+xOGiXhFUfohcx82NLbi5avzLW0lx+s6oAqQijfw==",
       "type": "package",
@@ -3566,6 +3460,47 @@
         "packageIcon.png"
       ]
     },
+    "PayPal/1.9.1": {
+      "sha512": "b3vq6Lc9CwSooCX2tsZ02zb7E/K/cA6EILCoMynue+ZeVuitJNqt0YwxPnp7uN0Pccob02oDlpAjRLH+GRCRxA==",
+      "type": "package",
+      "path": "paypal/1.9.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net40/PayPal.dll",
+        "lib/net40/PayPal.xml",
+        "lib/net45/PayPal.dll",
+        "lib/net45/PayPal.xml",
+        "lib/net451/PayPal.dll",
+        "lib/net451/PayPal.xml",
+        "paypal.1.9.1.nupkg.sha512",
+        "paypal.nuspec"
+      ]
+    },
+    "PayPalCheckoutSdk/1.0.4": {
+      "sha512": "4fsOPj6SOJurbVf5ANg7NQ5TNvSYmtngf3dpJN11xEk6BP+5Rn6OcaaTbUx+bVnnYmgaoe5LbRZe52QpAjuwqg==",
+      "type": "package",
+      "path": "paypalcheckoutsdk/1.0.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PayPalCheckoutSdk.dll",
+        "paypalcheckoutsdk.1.0.4.nupkg.sha512",
+        "paypalcheckoutsdk.nuspec"
+      ]
+    },
+    "PayPalHttp/1.0.1": {
+      "sha512": "Jlg8e9Egwxk+sfkIoGIkjQS+uxGNIOnY6NbUkWXKJiEGGqryeV9bIRNtSfjSgs/g02JcIQbKRFQW+8amtSo3ig==",
+      "type": "package",
+      "path": "paypalhttp/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PayPalHttp-Dotnet.dll",
+        "paypalhttp.1.0.1.nupkg.sha512",
+        "paypalhttp.nuspec"
+      ]
+    },
     "Swashbuckle.AspNetCore/6.9.0": {
       "sha512": "lvI+XHF21tkwXd2nDCLGJsdhdUYsY3Ax2fWUlvw81Oa6EedtnIAf5tThy8ZnPcz/9/TwsLgjgtX9ifOCIjbEPA==",
       "type": "package",
@@ -3667,35 +3602,6 @@
         "package-readme.md",
         "swashbuckle.aspnetcore.swaggerui.6.9.0.nupkg.sha512",
         "swashbuckle.aspnetcore.swaggerui.nuspec"
-      ]
-    },
-    "System.Buffers/4.5.0": {
-      "sha512": "pL2ChpaRRWI/p4LXyy4RgeWlYF2sgfj/pnVMvBqwNFr5cXg7CXNnWZWxrOONLg8VGdFB8oB+EG2Qw4MLgTOe+A==",
-      "type": "package",
-      "path": "system.buffers/4.5.0",
-      "files": [
-        ".nupkg.metadata",
-        ".signature.p7s",
-        "LICENSE.TXT",
-        "THIRD-PARTY-NOTICES.TXT",
-        "lib/netcoreapp2.0/_._",
-        "lib/netstandard1.1/System.Buffers.dll",
-        "lib/netstandard1.1/System.Buffers.xml",
-        "lib/netstandard2.0/System.Buffers.dll",
-        "lib/netstandard2.0/System.Buffers.xml",
-        "lib/uap10.0.16299/_._",
-        "ref/net45/System.Buffers.dll",
-        "ref/net45/System.Buffers.xml",
-        "ref/netcoreapp2.0/_._",
-        "ref/netstandard1.1/System.Buffers.dll",
-        "ref/netstandard1.1/System.Buffers.xml",
-        "ref/netstandard2.0/System.Buffers.dll",
-        "ref/netstandard2.0/System.Buffers.xml",
-        "ref/uap10.0.16299/_._",
-        "system.buffers.4.5.0.nupkg.sha512",
-        "system.buffers.nuspec",
-        "useSharedDesignerContext.txt",
-        "version.txt"
       ]
     },
     "System.CodeDom/4.4.0": {
@@ -4656,13 +4562,15 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "AutoMapper >= 13.0.1",
+      "BCrypt.Net-Next >= 4.0.3",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 8.0.10",
-      "Microsoft.AspNetCore.Http >= 2.2.2",
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Design >= 8.0.10",
       "Microsoft.EntityFrameworkCore.SqlServer >= 8.0.10",
       "Microsoft.EntityFrameworkCore.Tools >= 8.0.10",
       "Newtonsoft.Json >= 13.0.3",
+      "PayPal >= 1.9.1",
+      "PayPalCheckoutSdk >= 1.0.4",
       "Swashbuckle.AspNetCore >= 6.9.0"
     ]
   },
@@ -4720,13 +4628,13 @@
             "target": "Package",
             "version": "[13.0.1, )"
           },
+          "BCrypt.Net-Next": {
+            "target": "Package",
+            "version": "[4.0.3, )"
+          },
           "Microsoft.AspNetCore.Authentication.JwtBearer": {
             "target": "Package",
             "version": "[8.0.10, )"
-          },
-          "Microsoft.AspNetCore.Http": {
-            "target": "Package",
-            "version": "[2.2.2, )"
           },
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
             "target": "Package",
@@ -4751,6 +4659,14 @@
           "Newtonsoft.Json": {
             "target": "Package",
             "version": "[13.0.3, )"
+          },
+          "PayPal": {
+            "target": "Package",
+            "version": "[1.9.1, )"
+          },
+          "PayPalCheckoutSdk": {
+            "target": "Package",
+            "version": "[1.0.4, )"
           },
           "Swashbuckle.AspNetCore": {
             "target": "Package",
@@ -4827,6 +4743,16 @@
       "warningLevel": 1,
       "message": "El paquete \"System.Formats.Asn1\" 5.0.0 tiene una vulnerabilidad de gravedad alta conocida, https://github.com/advisories/GHSA-447r-wph3-92pm",
       "libraryId": "System.Formats.Asn1",
+      "targetGraphs": [
+        "net8.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "El paquete \"PayPal 1.9.1\" se restauró con \".NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1\" en lugar de la plataforma de destino del proyecto \"net8.0\". Puede que el paquete no sea totalmente compatible con el proyecto.",
+      "libraryId": "PayPal",
       "targetGraphs": [
         "net8.0"
       ]

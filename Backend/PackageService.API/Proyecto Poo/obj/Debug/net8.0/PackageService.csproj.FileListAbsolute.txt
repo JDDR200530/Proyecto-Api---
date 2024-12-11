@@ -916,3 +916,7 @@ C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proye
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Shipments.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Payments.json
 C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\SeedData\Truck.json
+C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\BCrypt.Net-Next.dll
+C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PayPal.dll
+C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PayPalCheckoutSdk.dll
+C:\Users\JOSUE DAVID\Documents\Lenguaje de Programacion\Proyecto Lenguajes\Proyecto-Api---\Backend\PackageService.API\Proyecto Poo\bin\Debug\net8.0\PayPalHttp-Dotnet.dll

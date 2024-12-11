@@ -54,13 +54,13 @@
               "target": "Package",
               "version": "[13.0.1, )"
             },
+            "BCrypt.Net-Next": {
+              "target": "Package",
+              "version": "[4.0.3, )"
+            },
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[8.0.10, )"
-            },
-            "Microsoft.AspNetCore.Http": {
-              "target": "Package",
-              "version": "[2.2.2, )"
             },
             "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
               "target": "Package",
@@ -85,6 +85,14 @@
             "Newtonsoft.Json": {
               "target": "Package",
               "version": "[13.0.3, )"
+            },
+            "PayPal": {
+              "target": "Package",
+              "version": "[1.9.1, )"
+            },
+            "PayPalCheckoutSdk": {
+              "target": "Package",
+              "version": "[1.0.4, )"
             },
             "Swashbuckle.AspNetCore": {
               "target": "Package",

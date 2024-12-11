@@ -14,5 +14,7 @@ namespace Proyecto_Poo.Dtos.Shipments
             public Guid TruckId { get; set; }
 
         public List<Guid> PackageIds { get; set; }
+
+        public string CreatedBy { get; set; }
     }
 }

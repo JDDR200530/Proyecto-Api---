@@ -119,6 +119,7 @@ namespace Proyecto_Poo.Service
                 context.Orders.Update(orderEntity);
                 await context.SaveChangesAsync();
 
+                logger.LogInformation("Pago creado con éxito. ID del Pago: {PaymentId}", paymentEntity.Id);
                 logger.LogInformation("Pago creado con éxito para la orden {OrderId}", dto.OrderId);
 
                 // Mapear la entidad a DTO y devolverla
@@ -129,7 +130,7 @@ namespace Proyecto_Poo.Service
                 {
                     StatusCode = 201,
                     Status = true,
-                    Message = "Pago con tarjeta de débito creado correctamente.",
+                    Message = $"Pago con tarjeta de débito creado correctamente. ID del Pago: {paymentEntity.Id}",
                     Data = paymentDto
                 };
             }
@@ -198,6 +199,128 @@ namespace Proyecto_Poo.Service
             // Cálculo del monto: 0.5 por kilo y 0.2 por kilómetro
             return Math.Round(totalWeight * 0.5 + distance * 0.2, 2);
         }
+        public async Task<ResponseDto<PaymentDto>> CreatePaymentWithPayPalAsync(PaymentPayPalCreatedDto dto)
+        {
+            try
+            {
+                if (dto == null)
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "Datos del pago no válidos."
+                    };
+                }
+
+                // Buscar la orden asociada
+                var orderEntity = await context.Orders.FirstOrDefaultAsync(o => o.Id == dto.OrderId);
+                if (orderEntity == null)
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 404,
+                        Status = false,
+                        Message = "La orden no fue encontrada."
+                    };
+                }
+
+                // Validar método de pago y correo de PayPal
+                if (dto.PaymentMethod != "PayPal" || string.IsNullOrEmpty(dto.PayPalEmail))
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "El pago con PayPal requiere un correo válido."
+                    };
+                }
+
+                if (!IsValidEmail(dto.PayPalEmail))
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "El correo de PayPal es inválido."
+                    };
+                }
+
+                // Calcular el monto basado en peso y distancia
+                double amount;
+                try
+                {
+                    amount = CalculateAmount(orderEntity.TotalWeight, orderEntity.Distance);
+                }
+                catch (ArgumentException ex)
+                {
+                    logger.LogError(ex, "Error al calcular el monto para la orden.");
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "Datos inválidos para calcular el monto del pago."
+                    };
+                }
+
+                // Crear y guardar la entidad de pago
+                var paymentEntity = new PaymentEntity
+                {
+                    Id = Guid.NewGuid(),
+                    Amount = amount,
+                    PaymentDate = DateTime.UtcNow,
+                    OrderId = dto.OrderId,
+                    PaymentMethod = dto.PaymentMethod,
+                    PayPalEmail = dto.PayPalEmail // Agregar el correo de PayPal a la entidad
+                };
+
+                context.Payments.Add(paymentEntity);
+
+                orderEntity.PaymentStatus = true;
+                context.Orders.Update(orderEntity);
+                await context.SaveChangesAsync();
+
+                logger.LogInformation("Pago creado con éxito para la orden {OrderId} usando PayPal", dto.OrderId);
+
+                // Mapear la entidad a DTO y devolverla
+                var paymentDto = mapper.Map<PaymentDto>(paymentEntity);
+
+                return new ResponseDto<PaymentDto>
+                {
+                    StatusCode = 201,
+                    Status = true,
+                    Message = "Pago con PayPal creado correctamente.",
+                    Data = paymentDto
+                };
+            }
+            catch (Exception ex)
+            {
+                logger.LogError(ex, "Error al procesar el pago con PayPal.");
+                return new ResponseDto<PaymentDto>
+                {
+                    StatusCode = 500,
+                    Status = false,
+                    Message = "Error interno al procesar el pago."
+                };
+            }
+        }
+
+        private bool IsValidEmail(string email)
+        {
+            try
+            {
+                var emailCheck = new System.Net.Mail.MailAddress(email);
+                return emailCheck.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+
+
+
+
     }
 
 
