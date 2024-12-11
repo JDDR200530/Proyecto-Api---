@@ -776,7 +776,7 @@
         }
       }
     },
-    "/api/pay/pay/paypal": {
+    "/api/pay/paypal": {
       "post": {
         "tags": [
           "Payment"
@@ -848,6 +848,33 @@
             }
           }
         },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ShipmentDtoResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Shipment"
+        ],
         "responses": {
           "200": {
             "description": "OK",

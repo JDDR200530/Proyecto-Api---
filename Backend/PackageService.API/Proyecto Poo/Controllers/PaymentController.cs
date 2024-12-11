@@ -31,7 +31,7 @@ namespace Proyecto_Poo.Controllers
         }
 
 
-        [HttpPost("pay/paypal")]
+        [HttpPost("paypal")]
         [Authorize(Roles =$"{RolesConstant.USER}")]
 
         public async Task<ActionResult<Response<PaymentDto>>> CreatePayPal (PaymentPayPalCreatedDto dto)

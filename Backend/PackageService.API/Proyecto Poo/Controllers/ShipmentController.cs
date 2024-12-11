@@ -43,5 +43,14 @@ namespace Proyecto_Poo.Controllers
             return StatusCode(response.StatusCode, response);
         }
 
+        [HttpGet]
+        [Authorize(Roles = $"{RolesConstant.ADMIN}")]
+
+        public async Task<ActionResult<Response<ShipmentDto>>> GetAll()
+        {
+            var response = await shipmentServices.GetAllShipmentsAsync();
+            return StatusCode(response.StatusCode, response);
+        }
+
     }
 }

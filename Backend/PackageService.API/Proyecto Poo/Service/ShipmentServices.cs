@@ -229,6 +229,56 @@ namespace Proyecto_Poo.Service
             };
         }
 
+
+        public async Task<ResponseDto<List<ShipmentDto>>> GetAllShipmentsAsync()
+        {
+            try
+            {
+                // Obtener todos los envíos desde la base de datos
+                var shipments = await _context.Shipments
+                    .Include(s => s.Order)    // Incluir la información de la orden asociada
+                    .Include(s => s.Payment)  // Incluir la información del pago asociado
+                    .Include(s => s.Truck)    // Incluir la información del camión asociado
+                    .ToListAsync();
+
+                // Verificar si no se encontraron envíos
+                if (!shipments.Any())
+                {
+                    return new ResponseDto<List<ShipmentDto>>
+                    {
+                        StatusCode = 404,
+                        Status = false,
+                        Message = "No se encontraron envíos",
+                        Data = null
+                    };
+                }
+
+                // Mapear las entidades de Shipment a DTOs
+                var shipmentDtos = _mapper.Map<List<ShipmentDto>>(shipments);
+
+                return new ResponseDto<List<ShipmentDto>>
+                {
+                    StatusCode = 200,
+                    Status = true,
+                    Message = "Lista de envíos obtenida correctamente",
+                    Data = shipmentDtos
+                };
+            }
+            catch (Exception ex)
+            {
+                // Manejo de errores
+                _logger.LogError(ex, "Error al obtener la lista de todos los envíos");
+                return new ResponseDto<List<ShipmentDto>>
+                {
+                    StatusCode = 500,
+                    Status = false,
+                    Message = "Se produjo un error inesperado",
+                    Data = null
+                };
+            }
+        }
+
+
     }
 }
 

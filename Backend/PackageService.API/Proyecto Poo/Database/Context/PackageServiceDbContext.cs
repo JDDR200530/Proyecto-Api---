@@ -133,6 +133,7 @@ namespace Proyecto_Poo.Database.Contex
                     break;
 
                 case EntityState.Modified:
+
                     // Ajustar peso considerando el cambio en el peso del paquete
                     var originalWeight = packageEntry.OriginalValues.GetValue<double>(nameof(PackageEntity.PackageWeight));
                     var currentWeight = package.PackageWeight;

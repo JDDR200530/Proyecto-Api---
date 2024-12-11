@@ -344,7 +344,7 @@
   {
     "ContainingType": "Proyecto_Poo.Controllers.PaymentController",
     "Method": "CreatePayPal",
-    "RelativePath": "api/pay/pay/paypal",
+    "RelativePath": "api/pay/paypal",
     "HttpMethod": "POST",
     "IsController": true,
     "Order": 0,
@@ -381,6 +381,26 @@
         "IsRequired": true
       }
     ],
+    "ReturnTypes": [
+      {
+        "Type": "Azure.Response\u00601[[Proyecto_Poo.Dtos.Shipments.ShipmentDto, PackageService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "Proyecto_Poo.Controllers.ShipmentController",
+    "Method": "GetAll",
+    "RelativePath": "api/shipments",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
     "ReturnTypes": [
       {
         "Type": "Azure.Response\u00601[[Proyecto_Poo.Dtos.Shipments.ShipmentDto, PackageService, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",

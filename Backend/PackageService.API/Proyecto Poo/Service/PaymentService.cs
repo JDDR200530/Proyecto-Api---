@@ -53,6 +53,18 @@ namespace Proyecto_Poo.Service
                     };
                 }
 
+                if (orderEntity.PaymentStatus)
+                {
+                    {
+                        return new ResponseDto<PaymentDto>
+                        {
+                            StatusCode = 400,
+                            Status = false,
+                            Message = "La orden ya"
+                        };
+                    }
+                }
+
                 // Validar método de pago y número de tarjeta
                 if (dto.PaymentMethod != "Debit Card" || dto.CardNumber <= 0)
                 {
@@ -199,10 +211,12 @@ namespace Proyecto_Poo.Service
             // Cálculo del monto: 0.5 por kilo y 0.2 por kilómetro
             return Math.Round(totalWeight * 0.5 + distance * 0.2, 2);
         }
+
         public async Task<ResponseDto<PaymentDto>> CreatePaymentWithPayPalAsync(PaymentPayPalCreatedDto dto)
         {
             try
             {
+                // Validación de entrada
                 if (dto == null)
                 {
                     return new ResponseDto<PaymentDto>
@@ -225,24 +239,25 @@ namespace Proyecto_Poo.Service
                     };
                 }
 
+                // Verificar si el estado de pago de la orden es true
+                if (orderEntity.PaymentStatus)
+                {
+                    return new ResponseDto<PaymentDto>
+                    {
+                        StatusCode = 400,
+                        Status = false,
+                        Message = "El pago para esta orden ya ha sido realizado."
+                    };
+                }
+
                 // Validar método de pago y correo de PayPal
-                if (dto.PaymentMethod != "PayPal" || string.IsNullOrEmpty(dto.PayPalEmail))
+                if (dto.PaymentMethod != "PayPal" || string.IsNullOrEmpty(dto.PayPalEmail) || !IsValidEmail(dto.PayPalEmail))
                 {
                     return new ResponseDto<PaymentDto>
                     {
                         StatusCode = 400,
                         Status = false,
                         Message = "El pago con PayPal requiere un correo válido."
-                    };
-                }
-
-                if (!IsValidEmail(dto.PayPalEmail))
-                {
-                    return new ResponseDto<PaymentDto>
-                    {
-                        StatusCode = 400,
-                        Status = false,
-                        Message = "El correo de PayPal es inválido."
                     };
                 }
 
@@ -276,6 +291,7 @@ namespace Proyecto_Poo.Service
 
                 context.Payments.Add(paymentEntity);
 
+                // Actualizar el estado de pago de la orden
                 orderEntity.PaymentStatus = true;
                 context.Orders.Update(orderEntity);
                 await context.SaveChangesAsync();
@@ -305,6 +321,7 @@ namespace Proyecto_Poo.Service
             }
         }
 
+
         private bool IsValidEmail(string email)
         {
             try
@@ -325,3 +342,4 @@ namespace Proyecto_Poo.Service
 
 
 }
+//4539578763621486
